@@ -1,5 +1,17 @@
-@import url(sheets/standard.css);
-@import url(sheets/assets.css);
-@import url(sheets/fonts.css);
-@import url(sheets/header.css);
-@import url(sheets/content.css);
+@import url(assets/sheets/standard.css);
+@import url(assets/sheets/assets.css);
+@import url(assets/sheets/fonts.css);
+@import url(assets/sheets/header.css);
+@import url(assets/sheets/content.css);
+
+@font-face {
+    font-family: 'Merienda-regular';
+    font-weight: 400;
+    src: url(assets/fonts/Merienda-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Merienda-bold';
+    font-weight: 700;
+    src: url(assets/fonts/Merienda-Bold.ttf);
+}

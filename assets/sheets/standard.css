@@ -8,15 +8,11 @@ body {
 
 h1 {
     margin-block: 0;
-    -webkit-text-stroke: 3px rgb(151, 30, 30);
-}
-
-.favicon_color {
-    filter: invert(49%) sepia(96%) saturate(415%) hue-rotate(5deg) brightness(91%) contrast(96%);
+    
 }
 
 .line {
-    height: 4px;
+    height: 6px;
     width: 100%;
-    background-color: black;
+    background-color: #b8870ba1;
 }
