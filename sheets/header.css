@@ -1,14 +1,20 @@
-.header_logo {
-    height: 100px;
-}
-
-
 .icon_container  {
     display: flex;
     gap: 20px;
     filter: invert(1);
     font-size: 20px;
     font-weight: 600;
+}
+
+.header_logo {
+    height: 100px;
+}
+
+.header_section{
+    padding: 30px;
+    background-image: url(../img/Gegrilltes\ Steak\ Mit\ Kirschtomaten\ Und\ Kräutern.jpg);
+    background-position: center center;
+    background-size: cover;
 }
 
 .header_text{
@@ -26,11 +32,4 @@ nav {
 nav a{
     text-decoration: none;
     color: black;
-}
-
-.header_section{
-    padding: 30px;
-    background-image: url(../img/Gegrilltes\ Steak\ Mit\ Kirschtomaten\ Und\ Kräutern.jpg);
-    background-position: center center;
-    background-size: cover;
 }
