@@ -1,3 +1,5 @@
 @import url(sheets/standard.css);
 @import url(sheets/assets.css);
 @import url(sheets/fonts.css);
+@import url(sheets/header.css);
+@import url(sheets/content.css);
