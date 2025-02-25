@@ -6,3 +6,8 @@ body {
 h1 {
     margin-block: 0;
 }
+
+.favicon_color {
+    filter: invert(49%) sepia(96%) saturate(415%) hue-rotate(5deg) brightness(91%) contrast(96%);
+}
+
