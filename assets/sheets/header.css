@@ -2,6 +2,7 @@
     display: flex;
     gap: 20px;
     filter: invert(1);
+    filter: invert(49%) sepia(96%) saturate(415%) hue-rotate(5deg) brightness(91%) contrast(96%);
     font-size: 20px;
     font-weight: 600;
 }
@@ -15,6 +16,9 @@
     background-image: url(../img/Gegrilltes\ Steak\ Mit\ Kirschtomaten\ Und\ Kräutern.jpg);
     background-position: center center;
     background-size: cover;
+    height: 200px;
+    width: 100%;
+    filter: brightness(0.4);
 }
 
 .header_text{
@@ -32,4 +36,11 @@ nav {
 nav a{
     text-decoration: none;
     color: black;
+}
+
+header {
+    position: absolute;
+    top: 80px;
+    left: 30px;
+    max-width: 1440px;
 }
