@@ -1,48 +1,18 @@
-.icon_container  {
-    display: flex;
-    gap: 20px;
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.header_logo {
-    height: 100px;
-    filter: invert(60%) sepia(97%) saturate(398%) hue-rotate(358deg) brightness(104%) contrast(108%);
-}
-
-.header_section{
-    padding: 30px;
+.header_background {
     background-image: url(../../img/Gegrilltes\ Steak\ Mit\ Kirschtomaten\ Und\ Kräutern.jpg);
-    background-position: center center;
+    height: 400px;
+    width: 100%;
     background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.icon_container img{
     height: 200px;
-    width: 100%;
-    filter: brightness(0.4);
+    filter: invert(42%) sepia(100%) saturate(399%) hue-rotate(5deg) brightness(104%) contrast(96%);
 }
 
-.header_text{
+.icon_container {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    font-family: 'Merienda-regular';
-    text-shadow: 5px 2px 8px rgb(37, 6, 6);
-    color: #ffbc11;
-    margin-block: 0;
-}
-
-.header_text p{
-    margin-block: 0;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-}
-
-header {
-    position: absolute;
-    top: 80px;
-    max-width: 1440px;
-    width: 100%;
+    gap: 60px;
 }

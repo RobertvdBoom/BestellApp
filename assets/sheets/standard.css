@@ -12,26 +12,47 @@ h1, h2 {
     font-family: 'Merienda-bold', sans-serif;
 }
 
-.line {
-    height: 6px;
+h1 {
+    font-size: 96px;
+}
+
+h2 {
+    font-size: 80px;
+}
+
+h3 {
+    font-size: 65px;
+}
+
+p {
+    font-size: 24px;
+    font-family: 'Merienda-regular', sans-serif;
+}
+
+.ds-fl-jc-center {
+    display: flex;
+    justify-content: center;
+}
+
+.ds-fl-spc-btw {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    background-color: #b8870b;
 }
 
-a {
-    font-family: 'Merienda-bold';
-    color: black;
-    margin-block: 0;
-    cursor: pointer;
-    font-size: 25px;
-    text-decoration: none;
-    margin-bottom: 20px;
+.max-width1440 {
+    max-width: 1440px;
+    flex: 1;
 }
 
-a:hover {
-    filter: invert(0.2);
+.ds-fl-col-cnt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.maxw1440 {
-    width: 100%;
+.pos-abs {
+    position: absolute;
+    top: 100px;
 }
