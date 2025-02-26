@@ -5,14 +5,17 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    filter: brightness(0.6);
 }
 
-.icon_container img{
+.header_container img{
     height: 200px;
     filter: invert(42%) sepia(100%) saturate(399%) hue-rotate(5deg) brightness(104%) contrast(96%);
 }
 
-.icon_container {
+.header_container {
     display: flex;
     gap: 60px;
+    color: #b8870b;
+    text-shadow: 0px 0px 10px black;
 }
