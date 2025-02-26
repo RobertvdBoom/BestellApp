@@ -1,14 +1,13 @@
 .icon_container  {
     display: flex;
     gap: 20px;
-    filter: invert(1);
-    filter: invert(49%) sepia(96%) saturate(415%) hue-rotate(5deg) brightness(91%) contrast(96%);
     font-size: 20px;
     font-weight: 600;
 }
 
 .header_logo {
     height: 100px;
+    filter: invert(60%) sepia(97%) saturate(398%) hue-rotate(358deg) brightness(104%) contrast(108%);
 }
 
 .header_section{
@@ -25,6 +24,14 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    font-family: 'Merienda-regular';
+    text-shadow: 5px 2px 8px rgb(37, 6, 6);
+    color: #ffbc11;
+    margin-block: 0;
+}
+
+.header_text p{
+    margin-block: 0;
 }
 
 nav {
@@ -33,14 +40,9 @@ nav {
     gap: 40px;
 }
 
-nav a{
-    text-decoration: none;
-    color: black;
-}
-
 header {
     position: absolute;
     top: 80px;
-    left: 30px;
     max-width: 1440px;
+    width: 100%;
 }

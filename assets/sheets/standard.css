@@ -4,15 +4,34 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #b8870b;
 }
 
-h1 {
+h1, h2 {
     margin-block: 0;
-    
+    font-family: 'Merienda-bold', sans-serif;
 }
 
 .line {
     height: 6px;
     width: 100%;
-    background-color: #b8870ba1;
+    background-color: #b8870b;
+}
+
+a {
+    font-family: 'Merienda-bold';
+    color: black;
+    margin-block: 0;
+    cursor: pointer;
+    font-size: 25px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+a:hover {
+    filter: invert(0.2);
+}
+
+.maxw1440 {
+    width: 100%;
 }
