@@ -40,22 +40,6 @@ let allDishes = [
     }
 ];
 
-const currency = { 'euro': 1, 'dollar': 1.04 };
+const currency = { "euro": 1, "dollar": 1.04 };
 
 let basket = [];
-
-//push item from allDishes into basket
-//
-
-//render function: Take current active link or page, 
-// clear current main container
-// for item in respective category: 
-// add html structure and add to main container
-// 
-
-// build render in 1 function like this: 
-// onload: pretend to 'click' starters page, clear and set global 'active page' to starters
-// 
-
-// render items:
-// parse category, 
