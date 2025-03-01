@@ -13,9 +13,9 @@ body {
     color: #b8870b;
 }
 
-h1, h2 {
-    margin-block: 0;
+h1, h2, h3 {
     font-family: 'Merienda-bold', sans-serif;
+    margin-block: 0;
 }
 
 h1 {
@@ -27,7 +27,7 @@ h2 {
 }
 
 h3 {
-    font-size: 65px;
+    font-size: 45px;
 }
 
 p {
@@ -39,6 +39,7 @@ a {
     text-decoration: none;
     color: #b8870b;
     font-size: 40px;
+    font-family: 'Merienda-bold', sans-serif;
 }
 
 .ds-fl-jc-center {
@@ -91,4 +92,10 @@ button {
 button:hover {
     color: black;
     background-color: #b8870b;
+}
+
+.ds-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
