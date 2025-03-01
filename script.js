@@ -43,3 +43,7 @@ let allDishes = [
 const currency = { "euro": 1, "dollar": 1.04 };
 
 let basket = [];
+
+// redo stuff here
+
+let newItems = [];
