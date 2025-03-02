@@ -55,18 +55,25 @@ let newItems = [];
 
 
 let basketDisplayRef = document.getElementById('test-tag-basket');
+let basketPriceDisplayRef = document.getElementById('test-tag-basket-price');
+
 
 
 let numInBasket = 0;
 basketDisplayRef.innerHTML = numInBasket;
+basketPriceDisplayRef.innerHTML = totalSum;
+
+let totalSum = numInBasket*7.9;
 
 
 function plus(){
     numInBasket ++;
     basketDisplayRef.innerHTML = numInBasket;
+    basketPriceDisplayRef.innerHTML = numInBasket*7.9;
 }
 
 function minus(){
     numInBasket --;
     basketDisplayRef.innerHTML = numInBasket;
+    basketPriceDisplayRef.innerHTML = totalSum;
 }
