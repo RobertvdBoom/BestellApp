@@ -1,8 +1,7 @@
 @import url(assets/sheets/standard.css);
-@import url(assets/sheets/assets.css);
-@import url(assets/sheets/fonts.css);
 @import url(assets/sheets/header.css);
 @import url(assets/sheets/content.css);
+@import url(assets/sheets/footer.css);
 
 @font-face {
     font-family: 'Merienda-regular';
