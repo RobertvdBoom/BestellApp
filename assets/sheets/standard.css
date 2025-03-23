@@ -2,6 +2,7 @@ body {
     margin: 0;
     background-color: #2e2d2c;
     color: #b8870b;
+    min-height: 200vh;
 }
 
 h1, h2, h3, p {
@@ -26,4 +27,14 @@ a {
     color: #b8870b;
     font-size: 40px;
     font-family: 'Merienda-bold', sans-serif;
+}
+
+.wrapper-1440{
+    width: 100%;
+    padding: 60px;
+    max-width: 1440px;
+}
+
+.width-100 {
+    width: 100%;
 }

@@ -1,0 +1,24 @@
+.header-section{
+    background-image: url(/img/header\ Bild.jpg);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-item-container {
+    display: flex;
+
+}
+
+a{
+    color: white;
+}
+
+.nav-link {
+    &.active,
+    &.show {
+      color: rgb(189 0 0);
+    }
+  }
