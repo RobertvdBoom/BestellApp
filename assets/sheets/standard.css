@@ -1,7 +1,8 @@
 body {
     margin: 0;
     background-color: #2e2d2c;
-    color: #b8870b;
+    color: #ffffff;
+    text-shadow: 0px 0px 8px #7a5803;
     min-height: 200vh;
 }
 
