@@ -1,4 +1,4 @@
-let basket = [];
+let basket = [{"dish" : "Bruschetta"}];
 
 function setPageActive(category){
     document.getElementById('link-starters').classList.remove('nav-list-active');
@@ -21,7 +21,26 @@ function renderCurrentItems (category) {
 
 renderCurrentItems("starters");
 
-// Render Items from List
+function checkCartItems(dish){
+    for (let index = 0; index < basket.length; index++) {
+        isInCart(dish, basket[index]);
+    }
+}
+
+function isInCart(dish, basketDish){
+    if (dish == basketDish) {
+        return true;
+    }
+}
+
+function addItemToCart(category, index) {
+    // if dish : dishname is in cart:
+    // add ob
+    let newItem = allDishes
+    basket.push(newItem);
+}
+
+console.log(checkCartItems("Bruschetta"));
 
 // pushItemToCart (take object, use Name, Price, Amount, Total)
 // itemInBasketCheck
