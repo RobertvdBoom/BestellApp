@@ -39,16 +39,16 @@
       <div class="collapse navbar-collapse " id="navbarNav">
         <ul class="navbar-nav nav-list">
           <li class="nav-item">
-            <a class="nav-link link-light" aria-current="page" href="#">Vorspeisen</a>
+            <a class="nav-link link-light nav-list-active" onclick="setPageActive('starters')" id="link-starters">Vorspeisen</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  active link-light" href="#">Hauptgerichte</a>
+            <a class="nav-link link-light" onclick="setPageActive('gourmetMainCourses')" id="link-gourmetMainCourses">Hauptgerichte</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-light" href="#">Nachspeisen</a>
+            <a class="nav-link link-light" onclick="setPageActive('desserts')" id="link-desserts">Nachspeisen</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-light" href="#">Getränke</a>
+            <a class="nav-link link-light" onclick="setPageActive('drinks')" id="link-drinks">Getränke</a>
           </li>
         </ul>
       </div>
@@ -59,7 +59,7 @@
   <main>
 
     <section id="item_container">
-
+      
     </section>
 
     <!-- <div class="wrapper-1440 container-fluid">

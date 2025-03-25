@@ -1,33 +1,16 @@
 let basket = [];
 
-function renderTestOutput(dishCategory, dishIndex) {
-    let itemPriceRef = document.getElementById('test-output');
-    let itemNameRef = document.getElementById('test-output');
-    let itemAmountRef = document.getElementById('test-output');
-    let itemDescriptionRef = document.getElementById('');
+function setPageActive(category){
+    document.getElementById('link-starters').classList.remove('nav-list-active');
+    document.getElementById('link-gourmetMainCourses').classList.remove('nav-list-active');
+    document.getElementById('link-desserts').classList.remove('nav-list-active');
+    document.getElementById('link-drinks').classList.remove('nav-list-active');
+    let navItemRef = document.getElementById(`link-${category}`);
+    navItemRef.classList.add('nav-list-active')
+    
+    document.getElementById('item_container').innerHTML = "";
+    renderCurrentItems(category);
 }
-
-function dishTemplate(category, index) {
-    let itemContainerRef = document.getElementById('item_container');
-    let price = allDishes[category][index].price;
-    price = stylePrice(price);
-
-    itemContainerRef.innerHTML += `
-    <div class="wrapper-1440 container-fluid">
-      <div class="card dish-container">
-        <img src="${allDishes[category][index].imageURL}" class="card-img-top">
-        <div class="card-body">
-          <h4>${allDishes[category][index].description}</h4>
-          <p class="card-text">${allDishes[category][index].description}</p>
-        </div>
-        <div class="dish-add-btn-and-price">
-          <button class="btn btn-outline-basket">+</button>
-          <p>${price}</p>
-        </div>
-      </div>
-    </div> `
-}
-
 
 function renderCurrentItems (category) {
     let currentDishArray = allDishes[category];
@@ -37,7 +20,6 @@ function renderCurrentItems (category) {
 }
 
 renderCurrentItems("starters");
-dishTemplate("starters", 3);
 
 // Render Items from List
 
@@ -60,6 +42,19 @@ dishTemplate("starters", 3);
 
 // check amount in basket
 
+
+
+
+
+
+
+
+
+
+
+
+
+// Price STYLING SECTION START
 function stylePrice(number) {
     let num = number;
     num = twoDigits(num);
@@ -74,3 +69,4 @@ function twoDigits (number){
 function replacePriceDot(number){
     return number.replace(".", ",");
 }
+// Price STYLING SECTION END

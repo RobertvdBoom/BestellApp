@@ -1,10 +1,10 @@
 const allDishes = {
     starters: [
-        { dish: "Bruschetta", price: 6.5, description: "Geröstetes Brot mit Tomaten, Basilikum und Knoblauch verfeinert.", amount: 0 },
-        { dish: "Caprese-Salat", price: 7.50, description: "Mozzarella, Tomaten und Basilikum mit Olivenöl beträufelt.", amount: 0 },
-        { dish: "Carpaccio vom Rind", price: 9.00, description: "Dünne Rindfleischscheiben mit Parmesan und Rucola.", amount: 0 },
-        { dish: "Gebackener Camembert", price: 8.00, description: "Panierter Camembert mit Preiselbeeren und Salatbeilage.", amount: 0 },
-        { dish: "Garnelencocktail", price: 9.50, description: "Frische Garnelen mit Cocktailsauce und Avocado serviert.", amount: 0 }
+        { dish: "Bruschetta", price: 6.5, description: "Geröstetes Brot mit Tomaten, Basilikum und Knoblauch verfeinert.", amount: 0, "imageURL" : "img/starters/Bruschetta.jpg" },
+        { dish: "Caprese-Salat", price: 7.50, description: "Mozzarella, Tomaten und Basilikum mit Olivenöl beträufelt.", amount: 0, "imageURL" : "img/starters/tomaten caprese.jpg" },
+        { dish: "Carpaccio vom Rind", price: 9.00, description: "Dünne Rindfleischscheiben mit Parmesan und Rucola.", amount: 0, "imageURL" : "img/starters/rinder carpaccio.jpg" },
+        { dish: "Gebackener Camembert", price: 8.00, description: "Panierter Camembert mit Preiselbeeren und Salatbeilage.", amount: 0, "imageURL" : "img/starters/back camembert.jpg" },
+        { dish: "Garnelencocktail", price: 9.50, description: "Frische Garnelen mit Cocktailsauce und Avocado serviert.", amount: 0, "imageURL" : "img/starters/garnelen cocktail.jpg" }
     ],
     
     gourmetMainCourses: [

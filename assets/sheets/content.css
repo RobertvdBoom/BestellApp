@@ -19,14 +19,26 @@
     object-fit: cover;
     object-position: center;
     border-radius: 0px;
-    width: 33%;
+    
 }
 
 .dish-add-btn-and-price {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-end;
     padding: 10px 15px; 
     font-size: 20px;
+    width: 10%;
 }
 
+.dish-image {
+    height: auto;
+    width: 30%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.card-body {
+    width: 60%;
+}

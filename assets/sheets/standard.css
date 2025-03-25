@@ -3,7 +3,7 @@ body {
     background-color: #2e2d2c;
     color: #ffffff;
     text-shadow: 0px 0px 5px #7a5803;
-    min-height: 200vh;
+    min-height: 100vh;
 }
 
 h1, h2, h3, h4, p {
