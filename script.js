@@ -21,6 +21,8 @@ function renderCurrentItems (category) {
 
 renderCurrentItems("starters");
 
+
+// TEST AREA // TEST AREA // TEST AREA // TEST AREA // TEST AREA // TEST AREA 
 function checkCartItems(dish){
     for (let index = 0; index < basket.length; index++) {
         isInCart(dish, basket[index]);

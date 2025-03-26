@@ -8,11 +8,11 @@ const allDishes = {
     ],
     
     gourmetMainCourses: [
-        { dish: "Filet Mignon", price: 29.90, description: "Zartes Rinderfilet mit Rotweinsauce und Trüffelkartoffelpüree.", amount: 0 },
-        { dish: "Lachsfilet an Safransauce", price: 26.50, description: "Gegrillter Lachs mit cremiger Safransauce und Spargel.", amount: 0 },
-        { dish: "Geschmorte Lammkeule", price: 28.00, description: "Langsam geschmorte Lammkeule mit Rosmarin und Polenta.", amount: 0 },
-        { dish: "Steinpilz-Risotto", price: 24.50, description: "Cremiges Risotto mit Steinpilzen, Parmesan und Trüffelöl.", amount: 0 },
-        { dish: "Hummer Thermidor", price: 34.00, description: "Überbackener Hummer mit Cognac-Sahnesauce und Gemüse.", amount: 0 }
+        { dish: "Filet Mignon", price: 29.90, description: "Zartes Rinderfilet mit Rotweinsauce und Trüffelkartoffelpüree.", amount: 0, "imageURL" : "img/main dishes/" },
+        { dish: "Lachsfilet an Safransauce", price: 26.50, description: "Gegrillter Lachs mit cremiger Safransauce und Spargel.", amount: 0, "imageURL" : "img/main dishes/" },
+        { dish: "Geschmorte Lammkeule", price: 28.00, description: "Langsam geschmorte Lammkeule mit Rosmarin und Polenta.", amount: 0, "imageURL" : "img/main dishes/" },
+        { dish: "Steinpilz-Risotto", price: 24.50, description: "Cremiges Risotto mit Steinpilzen, Parmesan und Trüffelöl.", amount: 0, "imageURL" : "img/main dishes/"},
+        { dish: "Hummer Thermidor", price: 34.00, description: "Überbackener Hummer mit Cognac-Sahnesauce und Gemüse.", amount: 0, "imageURL" : "img/main dishes/" }
     ],
 
     desserts: [
