@@ -24,9 +24,9 @@ const allDishes = {
     ],
 
     drinks: [
-        { dish: "Château Margaux Rotwein", price: 45.00, description: "Edler Bordeaux mit Aromen von schwarzen Beeren und Vanille.", amount: 0, "imageURL" : "img/getränke/Château Martineaux Rotwein.jpg"},
         { dish: "Dom Pérignon Champagner", price: 55.00, description: "Luxuriöser Jahrgangs-Champagner mit feiner Perlage und Fruchtnoten.", amount: 0, "imageURL" : "img/getränke/Dom Pérignon Champagner.jpg" },
         { dish: "Single Malt Whisky Macallan 18", price: 38.00, description: "Vollmundiger Whisky mit Sherry-Noten und sanftem Abgang.", amount: 0, "imageURL" : "img/getränke/Single Malt Whiskey Macallan 12.jpg"},
+        { dish: "Château Margaux Rotwein", price: 45.00, description: "Edler Bordeaux mit Aromen von schwarzen Beeren und Vanille.", amount: 0, "imageURL" : "img/getränke/Château Martineaux Rotwein.jpg"},
         { dish: "Palacio de Menadi Rueda Weißwein", price: 50.00, description: "Frischer, aromatischer Weißwein aus Spanien mit Noten von grünen Äpfeln und Zitrus.", amount: 0, "imageURL" : "img/getränke/Palacio de Menadi Rueda Weißwein.jpg"},
         { dish: "Jamaican Blue Mountain Kaffee", price: 12.00, description: "Seltenes Gourmet-Kaffee mit mildem Aroma und Schokoladennoten.", amount: 0, "imageURL" : "img/getränke/Jamaican Blue Mountain Coffee.jpg"}
     ]
