@@ -29,7 +29,7 @@
     align-items: flex-end;
     padding: 10px 15px; 
     font-size: 20px;
-    width: 10%;
+    width: 18%;
 }
 
 .dish-image {
@@ -40,5 +40,5 @@
 }
 
 .card-body {
-    width: 60%;
+    width: 52%;
 }

@@ -1,13 +1,22 @@
 let basket = [{"dish" : "Bruschetta"}];
+let currentActivePage = "starters";
+
+
+//save currentActivePage to localStorage to keep the items on reloading
+
+function init() { //ADD currentBasket
+    renderCurrentItems(currentActivePage);
+}
+
 
 function setPageActive(category){
+    currentActivePage = category;
     document.getElementById('link-starters').classList.remove('nav-list-active');
     document.getElementById('link-gourmetMainCourses').classList.remove('nav-list-active');
     document.getElementById('link-desserts').classList.remove('nav-list-active');
     document.getElementById('link-drinks').classList.remove('nav-list-active');
     let navItemRef = document.getElementById(`link-${category}`);
     navItemRef.classList.add('nav-list-active')
-    
     document.getElementById('item_container').innerHTML = "";
     renderCurrentItems(category);
 }
@@ -19,7 +28,16 @@ function renderCurrentItems (category) {
     }
 }
 
-renderCurrentItems("starters");
+
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+  
+
+
+
+// renderCurrentItems("starters");
 
 
 // TEST AREA // TEST AREA // TEST AREA // TEST AREA // TEST AREA // TEST AREA 
