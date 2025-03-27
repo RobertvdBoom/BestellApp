@@ -1,7 +1,7 @@
 let basket = [{"dish" : "Bruschetta"}];
 let currentActivePage = "starters";
 
-
+// Check Local Storage Function
 //save currentActivePage to localStorage to keep the items on reloading
 
 function init() { //ADD currentBasket
@@ -19,6 +19,7 @@ function setPageActive(category){
     navItemRef.classList.add('nav-list-active')
     document.getElementById('item_container').innerHTML = "";
     renderCurrentItems(category);
+    scrollTop();
 }
 
 function renderCurrentItems (category) {
@@ -29,14 +30,10 @@ function renderCurrentItems (category) {
 }
 
 
-function topFunction() {
+function scrollTop() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
-  
-
-
-
 // renderCurrentItems("starters");
 
 
