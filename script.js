@@ -1,4 +1,4 @@
-let basket = [{"dish" : "Bruschetta"}];
+let basket = [];
 let currentActivePage = "starters";
 
 // Check Local Storage Function
@@ -31,11 +31,14 @@ function renderCurrentItems (category) {
 
 
 function scrollTop() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
-// renderCurrentItems("starters");
 
+
+function logCart(){
+    console.log(basket);
+}
 
 // TEST AREA // TEST AREA // TEST AREA // TEST AREA // TEST AREA // TEST AREA 
 function checkCartItems(dish){
@@ -51,13 +54,11 @@ function isInCart(dish, basketDish){
 }
 
 function addItemToCart(category, index) {
-    // if dish : dishname is in cart:
-    // add ob
-    let newItem = allDishes
-    basket.push(newItem);
+    let object = allDishes[category][index];
+    basket.push(object);
+    logCart();
 }
 
-console.log(checkCartItems("Bruschetta"));
 
 // pushItemToCart (take object, use Name, Price, Amount, Total)
 // itemInBasketCheck

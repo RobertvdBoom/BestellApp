@@ -12,7 +12,7 @@ function dishTemplate(category, index) {
           <p class="card-text">${allDishes[category][index].description}</p>
         </div>
         <div class="dish-add-btn-and-price">
-          <button class="btn btn-outline-basket" onclick="addItemToCart(${allDishes[category][index].dish})">+</button>
+          <button class="btn btn-outline-basket" onclick="addItemToCart('${currentActivePage}', ${index})">+</button>
           <p>${price} €</p>
         </div>
       </div>
