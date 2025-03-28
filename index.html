@@ -39,10 +39,12 @@
       <div class="collapse navbar-collapse " id="navbarNav">
         <ul class="navbar-nav nav-list">
           <li class="nav-item">
-            <a class="nav-link link-light nav-list-active" onclick="setPageActive('starters')" id="link-starters">Vorspeisen</a>
+            <a class="nav-link link-light nav-list-active" onclick="setPageActive('starters')"
+              id="link-starters">Vorspeisen</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-light" onclick="setPageActive('gourmetMainCourses')" id="link-gourmetMainCourses">Hauptgerichte</a>
+            <a class="nav-link link-light" onclick="setPageActive('gourmetMainCourses')"
+              id="link-gourmetMainCourses">Hauptgerichte</a>
           </li>
           <li class="nav-item">
             <a class="nav-link link-light" onclick="setPageActive('desserts')" id="link-desserts">Nachspeisen</a>
@@ -58,42 +60,29 @@
 
   <main>
     <button onclick="logCart()">Log Cart</button>
-    <section id="test-basket">
-      <div>
 
+    <section id="test-basket">
+      <div class="basket-card">
+        <div class="basket-left-right">
+          <h5>Item name</h5>
+          <div>
+            <button>+</button>
+            <button>-</button>
+            trash
+          </div>
+        </div>
+        <div class="basket-left-right">
+          <h5>Item Amount</h5>
+          <h5>Item Total Price</h5>
+        </div>
       </div>
     </section>
 
     <section id="item_container">
-      
+
     </section>
 
-    <!-- <div class="wrapper-1440 container-fluid">
-      <div class="card dish-container">
-        <img src="img/starters/Bruschetta.jpg" class="card-img-top">
-        <div class="card-body">
-          <h4>Bruschetta</h4>
-          <p class="card-text">Geröstetes Brot mit Tomaten, Basilikum und Knoblauch verfeinert.</p>
-        </div>
-        <div class="dish-add-btn-and-price">
-          <button class="btn btn-outline-basket">+</button>
-          <p>6,50€</p>
-        </div>
-      </div>
-    </div>  
 
-    <div class="wrapper-1440 container-fluid" id="basketitem_${indexInBasket}">
-      <div class="card dish-container">
-        <div class="card-body">
-          <h4 id="basketitem_0_name"></h4>
-        </div>
-        <div class="dish-add-btn-and-price">
-          <button class="btn btn-outline-basket" onclick="plusOne(indexInBasket)">+</button>
-          <button class="btn btn-outline-basket" onclick="minusOne(indexInBasket)">-</button>
-          <p id="item-price_0">6,50€</p>
-        </div>
-      </div>
-    </div> -->
 
 
     <p id="test-output">

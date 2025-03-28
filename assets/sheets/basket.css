@@ -1,0 +1,10 @@
+.basket-card{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.basket-left-right {
+    display: flex;
+    flex-direction: column;
+}
