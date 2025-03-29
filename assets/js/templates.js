@@ -19,13 +19,13 @@ function dishTemplate(category, index) {
     </div> `
 }
 
-function basketTemplate() {
+function basketTemplate(index) {
   let basketContainerRef = document.getElementById('basket-container');
 
-  basketContainerRef += `
+  basketContainerRef.innerHTML += `
   <div class="basket-card">
         <div class="basket-left-right">
-          <h5 id="dish_in_basket_0">Item name</h5>
+          <h5>${basket[index].dish}</h5>
           <div class="ds-flex">
             <button onclick="itemPlusOne()">+</button>
             <p id="amount_in_basket_0">Amount</p>

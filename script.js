@@ -1,4 +1,4 @@
-let basket = [];
+let basket = [{ dish: "Carpaccio vom Rind", price: 9.00, description: "Dünne Rindfleischscheiben mit Parmesan und Rucola.", amount: 0, "imageURL" : "img/starters/rinder carpaccio.jpg" }];
 let currentActivePage = "starters";
 
 // Check Local Storage Function
@@ -6,6 +6,7 @@ let currentActivePage = "starters";
 
 function init() { //ADD currentBasket
     renderCurrentItems(currentActivePage);
+    basketTemplate(0);
 }
 
 
@@ -36,8 +37,11 @@ function scrollTop() {
   }
 
 
-function logCart(){
-    console.log(basket);
+function renderCart(){
+    for (let index = 0; index < basket.length; index++) {
+        const element = basket[index];
+        
+    }
 }
 
 // TEST AREA // TEST AREA // TEST AREA // TEST AREA // TEST AREA // TEST AREA 
@@ -58,6 +62,9 @@ function addItemToCart(category, index) {
     basket.push(object);
     logCart();
 }
+
+// FOR ITEM IN CART: ADD basketItem to Basket Container
+// renderBasket
 
 
 // pushItemToCart (take object, use Name, Price, Amount, Total)
