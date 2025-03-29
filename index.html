@@ -61,14 +61,14 @@
   <main>
     <button onclick="logCart()">Log Cart</button>
 
-    <section id="test-basket">
+    <section id="basket-container">
       <div class="basket-card">
         <div class="basket-left-right">
-          <h5>Item name</h5>
+          <h5 id="dish_in_basket_0">Item name</h5>
           <div class="ds-flex">
-            <button>+</button>
-            <p>Amount</p>
-            <button>-</button>
+            <button onclick="itemPlusOne()">+</button>
+            <p id="amount_in_basket_0">Amount</p>
+            <button onclick="itemPlusOne()">-</button>
             trash
           </div>
         </div>
