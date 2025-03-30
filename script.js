@@ -1,14 +1,15 @@
 let basket = [{ dish: "Carpaccio vom Rind", price: 9.00, description: "Dünne Rindfleischscheiben mit Parmesan und Rucola.", amount: 0, "imageURL" : "img/starters/rinder carpaccio.jpg" }];
 let currentActivePage = "starters";
 
-// Check Local Storage Function
-//save currentActivePage to localStorage to keep the items on reloading
-
 function init() { //ADD currentBasket
     renderCurrentItems(currentActivePage);
     basketTemplate(0);
 }
 
+function scrollTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
 
 function setPageActive(category){
     currentActivePage = category;
@@ -30,20 +31,6 @@ function renderCurrentItems (category) {
     }
 }
 
-
-function scrollTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-
-
-function renderCart(){
-    for (let index = 0; index < basket.length; index++) {
-        const element = basket[index];
-        
-    }
-}
-
 // TEST AREA // TEST AREA // TEST AREA // TEST AREA // TEST AREA // TEST AREA 
 function checkCartItems(dish){
     for (let index = 0; index < basket.length; index++) {
@@ -60,42 +47,7 @@ function isInCart(dish, basketDish){
 function addItemToCart(category, index) {
     let object = allDishes[category][index];
     basket.push(object);
-    logCart();
 }
-
-// FOR ITEM IN CART: ADD basketItem to Basket Container
-// renderBasket
-
-
-// pushItemToCart (take object, use Name, Price, Amount, Total)
-// itemInBasketCheck
-
-// updateBasket
-
-
-// itemPlusOne // same button as in basket
-// itemMinusOne // only in basket
-// updateItemInBasket
-
-
-
-
-// delete item from basket (just use pop item?)
-
-// 
-
-// check amount in basket
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Price STYLING SECTION START

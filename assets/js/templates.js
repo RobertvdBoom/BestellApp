@@ -28,7 +28,7 @@ function basketTemplate(index) {
           <h5>${basket[index].dish}</h5>
           <div class="ds-flex">
             <button onclick="itemPlusOne()">+</button>
-            <p id="amount_in_basket_0">Amount</p>
+            <p>${basket[index].amount}</p>
             <button onclick="itemPlusOne()">-</button>
             trash
           </div>
