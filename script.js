@@ -47,8 +47,19 @@ function isInCart(dish, basketDish){
 function addItemToCart(category, index) {
     let object = allDishes[category][index];
     basket.push(object);
+
+    //basket checker function
 }
 
+
+function isItemInBasket(item){
+    let itemToBeChecked = item; // this is the entire object
+    for (let index = 0; index < basket.length; index++) {
+        let basketItem = basket[index];
+        
+        // if item is == basket Item, basketItem[index].amount ++
+    }
+}
 
 // Price STYLING SECTION START
 function stylePrice(number) {
