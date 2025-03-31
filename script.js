@@ -40,6 +40,14 @@ function renderBasketItems () {
     totalSumRef.innerHTML = totalSum;
 }
 
+function addItemToCart(category, index) {
+    let object = allDishes[category][index];
+    allDishes[category][index].amount ++;
+    basket.push(object);
+
+    //basket checker function
+}
+
 function calculateSumInBasket(){
     let totalSumInBasket = 0;
     for (let index = 0; index < basket.length; index++) {
@@ -49,25 +57,11 @@ function calculateSumInBasket(){
     return totalSumInBasket;
 }
 
-// TEST AREA // TEST AREA // TEST AREA // TEST AREA // TEST AREA // TEST AREA 
-function checkCartItems(dish){
-    for (let index = 0; index < basket.length; index++) {
-        isInCart(dish, basket[index]);
-    }
-}
-
-function isInCart(dish, basketDish){
-    if (dish == basketDish) {
-        return true;
-    }
-}
-
-function addItemToCart(category, index) {
-    let object = allDishes[category][index];
-    allDishes[category][index].amount ++;
-    basket.push(object);
-
-    //basket checker function
+function itemPlusOne(index){
+    //gets the index from basket
+    // basket-index-amount ++ / --
+    // updateItemInBasket
+    // updateTotalSum
 }
 
 

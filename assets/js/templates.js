@@ -29,15 +29,15 @@ function basketTemplate(index) {
         <div class="basket-left-right">
           <h5>${basket[index].dish}</h5>
           <div class="ds-flex">
-            <button onclick="itemPlusOne()">+</button>
-            <p>${basket[index].amount}</p>
-            <button onclick="itemPlusOne()">-</button>
+            <button onclick="itemPlusOne(${index})">+</button>
+            <p id="amount-${index}-in-basket">${basket[index].amount}</p>
+            <button onclick="itemPlusOne(${index})">-</button>
             trash
           </div>
         </div>
         <div class="basket-left-right">
           <h5>${itemPrice} €</h5>
-          <h5>${total} €</h5>
+          <h5 id="total-sum">${total} €</h5>
         </div>
       </div>`
 }
