@@ -31,6 +31,24 @@ function renderCurrentItems (category) {
     }
 }
 
+function renderBasketItems () {
+    for (let index = 0; index < basket.length; index++) {
+        basketTemplate(index);
+    }
+    let totalSum = calculateSumInBasket();
+    let totalSumRef = document.getElementById('total_sum');
+    totalSumRef.innerHTML = totalSum;
+}
+
+function calculateSumInBasket(){
+    let totalSumInBasket = 0;
+    for (let index = 0; index < basket.length; index++) {
+        let currentItemSum = basket[index].price * basket[index].amount;
+        totalSumInBasket += currentItemSum;
+    }
+    return totalSumInBasket;
+}
+
 // TEST AREA // TEST AREA // TEST AREA // TEST AREA // TEST AREA // TEST AREA 
 function checkCartItems(dish){
     for (let index = 0; index < basket.length; index++) {
@@ -46,6 +64,7 @@ function isInCart(dish, basketDish){
 
 function addItemToCart(category, index) {
     let object = allDishes[category][index];
+    allDishes[category][index].amount ++;
     basket.push(object);
 
     //basket checker function

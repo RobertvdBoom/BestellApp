@@ -21,7 +21,9 @@ function dishTemplate(category, index) {
 
 function basketTemplate(index) {
   let basketContainerRef = document.getElementById('basket-container');
-
+  let total = `${basket[index].price}`*`${basket[index].amount}`
+  total = stylePrice(total);
+  let itemPrice = stylePrice(`${basket[index].price}`);
   basketContainerRef.innerHTML += `
   <div class="basket-card">
         <div class="basket-left-right">
@@ -34,8 +36,8 @@ function basketTemplate(index) {
           </div>
         </div>
         <div class="basket-left-right">
-          <h5>Item Amount</h5>
-          <h5>Item Total Price</h5>
+          <h5>${itemPrice} €</h5>
+          <h5>${total} €</h5>
         </div>
       </div>`
 }
