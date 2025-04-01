@@ -62,8 +62,10 @@ function itemPlusOne(index){
     renderBasketItems();
 }
 
-
-
+function itemMinusOne(index){
+    basket[index].amount--;
+    renderBasketItems();
+}
 
 function isItemInBasket(item){
     let itemToBeChecked = item; // this is the entire object
