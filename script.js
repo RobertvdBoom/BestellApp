@@ -58,11 +58,11 @@ function calculateSumInBasket(){
 }
 
 function itemPlusOne(index){
-    //gets the index from basket
-    // basket-index-amount ++ / --
-    // updateItemInBasket
-    // updateTotalSum
+    basket[index].amount++;
+    renderBasketItems();
 }
+
+
 
 
 function isItemInBasket(item){
