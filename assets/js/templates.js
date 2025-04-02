@@ -32,7 +32,7 @@ function basketTemplate(index) {
             <button onclick="itemPlusOne(${index})">+</button>
             <p id="amount-${index}-in-basket">${basket[index].amount}</p>
             <button onclick="itemPlusOne(${index})">-</button>
-            trash
+            <button onclick="deleteItemFromBasket(${index})">trash</button>
           </div>
         </div>
         <div class="basket-left-right">

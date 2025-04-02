@@ -1,6 +1,12 @@
 let basket = [{ dish: "Carpaccio vom Rind", price: 9.00, description: "Dünne Rindfleischscheiben mit Parmesan und Rucola.", amount: 0, "imageURL" : "img/starters/rinder carpaccio.jpg" }];
 let currentActivePage = "starters";
 
+// current idea : plusOne / MinusOne / Delete
+
+function deleteItemFromBasket(index){
+    basket.splice(index, 1);
+}
+
 function init() { //ADD currentBasket
     renderCurrentItems(currentActivePage);
     basketTemplate(0);
