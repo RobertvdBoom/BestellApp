@@ -5,6 +5,7 @@ let currentActivePage = "starters";
 
 function deleteItemFromBasket(index){
     basket.splice(index, 1);
+    renderBasketItems();
 }
 
 function init() { //ADD currentBasket
@@ -64,7 +65,7 @@ function calculateSumInBasket(){
 }
 
 function itemPlusOne(index){
-    basket[index].amount++;
+    basket[index].amount ++;
     renderBasketItems();
 }
 

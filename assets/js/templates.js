@@ -31,7 +31,7 @@ function basketTemplate(index) {
           <div class="ds-flex">
             <button onclick="itemPlusOne(${index})">+</button>
             <p id="amount-${index}-in-basket">${basket[index].amount}</p>
-            <button onclick="itemPlusOne(${index})">-</button>
+            <button onclick="itemMinusOne(${index})">-</button>
             <button onclick="deleteItemFromBasket(${index})">trash</button>
           </div>
         </div>
