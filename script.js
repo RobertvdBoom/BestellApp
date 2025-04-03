@@ -1,7 +1,8 @@
-let basket = [{ dish: "Carpaccio vom Rind", price: 9.00, description: "Dünne Rindfleischscheiben mit Parmesan und Rucola.", amount: 0, "imageURL" : "img/starters/rinder carpaccio.jpg" }];
+let basket = [];
 let currentActivePage = "starters";
 
-// current idea : plusOne / MinusOne / Delete
+// current idea : plusOne / MinusOne / Delete = DONE
+// Next step: renderBasketItems
 
 function deleteItemFromBasket(index){
     basket.splice(index, 1);
@@ -10,7 +11,6 @@ function deleteItemFromBasket(index){
 
 function init() { //ADD currentBasket
     renderCurrentItems(currentActivePage);
-    basketTemplate(0);
 }
 
 function scrollTop() {
@@ -39,9 +39,13 @@ function renderCurrentItems (category) {
 }
 
 function renderBasketItems () {
+    let basketContainerRef = document.getElementById('basket-container');
+    basketContainerRef.innerHTML = "";
     for (let index = 0; index < basket.length; index++) {
         basketTemplate(index);
     }
+
+    // CREATE NEW FUNCTION HERE AND STORE IN GLOBAL VARIABLE
     let totalSum = calculateSumInBasket();
     let totalSumRef = document.getElementById('total_sum');
     totalSumRef.innerHTML = totalSum;
