@@ -55,7 +55,7 @@ function addItemToCart(category, index) {
     let object = allDishes[category][index];
     allDishes[category][index].amount ++;
     basket.push(object);
-
+    renderBasketItems ()
     //basket checker function
 }
 
