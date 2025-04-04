@@ -54,6 +54,14 @@ function renderBasketItems () {
 function addItemToCart(category, index) {
     let object = allDishes[category][index];
     allDishes[category][index].amount ++;
+    
+    // Is item in basket?
+    // YES = return index
+    // NO = push to basket 
+    // Aftewards: increase amount of last item in basket ++
+
+    // End if else here
+
     basket.push(object);
     renderBasketItems ()
     //basket checker function
