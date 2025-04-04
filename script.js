@@ -87,6 +87,8 @@ function itemMinusOne(index){
 }
 
 function isItemInBasket(item){
+    // 
+    // find item, return index
     let itemToBeChecked = item; // this is the entire object
     for (let index = 0; index < basket.length; index++) {
         let basketItem = basket[index];
