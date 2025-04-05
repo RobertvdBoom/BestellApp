@@ -17,3 +17,8 @@
     height: 30px;
     filter: invert(1);
 }
+
+.basket-cart a{
+    font-size: 21px !important;
+    height: 30px !important;
+}
