@@ -8,3 +8,12 @@
     display: flex;
     flex-direction: column;
 }
+
+.basket-cart {
+    height: 30px;
+}
+
+.basket-cart img{
+    height: 30px;
+    filter: invert(1);
+}
