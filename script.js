@@ -53,7 +53,17 @@ function renderBasketItems () {
 
 function addItemToCart(category, index) {
     let object = allDishes[category][index];
+    if (basket.length > 0) {
+        //insertItemCheckerFunction
+    } else {
+        
+    }
+    // if object exists in basket already, do this:
+    // 
+
+    //do this, if object is not already in basket
     object.amount ++;
+    basket.push(object);
     
     // Is item in basket?
     // YES = return index
@@ -61,7 +71,7 @@ function addItemToCart(category, index) {
     // Aftewards: increase amount of last item in basket ++
 
     // End if else here
-    basket.push(object);
+    
     renderBasketItems ()
     //basket checker function
 }
