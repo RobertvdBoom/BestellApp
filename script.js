@@ -59,7 +59,7 @@ function addItemToCart(category, index) {
         
     }
     // if object exists in basket already, do this:
-    // 
+    // Wow time to keep the streak
 
     //do this, if object is not already in basket
     object.amount ++;
