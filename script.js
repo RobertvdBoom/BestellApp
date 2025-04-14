@@ -1,8 +1,15 @@
 let basket = [];
 let currentActivePage = "starters";
 
-// current idea : plusOne / MinusOne / Delete = DONE
-// Next step: renderBasketItems
+// Leftover ideas and ToDo's
+
+// Store everything in local storage (check chapter)
+// Responsive Menu, update and make it look nice
+// add: update local storage function to basket
+// Function: check if item is in basket and return index
+
+
+// responsive for everything
 
 function deleteItemFromBasket(index){
     basket.splice(index, 1);
@@ -59,7 +66,6 @@ function addItemToCart(category, index) {
         
     }
     // if object exists in basket already, do this:
-    // Wow time to keep the streak
 
     //do this, if object is not already in basket
     object.amount ++;
