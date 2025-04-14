@@ -70,7 +70,7 @@ function addItemToCart(category, index) {
     // NO = push to basket 
     // Aftewards: increase amount of last item in basket ++
 
-    // End if else here
+    // End if else here hm
     
     renderBasketItems ()
     //basket checker function
