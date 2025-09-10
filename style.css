@@ -35,6 +35,13 @@ body {
     padding: 5px 5px 10px 0px;
 }
 
+
+.dish-card img{
+    object-fit: cover;
+    border-radius: 16px;
+    aspect-ratio: 2/1;
+}
+
 main {
     max-width: 1440px;
     width: 100%;
