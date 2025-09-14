@@ -4,8 +4,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #3B7D4F;
-    background-image: url(/assets/img/bg.jpg);
+    background-color: #3b7d4f6b;
+    /* background-image: url(/assets/img/bg.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
