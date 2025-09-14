@@ -10,6 +10,16 @@ function calculateTotalSum () {
     }
 }
 
-calculateTotalSum();
-console.log(basket);
-console.log("hello");
+
+console.log(dishData.starters[0].dishPrice);
+
+let newBasket = [];
+
+function createNewItemInBasket(category, index) {
+    objectName = dishData[category][index].dishID;
+    let newElement = {["dishID" : objectName, "dishPrice" :  ]};
+
+    newBasket.push(newElement);
+}
+createNewItemInBasket("starters", 2)
+console.log(newBasket);

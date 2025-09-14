@@ -1,4 +1,4 @@
-let dishData = [
+let dishData = 
     {
         "starters": [
             {
@@ -191,5 +191,4 @@ let dishData = [
                 "dishInfoForWACG": "Placeholder, in Case needed"
             }
         ],
-    }
-];
+    };
