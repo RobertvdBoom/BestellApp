@@ -11,26 +11,25 @@ function calculateTotalSum () {
     }
 }
 
-
-function createNewItemInBasket(category, index) {
-    let pointer = dishData[category][index].dishID;
-    let price = dishData[category][index].dishPrice;
-    let newElement = {"dishID" : pointer, "dishPrice" : price, "amount" : 1};
-
-    newBasket.push(newElement);
-}
-
-createNewItemInBasket("starters", 2)
-createNewItemInBasket("starters", 1)
-console.log(newBasket);
-
-calculateTotalSum()
-
-function itemPlusOne() {
-
-}
-
 // write function to add item to cart -> check if in cart -> createNew / itemPlusOne
 // look for item in cart
 // only look if cart len != 0 1
 // 
+
+let cart = [];
+
+function addToCart(category, index) {
+    let element = {[category] : index};
+    cart.push(element)
+}
+
+addToCart("starters", 0);
+addToCart("starters", 1);
+addToCart("beverages", 2)
+addToCart("troll", 2)
+
+console.log(cart);
+
+
+// on render function: add the bigger topic to the function as a pointer
+// re-use for button category / index
