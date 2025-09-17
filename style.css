@@ -4,11 +4,33 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #3b7d4f6b;
-    /* background-image: url(/assets/img/bg.jpg); */
+    background-color: #8cd4e66b;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+header {
+    background-image: url(/assets/img/bg-top2.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    background-color: #ffffff10;
+    backdrop-filter: blur(12px);
+    box-shadow: 1px 1px 20px rgba(0, 41, 75, 0.445);
+    border-radius: 16px;
+    padding: 20px 50px;
+    max-width: 25%;
 }
 
 .dish-card {
@@ -36,7 +58,7 @@ body {
 }
 
 
-.dish-card img{
+.dish-card img {
     object-fit: cover;
     border-radius: 16px;
     aspect-ratio: 2/1;
@@ -71,14 +93,19 @@ ul {
 }
 
 
-a{
+a {
     text-decoration: none;
     color: #1c1c1c;
     font-size: 1.5rem;
-    font-weight: 550;
+    font-weight: 500;
     padding: 10px 20px;
     border-radius: 40px;
-    background-color: #E0A500;    
+    background-color: #7F405B;
+}
+
+a:hover {
+    cursor: pointer;
+    background-color: #f5b400;
 }
 
 header {
@@ -91,4 +118,16 @@ header {
 button {
     background-color: #C83C3C;
     color: #FFFFFF;
+}
+
+.dish-text {
+    max-width: 30%;
+}
+
+
+.montserrat-400 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
