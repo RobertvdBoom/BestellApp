@@ -4,7 +4,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #8cd4e66b;
+    background-color: #e79969;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background-image: url(/assets/img/bg-top2.JPG);
+    background-image: url(/assets/img/bg-top.JPG);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -25,7 +25,7 @@ header {
 }
 
 h1 {
-    background-color: #ffffff10;
+    background-color: #4d1d008e;
     backdrop-filter: blur(12px);
     box-shadow: 1px 1px 20px rgba(0, 41, 75, 0.445);
     border-radius: 16px;
@@ -42,7 +42,7 @@ h1 {
 
 .outer-card-container {
     background-color: #cecece28;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     backdrop-filter: blur(8px);
     box-shadow: 1px 1px 20px rgba(82, 82, 82, 0.301);
     border-radius: 16px;
@@ -93,19 +93,19 @@ ul {
 }
 
 
-a {
+nav a {
     text-decoration: none;
-    color: #1c1c1c;
+    color: #ffffff;
     font-size: 1.5rem;
     font-weight: 500;
     padding: 10px 20px;
     border-radius: 40px;
-    background-color: #7F405B;
+    background-color: #250e00;
 }
 
-a:hover {
+nav a:hover {
     cursor: pointer;
-    background-color: #f5b400;
+    background-color: #c54c00;
 }
 
 header {
@@ -116,8 +116,9 @@ header {
 }
 
 button {
-    background-color: #C83C3C;
+    background-color: #f75e00;
     color: #FFFFFF;
+    border: none;
 }
 
 .dish-text {
