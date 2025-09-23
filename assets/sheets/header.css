@@ -1,0 +1,19 @@
+header {
+    background-image: url(/assets/img/bg-top.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* header {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0px;
+} */
+
+header img{
+    aspect-ratio: 1/1;
+    height: 200px;
+}

@@ -4,3 +4,58 @@
 @import url(/assets/sheets/header.css);
 @import url(/assets/sheets/card.css);
 @import url(/assets/sheets/footer.css);
+
+h1 {
+    background-color: #4d1d008e;
+    backdrop-filter: blur(12px);
+    box-shadow: 1px 1px 20px rgba(0, 41, 75, 0.445);
+    border-radius: 16px;
+    padding: 20px 50px;
+    max-width: 40%;
+    color: white;
+    font-size: 3rem;
+}
+
+nav {
+    margin: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 40px;
+    background-color: #250e00;
+}
+
+nav a:hover {
+    cursor: pointer;
+    background-color: #c54c00;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+button {
+    background-color: #f75e00;
+    color: #FFFFFF;
+    border: none;
+}
+
+main {
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

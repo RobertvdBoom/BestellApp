@@ -1,0 +1,33 @@
+.dish-card {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+}
+
+.outer-card-container {
+    background-color: #3d1c1c28;
+    color: #ffffff;
+    box-shadow: 1px 1px 20px rgba(255, 255, 255, 0.301);
+    border-radius: 16px;
+    padding: 5px 10px;
+}
+
+
+.dish-card-price-and-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px 5px 10px 0px;
+}
+
+
+.dish-card img {
+    object-fit: cover;
+    border-radius: 16px;
+    aspect-ratio: 2/1;
+}
+
+.dish-text {
+    max-width: 30%;
+}
