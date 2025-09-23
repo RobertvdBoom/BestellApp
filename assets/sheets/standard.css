@@ -6,12 +6,7 @@
 @import url(/assets/sheets/footer.css);
 
 h1 {
-    background-color: #4d1d008e;
-    backdrop-filter: blur(12px);
-    box-shadow: 1px 1px 20px rgba(0, 41, 75, 0.445);
-    border-radius: 16px;
     padding: 20px 50px;
-    max-width: 40%;
     color: white;
     font-size: 3rem;
 }
@@ -32,7 +27,7 @@ nav a {
 
 nav a:hover {
     cursor: pointer;
-    background-color: #c54c00;
+    background-color: #f75e00;
 }
 
 ul {
@@ -58,4 +53,16 @@ main {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.menu_btn {
+    max-height: 50px;
+    position: absolute;
+    top: 10px;
+    left: 90%;
+    border-radius: 8px;
+}
+
+.menu_btn img{
+    height: 40px;
 }
