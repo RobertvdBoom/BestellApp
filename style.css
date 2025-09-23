@@ -30,7 +30,7 @@ h1 {
     box-shadow: 1px 1px 20px rgba(0, 41, 75, 0.445);
     border-radius: 16px;
     padding: 20px 50px;
-    max-width: 25%;
+    max-width: 40%;
 }
 
 .dish-card {
@@ -41,10 +41,9 @@ h1 {
 }
 
 .outer-card-container {
-    background-color: #cecece28;
+    background-color: #3d1c1c28;
     color: #ffffff;
-    backdrop-filter: blur(8px);
-    box-shadow: 1px 1px 20px rgba(82, 82, 82, 0.301);
+    box-shadow: 1px 1px 20px rgba(255, 255, 255, 0.301);
     border-radius: 16px;
     padding: 5px 10px;
 }
