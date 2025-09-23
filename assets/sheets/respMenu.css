@@ -1,0 +1,16 @@
+.resp_menu_box {
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    top: 240px;
+    right: 0;
+    margin: 0;
+    transition: all 250ms ease-in-out;
+}
+
+.resp_menu_closed {
+    transform: translateX(100%);
+}

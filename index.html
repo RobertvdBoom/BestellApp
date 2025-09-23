@@ -21,7 +21,7 @@
     <header>
         <img src="/assets/img/icons/lotus-blume.png" alt="">
         <h1>白蓮 - White Lotus</h1>
-        <button>open Menu</button>
+        <button onclick="toggleRespMenu()">open Menu</button>
     </header>
 
     <nav>
@@ -32,8 +32,8 @@
             <li><a href="#">Getränke</a></li>
         </ul>
     </nav>
-    <nav id="resp_menu" class="resp_menu_box closed_menu">
-        <button>Close Menu</button>
+    <nav id="resp_menu" class="resp_menu_box resp_menu_closed">
+        <button onclick="toggleRespMenu()">Close Menu</button>
         <a href="#">Vorspeisen</a>
         <a href="#">Hauptgerichte</a>
         <a href="#">Nachspeisen</a>

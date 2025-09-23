@@ -33,3 +33,9 @@ console.log(cart);
 
 // on render function: add the bigger topic to the function as a pointer
 // re-use for button category / index
+
+
+// RESP MENU
+function toggleRespMenu () {
+    document.getElementById("resp_menu").classList.toggle("resp_menu_closed");
+}
