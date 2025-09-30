@@ -22,13 +22,13 @@ function renderDishes(category) {
         dishContentRef.innerHTML += ` 
         <div class="outer-card-container">
             <div class="dish-card">
-                <img src="/assets/img/starters/edamame.jpg" alt="Beispielbild">
+                <img src="${dishData[category][index].dishImageURL}" alt="Beispielbild">
                 <div class="dish-text">
                     <h2>${dishData[category][index].dishName}</h2>
                     <p>${dishData[category][index].dishDescription}</p>
                 </div>
                 <div class="dish-card-price-and-button">
-                    <div>${dishData[category][index].dishPrice}</div>
+                    <div>${dishData[category][index].dishPrice.toFixed(2)} €</div>
                     <button>+</button>
                 </div>
             </div>

@@ -6,7 +6,7 @@ let dishData =
                 "dishID": "s010001",
                 "dishPrice": 4.20,
                 "dishDescription": "Gedämpfte junge Sojabohnen, leicht gesalzen – ein klassischer japanischer Snack.",
-                "dishImageURL": "Insert URL Here",
+                "dishImageURL": "/assets/img/starters/edamame.jpg",
                 "dishImageAlt": "Schale mit Edamame und Meersalz",
                 "dishInfoForWACG": "Placeholder, in Case needed"
             },
@@ -15,7 +15,7 @@ let dishData =
                 "dishID": "s010002",
                 "dishPrice": 6.80,
                 "dishDescription": "Hausgemachte japanische Teigtaschen, gefüllt mit Gemüse und Huhn, serviert mit Sojasauce.",
-                "dishImageURL": "Insert URL Here",
+                "dishImageURL": "/assets/img/starters/gyoza.jpg",
                 "dishImageAlt": "Japanische Gyoza-Teigtaschen auf einem Teller",
                 "dishInfoForWACG": "Placeholder, in Case needed"
             },
@@ -24,7 +24,7 @@ let dishData =
                 "dishID": "s010003",
                 "dishPrice": 3.90,
                 "dishDescription": "Traditionelle Suppe aus Miso-Paste mit Tofu, Algen und Frühlingszwiebeln.",
-                "dishImageURL": "Insert URL Here",
+                "dishImageURL": "/assets/img/starters/miso-soup.jpg",
                 "dishImageAlt": "Miso Suppe mit Tofu und Algen in einer Schale",
                 "dishInfoForWACG": "Placeholder, in Case needed"
             },
@@ -33,7 +33,7 @@ let dishData =
                 "dishID": "s010004",
                 "dishPrice": 7.20,
                 "dishDescription": "Knusprig frittiertes Gemüse im leichten Tempurateig, serviert mit Dip-Sauce.",
-                "dishImageURL": "Insert URL Here",
+                "dishImageURL": "/assets/img/starters/vegetable-tempura.jpg",
                 "dishImageAlt": "Tempura-Gemüse mit Dip-Sauce",
                 "dishInfoForWACG": "Placeholder, in Case needed"
             },
@@ -42,7 +42,7 @@ let dishData =
                 "dishID": "s010005",
                 "dishPrice": 5.10,
                 "dishDescription": "Reisbällchen mit Sesam, Algen und variierenden Füllungen wie Lachs oder Umeboshi.",
-                "dishImageURL": "Insert URL Here",
+                "dishImageURL": "/assets/img/starters/onigiri.jpg",
                 "dishImageAlt": "Onigiri Reisbällchen mit Nori",
                 "dishInfoForWACG": "Placeholder, in Case needed"
             }
