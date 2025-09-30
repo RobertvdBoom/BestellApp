@@ -28,7 +28,6 @@ addToCart("starters", 1);
 addToCart("beverages", 2)
 addToCart("troll", 2)
 
-console.log(cart);
 
 
 // on render function: add the bigger topic to the function as a pointer
