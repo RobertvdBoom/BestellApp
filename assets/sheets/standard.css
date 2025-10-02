@@ -11,6 +11,17 @@ h1 {
     font-size: 3rem;
 }
 
+.active-category {
+    border: 2px solid rgb(26, 2, 2);
+    transition: border 0s;
+    transition: background-position 0.5s;
+}
+
+.active-category:hover {
+    transition: border 0s;
+    transition: background-position 0.5s;
+}
+
 nav {
     margin: 20px;
 }
@@ -23,11 +34,26 @@ nav a {
     padding: 10px 20px;
     border-radius: 40px;
     background-color: #250e00;
+    background: linear-gradient(
+        15deg,
+        #bd4107,
+        #d3460f,
+        #db6b14,
+        #ff7a15,
+        #dd3131,
+        #f88007,
+        #ff0000
+    );
+    background-size: 300%;
+    background-position: center left;
+    transition: background-position 0.5s;
 }
 
 nav a:hover {
     cursor: pointer;
-    background-color: #f75e00;
+    background-size: 330%;
+    background-position: center right;
+    transition: 0.5s ease;
 }
 
 ul {
@@ -72,3 +98,4 @@ main {
     flex-direction: column;
     gap: 40px;
 }
+

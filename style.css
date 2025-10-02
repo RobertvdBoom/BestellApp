@@ -5,6 +5,16 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #e79969;
+    background: linear-gradient(
+      15deg,
+      #444244,
+      #6b6568,
+      #746b6b,
+      #504f4f,
+      #313030
+      
+    );
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

@@ -41,10 +41,6 @@ function toggleRespMenu () {
 
 renderDishes("starters");
 
-function calculateTotalDish (category, index){
-    
-}
-
 function calculateSum (category, index){
     let price = dishData[category][index].dishPrice * 2;
     console.log(price.toFixed(2) + "€");

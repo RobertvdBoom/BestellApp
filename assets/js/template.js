@@ -16,6 +16,7 @@ let dishCardTemplate = `
 
 
 function renderDishes(category) {
+    activateCategoryActiveBorder(category);
     let dishContentRef = document.getElementById('dish-container');
     dishContentRef.innerHTML= "";
     for (let index = 0; index < dishData[category].length; index++) {
@@ -34,23 +35,33 @@ function renderDishes(category) {
             </div>
         </div>
     `
-    }   
+    }
 }
 
-function renderCard(category, index) {
-    ` 
-        <div class="outer-card-container">
-            <div class="dish-card">
-                <img src="/assets/img/starters/edamame.jpg" alt="Beispielbild">
-                <div class="dish-text">
-                    <h2>${dishData[category][index].dishName}</h2>
-                    <p>${dishData[category][index].dishDescription}</p>
-                </div>
-                <div class="dish-card-price-and-button">
-                    <div>${dishData[category][index].dishPrice}</div>
-                    <button>+</button>
-                </div>
-            </div>
-        </div>
-    `
+let activeCategory = "starters";
+
+function activateCategoryActiveBorder(category){
+    let oldButtonContentRef = document.getElementById(activeCategory);
+    let newButtonContentRef = document.getElementById(category);
+    oldButtonContentRef.classList.remove("active-category");
+    newButtonContentRef.classList.add("active-category");
+    activeCategory = category;
 }
+
+// function renderCard(category, index) {
+//     ` 
+//         <div class="outer-card-container">
+//             <div class="dish-card">
+//                 <img src="/assets/img/starters/edamame.jpg" alt="Beispielbild">
+//                 <div class="dish-text">
+//                     <h2>${dishData[category][index].dishName}</h2>
+//                     <p>${dishData[category][index].dishDescription}</p>
+//                 </div>
+//                 <div class="dish-card-price-and-button">
+//                     <div>${dishData[category][index].dishPrice}</div>
+//                     <button>+</button>
+//                 </div>
+//             </div>
+//         </div>
+//     `
+// }
