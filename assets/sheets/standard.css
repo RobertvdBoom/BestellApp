@@ -46,6 +46,7 @@ nav a {
     );
     background-size: 300%;
     background-position: center left;
+    border: 2px solid transparent;
     transition: background-position 0.5s;
 }
 
