@@ -98,15 +98,6 @@ let dishData =
 
     "dessert": [
         {
-            "dishName": "Mochi-Eis",
-            "dishID": "d030001",
-            "dishPrice": 5.80,
-            "dishDescription": "Gefüllte Reismehlkugeln mit cremiger Eisfüllung in verschiedenen Geschmacksrichtungen.",
-            "dishImageURL": "/assets/img/dessert/mochi-eis.jpg",
-            "dishImageAlt": "Japanisches Mochi-Eis in bunten Farben",
-            "dishInfoForWACG": "Placeholder, in Case needed"
-        },
-        {
             "dishName": "Dorayaki",
             "dishID": "d030002",
             "dishPrice": 4.90,
@@ -134,6 +125,15 @@ let dishData =
             "dishInfoForWACG": "Frittierte Bällchen mit Mungbohnenfüllung, umhüllt mit Sesam; enthält Gluten und Hülsenfrüchte."
         },
         {
+            "dishName": "Mochi-Eis",
+            "dishID": "d030001",
+            "dishPrice": 5.80,
+            "dishDescription": "Gefüllte Reismehlkugeln mit cremiger Eisfüllung in verschiedenen Geschmacksrichtungen.",
+            "dishImageURL": "/assets/img/dessert/mochi-eis.jpg",
+            "dishImageAlt": "Japanisches Mochi-Eis in bunten Farben",
+            "dishInfoForWACG": "Placeholder, in Case needed"
+        },
+        {
             "dishName": "Matcha Tiramisu",
             "dishID": "d030003",
             "dishPrice": 6.70,
@@ -150,7 +150,7 @@ let dishData =
             "dishID": "b040001",
             "dishPrice": 4.80,
             "dishDescription": "Cremiger Latte mit fein gemahlenem Matcha-Grüntee.",
-            "dishImageURL": "Insert URL Here",
+            "dishImageURL": "/assets/img/beverages/matcha-latte.jpg",
             "dishImageAlt": "Matcha Latte in einer Keramikschale",
             "dishInfoForWACG": "Placeholder, in Case needed"
         },
@@ -159,7 +159,7 @@ let dishData =
             "dishID": "b040002",
             "dishPrice": 3.90,
             "dishDescription": "Grüntee mit geröstetem Reis, aromatisch und mild.",
-            "dishImageURL": "Insert URL Here",
+            "dishImageURL": "/assets/img/beverages/genmaicha.jpg",
             "dishImageAlt": "Genmaicha Tee in einer Tasse",
             "dishInfoForWACG": "Placeholder, in Case needed"
         },
@@ -168,17 +168,8 @@ let dishData =
             "dishID": "b040003",
             "dishPrice": 6.50,
             "dishDescription": "Süßlicher japanischer Likör aus eingelegten Pflaumen, kalt serviert.",
-            "dishImageURL": "Insert URL Here",
+            "dishImageURL": "/assets/img/beverages/umeshu.jpg",
             "dishImageAlt": "Glas mit japanischem Pflaumenwein Umeshu",
-            "dishInfoForWACG": "Placeholder, in Case needed"
-        },
-        {
-            "dishName": "Hojicha",
-            "dishID": "b040004",
-            "dishPrice": 3.70,
-            "dishDescription": "Gerösteter Grüntee mit mildem, leicht nussigem Geschmack.",
-            "dishImageURL": "Insert URL Here",
-            "dishImageAlt": "Tasse mit Hojicha Tee",
             "dishInfoForWACG": "Placeholder, in Case needed"
         },
         {
@@ -186,9 +177,19 @@ let dishData =
             "dishID": "b040005",
             "dishPrice": 3.20,
             "dishDescription": "Japanisches Erfrischungsgetränk in der traditionellen Glasflasche mit Kugelverschluss.",
-            "dishImageURL": "Insert URL Here",
+            "dishImageURL": "/assets/img/beverages/ramune.jpg",
             "dishImageAlt": "Ramune Getränkeflasche",
             "dishInfoForWACG": "Placeholder, in Case needed"
+        },
+        {
+            "dishName": "Sake (純米酒)",
+            "dishID": "b040007",
+            "dishPrice": 7.50,
+            "dishDescription": "Traditioneller japanischer Reiswein, servierbar kalt oder leicht erwärmt.",
+            "dishImageURL": "/assets/img/beverages/sake.jpg",
+            "dishImageAlt": "Schwarze Sakeflasche neben einem Glas Sake",
+            "dishInfoForWACG": "Alkoholhaltig, Reiswein (ca. 15 - 20 % Vol.)"
         }
+
     ],
 };
