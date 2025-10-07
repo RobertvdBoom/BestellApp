@@ -5,6 +5,11 @@
 @import url(/assets/sheets/card.css);
 @import url(/assets/sheets/footer.css);
 
+
+*{
+    box-sizing: border-box;
+}
+
 h1 {
     padding: 20px 50px;
     color: white;
@@ -48,6 +53,7 @@ nav a {
     background-position: center left;
     border: 2px solid transparent;
     transition: background-position 0.5s;
+    height: 200px;
 }
 
 nav a:hover {
@@ -100,3 +106,22 @@ main {
     gap: 40px;
 }
 
+.line{
+    height: 5px;
+    width: 100%;
+    background-color: #bd4107;
+    filter: blur(8px);
+    margin-top: 3px;
+}
+
+ul {
+   height: max-content;
+   box-sizing: border-box;
+}
+
+li{
+    box-sizing: border-box;
+    height: auto;
+    height: fit-content;
+    padding: 20px
+}
