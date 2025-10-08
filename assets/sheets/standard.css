@@ -53,7 +53,6 @@ nav a {
     background-position: center left;
     border: 2px solid transparent;
     transition: background-position 0.5s;
-    height: 200px;
 }
 
 nav a:hover {
@@ -86,6 +85,8 @@ main {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 .menu_btn {
@@ -104,6 +105,14 @@ main {
     display: flex;
     flex-direction: column;
     gap: 40px;
+}
+
+.card-scroll-container{
+    display: flex;
+    overflow-x: scroll;
+    height: auto;
+    padding: 5px 5px;
+    border-radius: 16px;
 }
 
 .line{

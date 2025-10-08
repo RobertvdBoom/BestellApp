@@ -29,15 +29,17 @@
 
     <button class="menu_btn" onclick="toggleRespMenu()"><img src="/assets/img/icons/menu.svg"
             alt="menu stripes"></button>
-        <div class="line"></div>
+    <div class="line"></div>
+
     <nav>
-        <ul>
-            <li><a href="#" onclick="renderDishes('starters')" class="active-category" id="starters">Vorspeisen</a></li>
-            <li><a href="#" onclick="renderDishes('mainDish')" id="mainDish">Hauptgerichte</a></li>
-            <li><a href="#" onclick="renderDishes('dessert')" id="dessert">Nachspeisen</a></li>
-            <li><a href="#" onclick="renderDishes('beverages')" id="beverages">Getränke</a></li>
-        </ul>
-    </nav>
+            <ul>
+                <li><a href="#" onclick="renderDishes('starters')" class="active-category" id="starters">Vorspeisen</a></li>
+                <li><a href="#" onclick="renderDishes('mainDish')" id="mainDish">Hauptgerichte</a></li>
+                <li><a href="#" onclick="renderDishes('dessert')" id="dessert">Nachspeisen</a></li>
+                <li><a href="#" onclick="renderDishes('beverages')" id="beverages">Getränke</a></li>
+            </ul>
+        </nav>
+
     <nav id="resp_menu" class="resp_menu_box resp_menu_closed">
         <div class="resp_menu_links">
             <a href="#" onclick="renderDishes('starters')">Vorspeisen</a>
@@ -49,39 +51,11 @@
     </nav>
 
     <main>
-
+        <div class="card-scroll-container"></div>
+        
 
         <div id="dish-container">
-
         </div>
-
-        <!-- <div class="outer-card-container">
-            <div class="dish-card">
-                <img src="/assets/img/starters/edamame.jpg" alt="Beispielbild">
-                <div class="dish-text">
-                    <h2>Edamame</h2>
-                    <p>Gedämpfte junge Sojabohnen, leicht gesalzen – ein klassischer japanischer Snack.</p>
-                </div>
-                <div class="dish-card-price-and-button">
-                    <div>Price</div>
-                    <button>+</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="outer-card-container">
-            <div class="dish-card">
-                <img src="/assets/img/starters/gyoza.jpg" alt="Beispielbild">
-                <div class="dish-text">
-                    <h2>Gyoza</h2>
-                    <p>Hausgemachte japanische Teigtaschen, gefüllt mit Gemüse und Huhn, serviert mit Sojasauce. 2</p>
-                </div>
-                <div class="dish-card-price-and-button">
-                    <div>Price</div>
-                    <button>+</button>
-                </div>
-            </div>
-        </div> -->
 
     </main>
     <aside></aside>
@@ -91,7 +65,8 @@
             <span>Diese Website wurde erstellt von <br>Robert van den Boom</span> <br>
             <a href="mailto:vdboom.robert@gmail.com">vdboom.robert@gmail.com</a>
         </address>
-        <a href="https://www.flaticon.com/de/kostenlose-icons/lotus" title="lotus Icons" target="_blank">Lotus Icons erstellt von
+        <a href="https://www.flaticon.com/de/kostenlose-icons/lotus" title="lotus Icons" target="_blank">Lotus Icons
+            erstellt von
             pikslgrafik - Flaticon</a><br>
         <a href="impressum.html" target="_blank" rel="noopener noreferrer">Impressum</a><br>
         <a href="datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutz</a>
