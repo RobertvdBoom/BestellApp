@@ -22,12 +22,12 @@
     <header>
         <div class="header_box">
             <img src="/assets/img/icons/lotus-blume-2.png" alt="">
-            
+
         </div>
         <!-- <button onclick="toggleRespMenu()">open Menu</button> -->
     </header>
 
-    
+
 
     <button class="menu_btn" onclick="toggleRespMenu()"><img src="/assets/img/icons/menu.svg"
             alt="menu stripes"></button>
@@ -36,25 +36,66 @@
     <section>
         <h1>白蓮 - White Lotus</h1>
         <div>
-            <div id="rating"></div>
-            <button onclick="restaurantRatingPlusMinus()">+</button>
+            <div>
+                <a onclick="starsPlus(1)" class="star">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2L14.94 8.63L22 9.27L16.5 14.14L18.18 21.02L12 17.27L5.82 21.02L7.5 14.14L2 9.27L9.06 8.63L12 2Z"
+                            stroke="black" stroke-width="0.75" fill="currentColor" />
+                    </svg>
+                </a>
+                <a onclick="starsPlus(2)" class="star">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2L14.94 8.63L22 9.27L16.5 14.14L18.18 21.02L12 17.27L5.82 21.02L7.5 14.14L2 9.27L9.06 8.63L12 2Z"
+                            stroke="black" stroke-width="0.75" fill="currentColor" />
+                    </svg>
+                </a>
+                <a onclick="starsPlus(3)" class="star">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2L14.94 8.63L22 9.27L16.5 14.14L18.18 21.02L12 17.27L5.82 21.02L7.5 14.14L2 9.27L9.06 8.63L12 2Z"
+                            stroke="black" stroke-width="0.75" fill="currentColor" />
+                    </svg>
+                </a>
+                <a onclick="starsPlus(4)" class="star">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2L14.94 8.63L22 9.27L16.5 14.14L18.18 21.02L12 17.27L5.82 21.02L7.5 14.14L2 9.27L9.06 8.63L12 2Z"
+                            stroke="black" stroke-width="0.75" fill="currentColor" />
+                    </svg>
+                </a>
+                <a onclick="starsPlus(5)" class="star">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2L14.94 8.63L22 9.27L16.5 14.14L18.18 21.02L12 17.27L5.82 21.02L7.5 14.14L2 9.27L9.06 8.63L12 2Z"
+                            stroke="black" stroke-width="0.75" fill="currentColor" />
+                    </svg>
+                </a>
+            </div>
+            <button id="ratingButton" onclick="restaurantRatingPlusMinus()">+</button>
             <div>min. 18.50 €</div>
             <div>keine Liefergebühr</div>
         </div>
-        
+
 
     </section>
 
     <div class="card-scroll-container" id="favorite-dishes"></div>
 
     <nav>
-            <ul>
-                <li><a onclick="renderDishes('starters')" class="active-category" id="starters">Vorspeisen</a></li>
-                <li><a onclick="renderDishes('mainDish')" id="mainDish">Hauptgerichte</a></li>
-                <li><a onclick="renderDishes('dessert')" id="dessert">Nachspeisen</a></li>
-                <li><a onclick="renderDishes('beverages')" id="beverages">Getränke</a></li>
-            </ul>
-        </nav>
+        <ul>
+            <li><a onclick="renderDishes('starters')" class="active-category" id="starters">Vorspeisen</a></li>
+            <li><a onclick="renderDishes('mainDish')" id="mainDish">Hauptgerichte</a></li>
+            <li><a onclick="renderDishes('dessert')" id="dessert">Nachspeisen</a></li>
+            <li><a onclick="renderDishes('beverages')" id="beverages">Getränke</a></li>
+        </ul>
+    </nav>
 
     <nav id="resp_menu" class="resp_menu_box resp_menu_closed">
         <div class="resp_menu_links">

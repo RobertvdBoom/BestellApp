@@ -58,3 +58,13 @@ li{
     filter: blur(8px);
     margin-top: 3px;
 }
+
+.star {
+    color: white;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.star:hover {
+    color: gold;
+}

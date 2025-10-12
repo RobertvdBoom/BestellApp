@@ -13,5 +13,17 @@ function calculateRating(){
 let liked = false;
 
 function restaurantRatingPlusMinus() {
-    
+    ratingButtonRef = document.getElementById('ratingButton');
+    if (liked == false) {
+        ratingButtonRef.innerHTML = "-";
+        liked = true;
+        restaurantRating.totalRatings ++;
+        console.log(restaurantRating.totalRatings)
+    } else {
+        ratingButtonRef.innerHTML = "+";
+        liked = false;
+        restaurantRating.totalRatings --;
+        console.log(restaurantRating.totalRatings)
+    }
+
 }
