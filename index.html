@@ -22,45 +22,58 @@
     <header>
         <div class="header_box">
             <img src="/assets/img/icons/lotus-blume-2.png" alt="">
-            <h1>白蓮 - White Lotus</h1>
+            
         </div>
         <!-- <button onclick="toggleRespMenu()">open Menu</button> -->
     </header>
+
+    
 
     <button class="menu_btn" onclick="toggleRespMenu()"><img src="/assets/img/icons/menu.svg"
             alt="menu stripes"></button>
     <div class="line"></div>
 
-    <div class="card-scroll-container"></div>
+    <section>
+        <h1>白蓮 - White Lotus</h1>
+        <div>
+            <div id="rating"></div>
+            <button onclick="restaurantRatingPlusMinus()">+</button>
+            <div>min. 18.50 €</div>
+            <div>keine Liefergebühr</div>
+        </div>
+        
+
+    </section>
+
+    <div class="card-scroll-container" id="favorite-dishes"></div>
 
     <nav>
             <ul>
-                <li><a href="#" onclick="renderDishes('starters')" class="active-category" id="starters">Vorspeisen</a></li>
-                <li><a href="#" onclick="renderDishes('mainDish')" id="mainDish">Hauptgerichte</a></li>
-                <li><a href="#" onclick="renderDishes('dessert')" id="dessert">Nachspeisen</a></li>
-                <li><a href="#" onclick="renderDishes('beverages')" id="beverages">Getränke</a></li>
+                <li><a onclick="renderDishes('starters')" class="active-category" id="starters">Vorspeisen</a></li>
+                <li><a onclick="renderDishes('mainDish')" id="mainDish">Hauptgerichte</a></li>
+                <li><a onclick="renderDishes('dessert')" id="dessert">Nachspeisen</a></li>
+                <li><a onclick="renderDishes('beverages')" id="beverages">Getränke</a></li>
             </ul>
         </nav>
 
     <nav id="resp_menu" class="resp_menu_box resp_menu_closed">
         <div class="resp_menu_links">
-            <a href="#" onclick="renderDishes('starters')">Vorspeisen</a>
-            <a href="#" onclick="renderDishes('mainDish')">Hauptgerichte</a>
-            <a href="#" onclick="renderDishes('dessert')">Nachspeisen</a>
-            <a href="#" onclick="renderDishes('beverages')">Getränke</a>
+            <a onclick="renderDishes('starters')">Vorspeisen</a>
+            <a onclick="renderDishes('mainDish')">Hauptgerichte</a>
+            <a onclick="renderDishes('dessert')">Nachspeisen</a>
+            <a onclick="renderDishes('beverages')">Getränke</a>
         </div>
         <button onclick="toggleRespMenu()"><strong>X</strong></button>
     </nav>
 
     <main>
-        
-        
-
         <div id="dish-container">
         </div>
-
     </main>
-    <aside></aside>
+
+    <aside>
+        <!-- WARENKORB HIER -->
+    </aside>
 
     <footer>
         <address>

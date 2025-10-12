@@ -6,8 +6,23 @@
 
 .card-scroll-container{
     display: flex;
+    gap: 20px;
     overflow-x: scroll;
+    scrollbar-color: #464545 #FA5C05;
     height: auto;
     padding: 5px 5px;
     border-radius: 16px;
+    width: 100%;
+    max-width: 1440px;
+    margin: 50px 5px;
+    height: 240px;
+}
+
+
+
+.dish-card-price-and-button-fav{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    width: 100px;
 }

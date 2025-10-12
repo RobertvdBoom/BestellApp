@@ -47,3 +47,38 @@ function activateCategoryActiveBorder(category){
 }
 
 renderDishes("starters");
+
+let favDishes = [ dishData.starters[2], dishData.starters[3], dishData.mainDish[1], dishData.mainDish[3], dishData.mainDish[4], dishData.dessert[1], dishData.dessert[0]];
+
+function renderFavDishes() {
+    let favDishContentRef = document.getElementById('favorite-dishes');
+    for (let index = 0; index < favDishes.length; index++) {
+        let element = favDishes[index];
+        favDishContentRef.innerHTML += ` 
+        <div class="outer-card-container">
+            <div class="dish-card">
+                <img src="${element.dishImageURL}" alt="${element.dishImageAlt}">
+                <div class="dish-text">
+                    <h2>${element.dishName}</h2>
+                    <p>${element.dishDescription}</p>
+                </div>
+                <div class="dish-card-price-and-button-fav">
+                    <div>${element.dishPrice.toFixed(2)} €</div>
+                    <button>+</button>
+                </div>
+            </div>
+        </div>
+    `
+    }
+}
+
+renderFavDishes();
+
+renderRating();
+
+function renderRating(){
+    ratingRef = document.getElementById('rating');
+    ratingRef.innerHTML = "";
+    console.log((restaurantRating.totalStars / restaurantRating.totalRatings).toFixed(1));
+    ratingRef.innerHTML += (restaurantRating.totalStars / restaurantRating.totalRatings).toFixed(1);
+}

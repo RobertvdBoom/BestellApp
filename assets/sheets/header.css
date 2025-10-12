@@ -1,8 +1,8 @@
 header {
-    background-image: url(/assets/img/bg-top.JPG);
+    background-image: url(/assets/img/mainDish/katsu-curry.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center bottom;
     display: flex;
     justify-content: center;
     height: 240px;
@@ -17,10 +17,8 @@ header img{
 }
 
 .header_box {
-    background-color: #4d1d008e;
-    backdrop-filter: blur(12px);
-    box-shadow: 1px 1px 20px rgba(0, 41, 75, 0.445);
-    /* border-radius: 16px; */
+    background-color: #00000098;
+    box-shadow: 1px 1px 20px rgb(255, 116, 3);
     display: flex;
     justify-content: center;
     align-items: center;
