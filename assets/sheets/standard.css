@@ -68,3 +68,16 @@ li{
 .star:hover {
     color: gold;
 }
+
+
+.top-level-bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.top-level-bar img{
+    height: 40px;
+}
