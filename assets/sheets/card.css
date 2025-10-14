@@ -11,6 +11,7 @@
     box-shadow: 1px 1px 20px rgba(255, 255, 255, 0.301);
     border-radius: 16px;
     padding: 5px 10px;
+    min-width: 600px;
 }
 
 
@@ -19,6 +20,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 5px 5px 10px 0px;
+    width: 60px;
 }
 
 
@@ -27,8 +29,9 @@
     border-radius: 16px;
     aspect-ratio: 2/1;
     object-position: center;
+    max-width: 40%;
 }
 
 .dish-text {
-    max-width: 30%;
+    width: 40%;
 }
