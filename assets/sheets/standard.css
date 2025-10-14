@@ -20,6 +20,8 @@ button {
     background-color: #f75e00;
     color: #FFFFFF;
     border: none;
+    height: 1.5rem;
+    border-radius: 4px;
 }
 
 h1 {
@@ -80,4 +82,14 @@ li{
 
 .top-level-bar img{
     height: 40px;
+}
+
+li a{
+    max-width: 20%;
+}
+
+.restaurant-rating-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
