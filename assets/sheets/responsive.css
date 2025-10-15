@@ -1,0 +1,10 @@
+@media (max-width: 800px) {
+    
+    .dish-card {
+        flex-direction: column;
+        height: auto;
+    }
+    .dish-card img{
+        width: 100%;
+    }
+}

@@ -5,6 +5,7 @@
 @import url(/assets/sheets/content.css);
 @import url(/assets/sheets/card.css);
 @import url(/assets/sheets/footer.css);
+@import url(/assets/sheets/responsive.css);
 
 main {
     max-width: 1440px;
@@ -14,6 +15,7 @@ main {
     gap: 20px;
     min-height: 100vh;
     min-height: 100dvh;
+    padding: 1rem;
 }
 
 button {
@@ -36,9 +38,8 @@ ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
     width: 100%;
-    padding-bottom: 20px;
 }
 
 ul {
@@ -50,7 +51,6 @@ li{
     box-sizing: border-box;
     height: auto;
     height: fit-content;
-    padding: 20px
 }
 
 .line{
