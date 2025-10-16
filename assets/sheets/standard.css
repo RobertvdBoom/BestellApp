@@ -6,16 +6,21 @@
 @import url(/assets/sheets/card.css);
 @import url(/assets/sheets/footer.css);
 @import url(/assets/sheets/responsive.css);
+@import url(/assets/sheets/basket.css);
 
 main {
-    max-width: 1440px;
-    width: 100%;
+    /* display: flex;
+    flex-direction: column;
+    width: 100%; */
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    min-height: 100vh;
-    min-height: 100dvh;
-    padding: 1rem;
+    align-items: center;
+    flex: 1;
+}
+
+.outer-main-container {
+    display: flex;
+    width: 100%;
 }
 
 button {
@@ -53,39 +58,21 @@ li{
     height: fit-content;
 }
 
-.line{
-    height: 5px;
-    width: 100%;
-    background-color: #bd4107;
-    filter: blur(8px);
-    margin-top: 3px;
+li a{
+    max-width: 20%;
 }
-
-.star {
-    color: white;
-    transition: color 0.3s;
-    cursor: pointer;
-}
-
-.star:hover {
-    color: gold;
-}
-
 
 .top-level-bar{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
+    padding: 1rem;
+    background-color: rgb(22, 22, 22);
 }
 
 .top-level-bar img{
     height: 40px;
-}
-
-li a{
-    max-width: 20%;
 }
 
 .restaurant-rating-info {

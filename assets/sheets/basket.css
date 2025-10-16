@@ -1,0 +1,7 @@
+#basket {
+    max-width: 350px;
+    min-height: 100%;
+    background-color: rgb(49, 49, 49);
+    display: flex;
+    flex: 1;
+}

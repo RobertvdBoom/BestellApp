@@ -18,7 +18,7 @@ nav a {
     color: #ffffff;
     font-size: 1.5rem;
     font-weight: 500;
-    padding: 5px 10px;
+    padding: 0.75rem;
     border-radius: 40px;
     background-color: #250e00;
     background: linear-gradient(
@@ -66,8 +66,4 @@ button:hover {
     background-size: 330%;
     background-position: center right;
     transition: 0.5s ease;
-}
-
-button img:hover{
-    filter: invert(1);
 }

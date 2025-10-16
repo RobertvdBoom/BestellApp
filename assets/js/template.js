@@ -73,13 +73,3 @@ function renderFavDishes() {
 }
 
 renderFavDishes();
-
-renderRating();
-
-function renderRating(){
-    ratingRef = document.getElementById('rating');
-    ratingRef.innerHTML = "";
-    console.log((restaurantRating.totalStars / restaurantRating.totalRatings).toFixed(1));
-    ratingRef.innerHTML += (restaurantRating.totalStars / restaurantRating.totalRatings).toFixed(1);
-}
-
