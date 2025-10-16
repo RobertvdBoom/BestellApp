@@ -2,22 +2,27 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    width: 100%;
 }
 
 .card-scroll-container{
-    display: flex;
-    gap: 20px;
     overflow-x: scroll;
     scrollbar-color: #464545 #3f3e3e;
-    height: auto;
     padding: 5px;
     border-radius: 16px;
     width: 100%;
     max-width: 1440px;
-    margin: 30px 10px;
-    height: 240px;
 }
 
+/* #favorite-dishes {
+    display: flex;
+    gap: 20px;
+} */
+
+/* .dish-card-favorite-box{
+    display: flex;
+    min-width: 600px;
+} */
 
 
 .dish-card-price-and-button-fav{
@@ -26,4 +31,15 @@
     justify-content: space-between;
     /* width: 100px; */
     width: 65px;
+}
+
+.main-content-area{
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 1rem;
 }

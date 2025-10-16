@@ -9,9 +9,6 @@
 @import url(/assets/sheets/basket.css);
 
 main {
-    /* display: flex;
-    flex-direction: column;
-    width: 100%; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,4 +76,8 @@ li a{
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.d_none{
+    display: none;
 }

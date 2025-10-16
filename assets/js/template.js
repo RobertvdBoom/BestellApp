@@ -55,7 +55,7 @@ function renderFavDishes() {
     for (let index = 0; index < favDishes.length; index++) {
         let element = favDishes[index];
         favDishContentRef.innerHTML += ` 
-        <div class="outer-card-container">
+        <div class="outer-card-container dish-card-favorite-box">
             <div class="dish-card">
                 <img src="${element.dishImageURL}" alt="${element.dishImageAlt}">
                 <div class="dish-text">
@@ -72,4 +72,4 @@ function renderFavDishes() {
     }
 }
 
-renderFavDishes();
+// renderFavDishes();
