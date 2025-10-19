@@ -10,3 +10,15 @@
 .basket-container{
     display: flex;
 }
+
+#basket-total-container{
+    background-color: orangered;
+    height: 60px;
+    width: 100%;
+}
+
+#basket-delivery-cost{
+    background-color: grey;
+    height: 40px;
+    margin: 20px 0px;
+}

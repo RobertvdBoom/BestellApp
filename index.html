@@ -39,7 +39,8 @@
             
 
             <section class="restaurant-header">
-                <h1>白蓮 - White Lotus</h1>
+                <!-- 白蓮 - -->
+                <h1>White Lotus</h1>
                 <div id="restaurant-info">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="gold" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -94,7 +95,7 @@
 
             <section class="main-content-area" id="dish-container">
             </section>
-            <nav id="resp_menu" class="resp_menu_box resp_menu_closed desktop-d-none">
+            <!-- <nav id="resp_menu" class="resp_menu_box resp_menu_closed desktop-d-none">
                 <div class="resp_menu_links">
                     <a onclick="renderDishes('starters')">Vorspeisen</a>
                     <a onclick="renderDishes('mainDish')">Hauptgerichte</a>
@@ -102,20 +103,23 @@
                     <a onclick="renderDishes('beverages')">Getränke</a>
                 </div>
                 <button onclick="toggleRespMenu()"><strong>X</strong></button>
-            </nav>
+            </nav> -->
 
         </main>
 
 
-        <!-- <aside id="basket">
+        <aside id="basket">
             <h2>Warenkorb</h2>
             <section id="basket-container">
                 <div class="delivery-or-pickup-container">
                     <button class="btn-delivery">Lieferung</button>
                     <button class="btn-pickup">Abholung</button>
                 </div>
+
+                <p id="basket-delivery-cost"></p>
+                <div id="basket-total-container"></div>
             </section>
-        </aside> -->
+        </aside>
     </div>
 
 

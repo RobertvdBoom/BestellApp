@@ -73,3 +73,19 @@ function renderFavDishes() {
 }
 
 // renderFavDishes();
+
+// Basket 
+
+let deliveryCost = 5;
+
+function renderDeliveryCost(){
+    let deliveryCostRef = document.getElementById('basket-delivery-cost');
+    deliveryCostRef.innerHTML += deliveryCost.toFixed(2) + " €";
+
+}
+
+renderDeliveryCost();
+
+function updatePrice() {
+    let priceContainerRef = document.getElementById('basket-total-container');
+}

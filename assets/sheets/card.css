@@ -27,7 +27,7 @@
 .dish-card img {
     object-fit: cover;
     border-radius: 16px;
-    aspect-ratio: 2/1;
+    aspect-ratio: 4/3;
     object-position: center;
 }
 
