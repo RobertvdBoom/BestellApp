@@ -72,7 +72,7 @@ function renderFavDishes() {
     }
 }
 
-// renderFavDishes();
+renderFavDishes();
 
 // Basket 
 
@@ -86,6 +86,14 @@ function renderDeliveryCost(){
 
 renderDeliveryCost();
 
-function updatePrice() {
+function updatePrice(totalSum) {
     let priceContainerRef = document.getElementById('basket-total-container');
+    priceContainerRef.innerHTML += "Gesamt: " + totalSum.toFixed(2) + "€";
+}
+
+updatePrice(24.40);
+
+function totalSumOfItems() {
+    let totalSumOfItemsContainerRef = document.getElementById('');
+
 }

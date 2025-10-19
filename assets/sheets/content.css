@@ -14,15 +14,15 @@
     max-width: 1440px;
 }
 
-/* #favorite-dishes {
+#favorite-dishes {
     display: flex;
     gap: 20px;
-} */
+}
 
-/* .dish-card-favorite-box{
+.dish-card-favorite-box{
     display: flex;
     min-width: 600px;
-} */
+}
 
 
 .dish-card-price-and-button-fav{
@@ -42,4 +42,9 @@
     min-height: 100vh;
     min-height: 100dvh;
     padding: 1rem;
+}
+
+.test {
+    display: flex;
+    width: min(50vw,);
 }
