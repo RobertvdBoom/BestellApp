@@ -1,8 +1,9 @@
 #dish-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 40px;
-    width: 100%;
+    width: min(90%, 1440px);
 }
 
 .card-scroll-container{
@@ -46,5 +47,5 @@
 
 .test {
     display: flex;
-    width: min(50vw,);
+    width: min(90%, 1440px);
 }
