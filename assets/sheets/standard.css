@@ -82,3 +82,10 @@ li a{
 .d_none{
     display: none;
 }
+
+.ds-flex-basket {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+}

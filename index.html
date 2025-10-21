@@ -36,7 +36,7 @@
 
 
 
-            
+
 
             <section class="restaurant-header">
                 <!-- 白蓮 - -->
@@ -56,11 +56,11 @@
 
 
 
-            <div class="test"> 
-            <section class="card-scroll-container">
-                <div id="favorite-dishes"></div>
+            <section class="outer-card-scroll-container">
+                <div class="card-scroll-container">
+                    <div id="favorite-dishes"></div>
+                </div>
             </section>
-            </div>
 
 
 
@@ -77,16 +77,16 @@
             </nav>
 
             <div class="resp-menu-btn-container">
-            <button class="menu_btn desktop-d-none" onclick="toggleRespMenu()"><img src="/assets/img/icons/menu.svg"
-            alt="menu stripes"></button>
+                <button class="menu_btn desktop-d-none" onclick="toggleRespMenu()"><img src="/assets/img/icons/menu.svg"
+                        alt="menu stripes"></button>
             </div>
 
-            
 
 
 
 
-            
+
+
 
 
 
@@ -115,6 +115,38 @@
                 <div class="delivery-or-pickup-container">
                     <button class="btn-delivery">Lieferung</button>
                     <button class="btn-pickup">Abholung</button>
+                </div>
+
+                <div id="basket-items-container">
+                    <div class="basket-item">
+                        <div class="ds-flex-basket">
+                            <h3>Spaghetti</h3>
+                            <span id="item-price-0">13.40€</span>
+                        </div>
+                        <div class="ds-flex-basket">
+                            <span>Anmerkung hinzufügen</span>
+                            <div >
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="basket-item">
+                        <div class="ds-flex-basket">
+                            <h3>Spaghetti</h3>
+                            <span id="item-price-0">13.40€</span>
+                        </div>
+                        <div class="ds-flex-basket">
+                            <span>Anmerkung hinzufügen</span>
+                            <div >
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <p id="basket-delivery-cost"></p>
