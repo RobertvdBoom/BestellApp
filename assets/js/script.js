@@ -53,3 +53,17 @@ inventory.find(isCherries);
 console.log(inventory[2].quantity);
 
 console.log(newBasket);
+
+function itemPlusOne(index) {
+    inventory[index].quantity ++;
+    console.log(inventory[index].quantity);
+}
+
+function itemMinusOne(index) {
+    inventory[index].quantity --;
+    console.log(inventory[index].quantity);
+    if (inventory[index].quantity == 0) {
+      inventory.splice(index, 1);
+    }
+    console.log(inventory[0]);
+}
