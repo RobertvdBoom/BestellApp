@@ -57,13 +57,33 @@ console.log(newBasket);
 function itemPlusOne(index) {
     inventory[index].quantity ++;
     console.log(inventory[index].quantity);
+    renderAmount(index);
 }
 
 function itemMinusOne(index) {
     inventory[index].quantity --;
     console.log(inventory[index].quantity);
-    if (inventory[index].quantity == 0) {
-      inventory.splice(index, 1);
+    if (inventory[index].quantity !== 0) {
+      renderAmount(index);
     }
-    console.log(inventory[0]);
+    else {
+      inventory.splice(index, 1);
+      console.log(inventory[index]);
+    }
 }
+
+function pushItemToBasket(category, index) {
+
+}
+
+function isInBasket(item) {
+    // Pass name
+    // check if its in basket 
+    // return index
+    // basket[index] ++
+    
+  }
+
+  function renderAmount(index) {
+
+  }
