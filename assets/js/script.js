@@ -46,7 +46,7 @@ function isCherries(fruit) {
   }
 }
 
-let newBasket = [];
+
 
 inventory.find(isCherries);
 

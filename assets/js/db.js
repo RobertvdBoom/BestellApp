@@ -195,3 +195,5 @@ let dishData =
 };
 
 let restaurantRating = {"totalStars": 4905, "totalRatings": 1100};
+
+let newBasket = [];

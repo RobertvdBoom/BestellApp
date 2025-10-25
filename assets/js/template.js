@@ -97,3 +97,23 @@ function totalSumOfItems() {
     let totalSumOfItemsContainerRef = document.getElementById('');
 
 }
+
+function renderItem(index) {
+    basketRef = document.getElementById('basket-items-container');
+    basketRef.innerHTML += `
+                    <div class="basket-item">
+                        <div class="ds-flex-basket">
+                            <h3>${itemBasket[index][dishName]}</h3>
+                            <span id="item-price-0">${itemBasket[index][dishPrice]}</span>
+                        </div>
+                        <div class="ds-flex-basket">
+                            <span>Anmerkung hinzufügen</span>
+                            <div >
+                                <button onclick="itemMinusOne(${index})">-</button>
+                                <span>${itemBasket[index][amount]}</span>
+                                <button onclick="itemPlusOne(${index})">+</button>
+                            </div>
+                        </div>
+                    </div>
+    `
+}
