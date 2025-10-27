@@ -7,6 +7,7 @@
 @import url(/assets/sheets/footer.css);
 @import url(/assets/sheets/responsive.css);
 @import url(/assets/sheets/basket.css);
+@import url(/assets/sheets/stars.css);
 
 main {
     display: flex;
