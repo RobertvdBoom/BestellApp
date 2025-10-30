@@ -5,6 +5,8 @@ function toggleRespMenu () {
 }
 
 
+let basket = [];
+
 
 function calculateRating(){
     return averageRating = (rating.totalStars / rating.totalRatings).toFixed(1);
@@ -73,8 +75,17 @@ function itemMinusOne(index) {
 }
 
 function pushItemToBasket(category, index) {
-
+    let itemObjectInBasket = { 
+      "category" : category,
+      "itemName" : dishData[category][index].dishName,
+      "dishPrice" : dishData[category][index].dishPrice,
+      "dishAmount" : 1,
+    }
+    basket.push(itemObjectInBasket);
 }
+
+pushItemToBasket('starters', 0)
+console.log(basket);
 
 function isInBasket(item) {
     // Pass name
@@ -87,3 +98,4 @@ function isInBasket(item) {
   function renderAmount(index) {
 
   }
+
