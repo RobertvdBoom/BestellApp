@@ -93,27 +93,22 @@ function updatePrice(totalSum) {
 
 updatePrice(24.40);
 
-function totalSumOfItems() {
-    let totalSumOfItemsContainerRef = document.getElementById('');
-
-}
-
-function renderBasketItem(index) {
+function renderBasketItems() {
     let basketRef = document.getElementById('basket-items-container');
-
-    for (let index = 0; index < basketItem.length; index++) {
-        let element = basketItem[index];
+    basketRef.innerHTML = "";
+    for (let index = 0; index < itemBasket.length; index++) {
+        let element = itemBasket[index];
         basketRef.innerHTML += `
                     <div class="basket-item">
                         <div class="ds-flex-basket">
-                            <h3>${itemBasket[index].dishName}</h3>
-                            <span id="item-price-0">${itemBasket[index].dishPrice}</span>
+                            <h3>${element.dishName}</h3>
+                            <span id="item-price-0">${element.dishPrice}</span>
                         </div>
                         <div class="ds-flex-basket">
                             <span>Anmerkung hinzufügen</span>
                             <div >
                                 <button onclick="itemMinusOne(${index})">-</button>
-                                <span>${itemBasket[index].amount}</span>
+                                <span>${element.amount}</span>
                                 <button onclick="itemPlusOne(${index})">+</button>
                             </div>
                         </div>
@@ -121,3 +116,10 @@ function renderBasketItem(index) {
     `
     }
 }
+
+let itemBasket = [
+    {"dishName" : "Test Banana", "dishPrice" : 7.50, "amount" : 1},
+    {"dishName" : "Test Banana2", "dishPrice" : 9.50, "amount" : 2},
+];
+
+renderBasketItems();
