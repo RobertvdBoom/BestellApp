@@ -30,30 +30,6 @@ function restaurantRatingPlusMinus() {
 
 }
 
-const inventory = [
-  { name: "apples", quantity: 2 },
-  { name: "bananas", quantity: 0 },
-  { name: "cherries", quantity: 5 },
-];
-
-function isCherries(fruit) {
-  if (fruit.name === "cherries") {
-    console.log(fruit);
-    fruit.quantity ++;
-    let test = inventory.indexOf(fruit);
-    console.log(test);
-        // return fruit.name;
-  } else {
-    newBasket.push(fruit);
-  }
-}
-
-
-
-inventory.find(isCherries);
-
-console.log(inventory[2].quantity);
-
 console.log(newBasket);
 
 function itemPlusOne(index) {
@@ -85,7 +61,7 @@ function pushItemToBasket(category, index) {
 }
 
 pushItemToBasket('starters', 0)
-console.log(basket);
+
 
 function isInBasket(item) {
     // Pass name
