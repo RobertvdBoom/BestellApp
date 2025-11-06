@@ -21,21 +21,38 @@ function itemMinusOne(index) {
 }
 
 function isInBasket(category, index) {
-  if (itemBasket.length >= 1) {
-    for (let basketIndex = 0; basketIndex < itemBasket.length; basketIndex++) {
+  let itemIsInBasket = false;
+  let itemIndex = "";
+  for (let basketIndex = 0; basketIndex < itemBasket.length; basketIndex++) {
       let itemToBeChecked = itemBasket[basketIndex].dishName;
       if (itemToBeChecked == dishData[category][index].dishName) {
-        console.log("item is in Basket already, add it up");
-        itemBasket[basketIndex].dishAmount ++;
-        break
+        itemIsInBasket = true;
+        itemIndex = basketIndex;
       }
       else {
         continue;
       }
     }
+
+  if (itemIsInBasket == false) {
+    pushItemToBasket(category, index);
+  } else {
+    itemBasket[itemIndex].dishAmount ++;
+  }
+
+
+  if (itemBasket.length >= 1) {
+    for (let basketIndex = 0; basketIndex < itemBasket.length; basketIndex++) {
+      let itemToBeChecked = itemBasket[basketIndex].dishName;
+      if (itemToBeChecked == dishData[category][index].dishName) {
+        itemIsInBasket = true;
+      }
+      else if(itemIsInBasket == true){
+        itemBasket[basketIndex]
+      }
+    }
   }
   else {
-    console.log("item was not yet in basket, therefore added")
     pushItemToBasket(category, index);
   }
   renderBasketItems();
