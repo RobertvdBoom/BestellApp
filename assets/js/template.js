@@ -30,7 +30,7 @@ function renderDishes(category) {
                 </div>
                 <div class="dish-card-price-and-button">
                     <div>${dishData[category][index].dishPrice.toFixed(2)} €</div>
-                    <button>+</button>
+                    <button onclick="isInBasket('${category}', ${index})">+</button>
                 </div>
             </div>
         </div>
@@ -108,7 +108,7 @@ function renderBasketItems() {
                             <span>Anmerkung hinzufügen</span>
                             <div >
                                 <button onclick="itemMinusOne(${index})">-</button>
-                                <span>${element.amount}</span>
+                                <span>${element.dishAmount}</span>
                                 <button onclick="itemPlusOne(${index})">+</button>
                             </div>
                         </div>
@@ -117,9 +117,6 @@ function renderBasketItems() {
     }
 }
 
-let itemBasket = [
-    {"dishName" : "Test Banana", "dishPrice" : 7.50, "amount" : 1},
-    {"dishName" : "Test Banana2", "dishPrice" : 9.50, "amount" : 2},
-];
+let itemBasket = [];
 
 renderBasketItems();

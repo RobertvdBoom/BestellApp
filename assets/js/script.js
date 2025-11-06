@@ -2,28 +2,6 @@ function toggleRespMenu() {
   document.getElementById("resp_menu").classList.toggle("resp_menu_closed");
 }
 
-function calculateRating() {
-  return averageRating = (rating.totalStars / rating.totalRatings).toFixed(1);
-}
-
-let liked = false;
-
-function restaurantRatingPlusMinus() {
-  ratingButtonRef = document.getElementById('ratingButton');
-  if (liked == false) {
-    ratingButtonRef.innerHTML = "-";
-    liked = true;
-    restaurantRating.totalRatings++;
-    console.log(restaurantRating.totalRatings)
-  } else {
-    ratingButtonRef.innerHTML = "+";
-    liked = false;
-    restaurantRating.totalRatings--;
-    console.log(restaurantRating.totalRatings)
-  }
-
-}
-
 function itemPlusOne(index) {
   inventory[index].quantity++;
   console.log(inventory[index].quantity);
@@ -42,34 +20,33 @@ function itemMinusOne(index) {
   }
 }
 
+function isInBasket(category, index) {
+  if (itemBasket.length >= 1) {
+    for (let basketIndex = 0; basketIndex < itemBasket.length; basketIndex++) {
+      let itemToBeChecked = itemBasket[basketIndex].dishName;
+      if (itemToBeChecked == dishData[category][index].dishName) {
+        console.log("item is in Basket already, add it up");
+        itemBasket[basketIndex].dishAmount ++;
+        break
+      }
+      else {
+        continue;
+      }
+    }
+  }
+  else {
+    console.log("item was not yet in basket, therefore added")
+    pushItemToBasket(category, index);
+  }
+  renderBasketItems();
+}
+
 function pushItemToBasket(category, index) {
-  if (itemIsInBasket == true) {
-    findIndexInBasket(category, index);
-  } else {
     let itemObjectInBasket = {
       "category": category,
-      "itemName": dishData[category][index].dishName,
+      "dishName": dishData[category][index].dishName,
       "dishPrice": dishData[category][index].dishPrice,
       "dishAmount": 1,
     }
-    basket.push(itemObjectInBasket);
+    itemBasket.push(itemObjectInBasket);
   }
-
-
-}
-
-pushItemToBasket('starters', 0)
-
-
-function isInBasket(item) {
-  // Pass name
-  // check if its in basket 
-  // return index
-  // basket[index] ++
-
-}
-
-function renderAmount(index) {
-
-}
-
