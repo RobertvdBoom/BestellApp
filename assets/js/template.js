@@ -117,6 +117,7 @@ function renderBasketItems() {
                     </div>
     `
     }
+    calculateTotalBasket();
 }
 
 let itemBasket = [];

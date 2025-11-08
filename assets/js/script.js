@@ -65,3 +65,14 @@ function pushItemToBasket(category, index) {
     }
     itemBasket.push(itemObjectInBasket);
   }
+
+function calculateTotalBasket() {
+  let basketTotalRef = document.getElementById('basket-total-container');
+  basketTotalRef.innerHTML="";
+  let total = 0;
+  for (let index = 0; index < itemBasket.length; index++) {
+    let element = itemBasket[index];
+    total += element.dishAmount*element.dishPrice;
+  }
+  basketTotalRef.innerHTML = total.toFixed(2) + " €";
+}
