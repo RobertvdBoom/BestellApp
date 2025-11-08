@@ -3,20 +3,18 @@ function toggleRespMenu() {
 }
 
 function itemPlusOne(index) {
-  inventory[index].quantity++;
-  console.log(inventory[index].quantity);
-  renderAmount(index);
+  itemBasket[index].dishAmount++;
+  renderBasketItems();
 }
 
 function itemMinusOne(index) {
-  inventory[index].quantity--;
-  console.log(inventory[index].quantity);
-  if (inventory[index].quantity !== 0) {
-    renderAmount(index);
+  itemBasket[index].dishAmount--;
+  if (itemBasket[index].dishAmount <= 0) {
+    itemBasket.splice(index, 1);
+    renderBasketItems();
   }
   else {
-    inventory.splice(index, 1);
-    console.log(inventory[index]);
+    renderBasketItems();
   }
 }
 

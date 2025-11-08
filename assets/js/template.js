@@ -98,11 +98,13 @@ function renderBasketItems() {
     basketRef.innerHTML = "";
     for (let index = 0; index < itemBasket.length; index++) {
         let element = itemBasket[index];
+        elementTotal = element.dishPrice*element.dishAmount;
+        elementTotal = elementTotal.toFixed(2);
         basketRef.innerHTML += `
                     <div class="basket-item">
                         <div class="ds-flex-basket">
                             <h3>${element.dishName}</h3>
-                            <span id="item-price-0">${element.dishPrice}</span>
+                            <span id="item-price-0">${elementTotal} €</span>
                         </div>
                         <div class="ds-flex-basket">
                             <span>Anmerkung hinzufügen</span>
