@@ -74,5 +74,6 @@ function calculateTotalBasket() {
     let element = itemBasket[index];
     total += element.dishAmount*element.dishPrice;
   }
+  total += deliveryCost;
   basketTotalRef.innerHTML = total.toFixed(2) + " €";
 }
