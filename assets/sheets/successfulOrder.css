@@ -36,3 +36,21 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.wrapper p {
+    font-size: 2rem;
+    color: white;
+}
+
+.wrapper a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.wrapper h2{
+    font-size: 4rem;
+    color: white;
+}
+
+.successful-order-header

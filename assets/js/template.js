@@ -86,13 +86,6 @@ function renderDeliveryCost(){
 
 renderDeliveryCost();
 
-function updatePrice(totalSum) {
-    let priceContainerRef = document.getElementById('basket-total-container');
-    priceContainerRef.innerHTML += "Gesamt: " + totalSum.toFixed(2) + "€";
-}
-
-updatePrice(24.40);
-
 function renderBasketItems() {
     let basketRef = document.getElementById('basket-items-container');
     basketRef.innerHTML = "";
