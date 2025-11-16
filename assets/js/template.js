@@ -48,7 +48,13 @@ function activateCategoryActiveBorder(category){
 
 renderDishes("starters");
 
-let favDishes = [ dishData.starters[2], dishData.starters[3], dishData.mainDish[1], dishData.mainDish[3], dishData.mainDish[4], dishData.dessert[1], dishData.dessert[0]];
+let favDishes = [{"category" : "starters", "index" : 2}, 
+{"category" : "starters", "index" : 3},
+{"category" : "mainDish", "index" : 1},
+{"category" : "mainDish", "index" : 3},
+{"category" : "mainDish", "index" : 4},
+{"category" : "dessert", "index" : 1},
+{"category" : "dessert", "index" : 0}];
 
 function renderFavDishes() {
     let favDishContentRef = document.getElementById('favorite-dishes');
