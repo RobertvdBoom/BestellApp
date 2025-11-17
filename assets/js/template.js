@@ -63,14 +63,14 @@ function renderFavDishes() {
         favDishContentRef.innerHTML += ` 
         <div class="outer-card-container dish-card-favorite-box">
             <div class="dish-card">
-                <img src="${element.dishImageURL}" alt="${element.dishImageAlt}">
+                <img src="${dishData[element.category][element.index].dishImageURL}" alt="${dishData[element.category][element.index].dishImageAlt}">
                 <div class="dish-text">
-                    <h2>${element.dishName}</h2>
-                    <p>${element.dishDescription}</p>
+                    <h2>${dishData[element.category][element.index].dishName}</h2>
+                    <p>${dishData[element.category][element.index].dishDescription}</p>
                 </div>
                 <div class="dish-card-price-and-button-fav">
-                    <div>${element.dishPrice.toFixed(2)} €</div>
-                    <button onclick="isInBasket('${favDishes[index].category}', ${index}">+</button>
+                    <div>${dishData[element.category][element.index].dishPrice.toFixed(2)} €</div>
+                    <button onclick="isInBasket('${favDishes[index].category}', ${index})">+</button>
                 </div>
             </div>
         </div>

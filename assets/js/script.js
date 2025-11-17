@@ -66,7 +66,7 @@ function pushItemToBasket(category, index) {
     itemBasket.push(itemObjectInBasket);
   }
 
-function calculateTotalBasket() {
+  function calculateTotalBasket() {
   let basketTotalRef = document.getElementById('basket-total-container');
   basketTotalRef.innerHTML="";
   let total = 0;
