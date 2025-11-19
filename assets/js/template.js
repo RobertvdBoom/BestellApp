@@ -70,7 +70,7 @@ function renderFavDishes() {
                 </div>
                 <div class="dish-card-price-and-button-fav">
                     <div>${dishData[element.category][element.index].dishPrice.toFixed(2)} €</div>
-                    <button onclick="isInBasket('${favDishes[index].category}', ${index})">+</button>
+                    <button onclick="isInBasket('${favDishes[index].category}', ${element.index})">+</button>
                 </div>
             </div>
         </div>
@@ -86,6 +86,7 @@ let deliveryCost = 5;
 
 function renderDeliveryCost(){
     let deliveryCostRef = document.getElementById('basket-delivery-cost');
+    deliveryCostRef.innerHTML = "";
     deliveryCostRef.innerHTML += deliveryCost.toFixed(2) + " €";
 
 }

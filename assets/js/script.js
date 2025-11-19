@@ -77,3 +77,28 @@ function pushItemToBasket(category, index) {
   total += deliveryCost;
   basketTotalRef.innerHTML = total.toFixed(2) + " €";
 }
+
+let delivery = true;
+
+function adjustDeliveryCost() {
+  if (delivery == true) {
+    deliveryCost = 5;
+  }
+  else if (delivery == false){
+    deliveryCost = 0;
+  }
+}
+
+function addDeliveryCost() {
+  delivery = true;
+  adjustDeliveryCost();
+  renderDeliveryCost();
+  calculateTotalBasket();
+}
+
+function removeDeliveryCost() {
+  delivery = false;
+  adjustDeliveryCost();
+  renderDeliveryCost();
+  calculateTotalBasket();
+}
