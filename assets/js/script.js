@@ -102,3 +102,26 @@ function removeDeliveryCost() {
   renderDeliveryCost();
   calculateTotalBasket();
 }
+
+function payItemsNow() {
+  let basketRef = document.getElementById('basket-items-container');
+  itemBasket = [];
+  clearTotalAndDeliveryCost()
+  basketRef.innerHTML= "";
+  basketRef.innerHTML= "Vielen Dank für deine Bestellung, Sie sollte in  60 Minuten bei dir sein!";
+}
+
+function payItemsAtShop() {
+  let basketRef = document.getElementById('basket-items-container');
+  itemBasket = [];
+  clearTotalAndDeliveryCost()
+  basketRef.innerHTML= "";
+  basketRef.innerHTML= "Vielen Dank für deine Bestellung, Sie sollte in  45 Minuten abholbereit sein!";
+}
+
+function clearTotalAndDeliveryCost() {
+  let deliverCostRef = document.getElementById('basket-delivery-cost');
+  let totalBasketRef = document.getElementById('basket-total-container');
+  deliverCostRef.innerHTML = "";
+  totalBasketRef.innerHTML = "";
+}
