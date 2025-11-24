@@ -125,3 +125,10 @@ function clearTotalAndDeliveryCost() {
   deliverCostRef.innerHTML = "";
   totalBasketRef.innerHTML = "";
 }
+
+function toggleItemBasketBoxes () {
+  let deliverCostRef = document.getElementById('basket-delivery-cost');
+  let totalContainerRef = document.getElementById('basket-total-container');
+  deliverCostRef.classList.toggle('item-basket-display-none');
+  totalContainerRef.classList.toggle('item-basket-display-none');
+}

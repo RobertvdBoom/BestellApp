@@ -36,3 +36,7 @@
     flex-direction: column;
     align-items: center;
 }
+
+.item-basket-display-none {
+    display: none;
+}
