@@ -105,6 +105,16 @@
                 <button onclick="toggleRespMenu()"><strong>X</strong></button>
             </nav> -->
 
+            <dialog onclick="openDialog()" id="basket-dialog">
+                <h2>Danke für deine Bestellung!</h2>
+                <p>Möchtest du bar (vor Ort) oder mit karte zahlen?</p>
+                <div>
+                    <button>Bar (vor Ort)</button>
+                    <button>Online mit Karte</button>
+                </div>
+                <button onclick="finishOrder()">Bestellung Abschließen!</button>
+            </dialog>
+
         </main>
 
 

@@ -132,3 +132,13 @@ function toggleItemBasketBoxes () {
   deliverCostRef.classList.toggle('item-basket-display-none');
   totalContainerRef.classList.toggle('item-basket-display-none');
 }
+
+let dialogRef = document.getElementById('basket-dialog');
+
+function openDialog() {
+  dialogRef.openDialog();
+}
+
+function closeDialog() {
+  dialogRef.closest();
+}
