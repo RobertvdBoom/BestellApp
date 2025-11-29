@@ -136,9 +136,20 @@ function toggleItemBasketBoxes () {
 let dialogRef = document.getElementById('basket-dialog');
 
 function openDialog() {
-  dialogRef.openDialog();
+  dialogRef.showModal();
 }
 
 function closeDialog() {
-  dialogRef.closest();
+  dialogRef.close();
+}
+
+let orderList = [];
+
+function finishOrder(){
+  orderList.push(itemBasket);
+  itemBasket = [];
+  let containerRef = document.getElementById('basket-item-container');
+  containerRef.innerHTML = "";
+  console.log(orderList);
+  dialogRef.close();
 }
