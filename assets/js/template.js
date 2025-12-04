@@ -18,7 +18,7 @@ let activeCategory = "starters";
 function renderDishes(category) {
     activateCategoryActiveBorder(category);
     let dishContentRef = document.getElementById('dish-container');
-    dishContentRef.innerHTML= "";
+    dishContentRef.innerHTML = "";
     for (let index = 0; index < dishData[category].length; index++) {
         dishContentRef.innerHTML += ` 
         <div class="outer-card-container">
@@ -38,7 +38,7 @@ function renderDishes(category) {
     }
 }
 
-function activateCategoryActiveBorder(category){
+function activateCategoryActiveBorder(category) {
     let oldButtonContentRef = document.getElementById(activeCategory);
     let newButtonContentRef = document.getElementById(category);
     oldButtonContentRef.classList.remove("active-category");
@@ -48,13 +48,13 @@ function activateCategoryActiveBorder(category){
 
 renderDishes("starters");
 
-let favDishes = [{"category" : "starters", "index" : 2}, 
-{"category" : "starters", "index" : 3},
-{"category" : "mainDish", "index" : 1},
-{"category" : "mainDish", "index" : 3},
-{"category" : "mainDish", "index" : 4},
-{"category" : "dessert", "index" : 1},
-{"category" : "dessert", "index" : 0}];
+let favDishes = [{ "category": "starters", "index": 2 },
+{ "category": "starters", "index": 3 },
+{ "category": "mainDish", "index": 1 },
+{ "category": "mainDish", "index": 3 },
+{ "category": "mainDish", "index": 4 },
+{ "category": "dessert", "index": 1 },
+{ "category": "dessert", "index": 0 }];
 
 function renderFavDishes() {
     let favDishContentRef = document.getElementById('favorite-dishes');
@@ -84,7 +84,7 @@ renderFavDishes();
 
 let deliveryCost = 5;
 
-function renderDeliveryCost(){
+function renderDeliveryCost() {
     let deliveryCostRef = document.getElementById('basket-delivery-cost');
     deliveryCostRef.innerHTML = "";
     deliveryCostRef.innerHTML += deliveryCost.toFixed(2) + " €";
@@ -98,7 +98,7 @@ function renderBasketItems() {
     basketRef.innerHTML = "";
     for (let index = 0; index < itemBasket.length; index++) {
         let element = itemBasket[index];
-        elementTotal = element.dishPrice*element.dishAmount;
+        elementTotal = element.dishPrice * element.dishAmount;
         elementTotal = elementTotal.toFixed(2);
         basketRef.innerHTML += `
                     <div class="basket-item">
@@ -123,3 +123,15 @@ function renderBasketItems() {
 let itemBasket = [];
 
 renderBasketItems();
+
+function calculateTotalBasket() {
+    let basketTotalRef = document.getElementById('basket-total-container');
+    basketTotalRef.innerHTML = "";
+    let total = 0;
+    for (let index = 0; index < itemBasket.length; index++) {
+        let element = itemBasket[index];
+        total += element.dishAmount * element.dishPrice;
+    }
+    total += deliveryCost;
+    basketTotalRef.innerHTML = total.toFixed(2) + " €";
+}
