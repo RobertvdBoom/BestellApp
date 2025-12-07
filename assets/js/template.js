@@ -82,7 +82,7 @@ renderFavDishes();
 
 // Basket 
 
-let deliveryCost = 5;
+let deliveryCost = 0;
 
 function renderDeliveryCost() {
     let deliveryCostRef = document.getElementById('basket-delivery-cost');
@@ -91,7 +91,7 @@ function renderDeliveryCost() {
 
 }
 
-renderDeliveryCost();
+// renderDeliveryCost();
 
 function renderBasketItems() {
     let basketRef = document.getElementById('basket-items-container');
@@ -122,7 +122,7 @@ function renderBasketItems() {
 
 let itemBasket = [];
 
-renderBasketItems();
+// renderBasketItems();
 
 function calculateTotalBasket() {
     let basketTotalRef = document.getElementById('basket-total-container');

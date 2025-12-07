@@ -66,7 +66,7 @@ function pushItemToBasket(category, index) {
     itemBasket.push(itemObjectInBasket);
   }
 
-let delivery = true;
+let delivery = false;
 
 function adjustDeliveryCost() {
   if (delivery == true) {
