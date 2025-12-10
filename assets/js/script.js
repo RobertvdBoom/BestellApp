@@ -138,7 +138,13 @@ function finishOrder(){
   itemBasket = [];
   let basketContainerRef = document.getElementById('basket-items-container');
   basketContainerRef.innerHTML = "";
+  console.log("order list:");
   console.log(orderList);
+  console.log("item basket:");
+  console.log(itemBasket);
   renderBasketItems();
   closeDialog();
 }
+
+// save order List to Local Storage
+// 

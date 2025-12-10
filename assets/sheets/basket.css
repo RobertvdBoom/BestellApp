@@ -10,19 +10,6 @@
     display: flex;
 }
 
-#basket-total-container{
-    background-color: orangered;
-    height: 60px;
-    width: 100%;
-    text-align: center;
-}
-
-#basket-delivery-cost{
-    background-color: grey;
-    height: 40px;
-    margin: 20px 0px;
-}
-
 .basket-item {
     width: 100%;
     display: flex;
@@ -37,11 +24,46 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background: linear-gradient(15deg, #bd4107, #d3460f, #db6b14, #ff7a15, #dd3131, #f88007, #ff0000);
+    background-size: 300%;
     padding: 5px;
     margin-top: 12px;
 }
 
 .item-basket-display-none {
     display: none;
+}
+
+.cost-in-basket-container {
+    background: linear-gradient(15deg, #bd4107, #d3460f, #db6b14, #ff7a15, #dd3131, #f88007, #ff0000);
+    background-size: 300%;
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 10px 5px;
+}
+
+.dialog-btn {
+    height: 40px;
+}
+
+aside h2{
+    color: white;
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+.delivery-or-pickup-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-delivery {
+    width: 48%;
+}
+
+.btn-pickup {
+    width: 48%;
 }
