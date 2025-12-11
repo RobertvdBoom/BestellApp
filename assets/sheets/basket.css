@@ -47,6 +47,8 @@
 
 .dialog-btn {
     height: 40px;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 aside h2{
