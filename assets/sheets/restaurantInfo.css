@@ -1,0 +1,24 @@
+.restaurant-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: min(90%, 1440px);
+}
+
+#restaurant-info {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    gap: 16px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 5px;
+}
+
+#restaurant-info span{
+    color: white;
+}

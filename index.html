@@ -29,7 +29,11 @@
         <main>
             <section class="atf-box">
                 <div class="header-box">
-                    <img src="/assets/img/icons/lotus-blume-2.png" alt="">
+
+                    <div class="header-icon-box">
+                        <img src="/assets/img/icons/lotus-blume-2.png" alt="">
+                    </div>
+                    
 
                 </div>
             </section>
@@ -40,14 +44,16 @@
 
             <section class="restaurant-header">
                 <!-- 白蓮 - rework this section for better visibility, check again at 320px width-->
-                <h1>White Lotus</h1>
+                <h1>白蓮 - White Lotus</h1>
                 <div id="restaurant-info">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="gold" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M12 2L14.94 8.63L22 9.27L16.5 14.14L18.18 21.02L12 17.27L5.82 21.02L7.5 14.14L2 9.27L9.06 8.63L12 2Z"
-                            stroke="black" stroke-width="0.75" fill="gold" />
-                    </svg>
-                    <span>Bewertung:</span>
+                    <span class="rating">Bewertung: 4,7
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="gold" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2L14.94 8.63L22 9.27L16.5 14.14L18.18 21.02L12 17.27L5.82 21.02L7.5 14.14L2 9.27L9.06 8.63L12 2Z"
+                                stroke="black" stroke-width="0.75" fill="gold" />
+                        </svg>
+                        (621)
+                    </span>
                     <span>Mindestbestellwert: 18.50€</span>
                     <span></span>
                 </div>
@@ -114,7 +120,7 @@
                     <h2>Danke für deine Bestellung!</h2>
                     <p>Möchtest du bar (vor Ort) oder mit karte zahlen?</p>
                 </div>
-                
+
                 <div class="dialog-payment-buttons-container">
                     <button>Bar (vor Ort)</button>
                     <button>Online mit Karte</button>
@@ -148,8 +154,8 @@
                     <p>Summe:</p>
                     <p id="basket-total-container">0.00 €</p>
                 </div>
-                
-                
+
+
             </section>
             <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
         </aside>

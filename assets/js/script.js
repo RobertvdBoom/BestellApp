@@ -144,7 +144,13 @@ function finishOrder(){
   console.log(itemBasket);
   renderBasketItems();
   closeDialog();
+  resetBasketItemsContainer()
 }
 
+
+function resetBasketItemsContainer() {
+  let basketRef = document.getElementById('basket-items-container');
+  basketRef.innerHTML = "Vielen Dank für deine Bestellung! Dein Essen sollte in 60 Minuten bei dir sein!";
+}
 // save order List to Local Storage
 // 
