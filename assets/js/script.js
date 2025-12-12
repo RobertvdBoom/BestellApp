@@ -154,3 +154,14 @@ function resetBasketItemsContainer() {
 }
 // save order List to Local Storage
 // 
+
+// Global variable to store a reference to the opened window
+let openedWindow;
+
+function openWindow() {
+  openedWindow = window.open("successfulOrder.html");
+}
+
+function closeOpenedWindow() {
+  openedWindow.close();
+}

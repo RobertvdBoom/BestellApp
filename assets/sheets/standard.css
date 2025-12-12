@@ -16,6 +16,7 @@ main {
     align-items: center;
     flex: 1;
     width: calc(100vw - 350px);
+    margin-bottom: 40px;
 }
 
 .outer-main-container {
