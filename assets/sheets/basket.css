@@ -1,13 +1,20 @@
 #basket {
-    width: 350px;
-    min-height: 100%;
+    width: 400px;
+    min-height: 100vh;
+    height: 100dvh;
     background-color: rgb(49, 49, 49);
     display: flex;
     flex-direction: column;
+    position: sticky;
+    top: 0 ;
+
 }
 
-.basket-container{
+#basket-container{
     display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: calc(70vh - 72px - 149px); /* buttons 4x = 20vh; decreased by 10 for visibility on scroll; 72px is top bar / 5x gap 20px = 100 + 49px from h2 */
 }
 
 .basket-item {
@@ -27,7 +34,7 @@
     background: linear-gradient(15deg, #bd4107, #d3460f, #db6b14, #ff7a15, #dd3131, #f88007, #ff0000);
     background-size: 300%;
     padding: 5px;
-    margin-top: 12px;
+    overflow-y: auto;
 }
 
 .item-basket-display-none {
@@ -37,35 +44,45 @@
 .cost-in-basket-container {
     background: linear-gradient(15deg, #bd4107, #d3460f, #db6b14, #ff7a15, #dd3131, #f88007, #ff0000);
     background-size: 300%;
-    margin: 20px 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-weight: 600;
     padding: 10px 5px;
+    height: max(5%, 50px);
 }
 
 .dialog-btn {
-    height: 40px;
+    height: max(5%, 50px);
     font-size: 1rem;
     font-weight: 600;
 }
 
 aside h2{
     color: white;
-    margin-bottom: 40px;
     font-size: 40px;
 }
 
 .delivery-or-pickup-container{
     display: flex;
     justify-content: space-between;
+    height: max(5%, 50px);
 }
 
 .btn-delivery {
     width: 48%;
+    height: 100%;
+    
 }
 
 .btn-pickup {
     width: 48%;
+    height: 100%;
+}
+
+.cost-and-checkout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
 }

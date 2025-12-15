@@ -165,3 +165,4 @@ function openWindow() {
 function closeOpenedWindow() {
   openedWindow.close();
 }
+

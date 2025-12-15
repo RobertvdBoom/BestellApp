@@ -22,7 +22,7 @@
 
     <header class="top-level-bar">
         <h2>Bestell App</h2>
-        <img src="/assets/img/icons/menu.svg" alt="menu stripes">
+        <img src="/assets/img/icons/menu.svg" alt="menu stripes" class="desktop-d-none">
     </header>
 
     <div class="outer-main-container">
@@ -132,19 +132,24 @@
         </main>
 
 
-        <aside id="basket">
+        <aside id="basket" class="mobile-d-none">
             <h2>Warenkorb</h2>
-            <section id="basket-container">
-                <div class="delivery-or-pickup-container">
+            <div class="delivery-or-pickup-container">
                     <button class="btn-delivery" onclick="addDeliveryCost()">Lieferung</button>
                     <button class="btn-pickup" onclick="removeDeliveryCost()">Abholung</button>
                 </div>
+            <section id="basket-container">
 
                 <div id="basket-items-container">
                     <p>Wir freuen uns auf deine Bestellung!</p>
 
                 </div>
 
+
+
+
+            </section>
+            
                 <div class="cost-in-basket-container">
                     <p>Lieferkosten:</p>
                     <p id="basket-delivery-cost">0.00 €</p>
@@ -154,10 +159,9 @@
                     <p>Summe:</p>
                     <p id="basket-total-container">0.00 €</p>
                 </div>
+                <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
+            
 
-
-            </section>
-            <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
         </aside>
 
     </div>
