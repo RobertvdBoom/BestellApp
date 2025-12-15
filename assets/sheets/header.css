@@ -18,7 +18,8 @@ header {
 
 .atf-box img{
     aspect-ratio: 1/1;
-    height: 200px;
+    max-height: 200px;
+    height: max(150px, 15dvh);
 }
 
 .header-box {
