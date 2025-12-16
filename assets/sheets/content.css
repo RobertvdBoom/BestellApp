@@ -30,7 +30,6 @@
     display: flex;
     flex-direction: column-reverse;
     justify-content: space-between;
-    /* width: 100px; */
     width: 65px;
 }
 

@@ -5,10 +5,10 @@
 @import url(/assets/sheets/content.css);
 @import url(/assets/sheets/card.css);
 @import url(/assets/sheets/footer.css);
-@import url(/assets/sheets/responsive.css);
 @import url(/assets/sheets/basket.css);
 @import url(/assets/sheets/dialog.css);
 @import url(/assets/sheets/restaurantInfo.css);
+@import url(/assets/sheets/responsive.css);
 
 main {
     display: flex;

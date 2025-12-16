@@ -10,8 +10,6 @@
         aspect-ratio: 2/1  ;
     }
     .dish-card-price-and-button {
-        /* flex-direction: row;
-        justify-content: space-evenly; */
         width: 100%;
         align-items: center;
     }
@@ -26,6 +24,15 @@
         margin-top: 20px;
     }
     
+    .dish-card-price-and-button-fav {
+        width: 100%;
+        align-items: center;
+    }
+
+    .dish-card-price-and-button-fav button{
+        width: 50%;
+    }
+    
     .dish-text {
         width: 100%;
         text-align: center;
@@ -34,7 +41,7 @@
     .outer-card-container{
         display: flex;
         flex: 1;
-        min-width: 80vw;
+        min-width: 65vw;
     }
 
     .mobile-d-none{
@@ -60,11 +67,18 @@
     .desktop-d-none {
         display: none;
     }
+
+    
 }
 
 @media (max-width: 1100px) {
 
     .mobile-d-none {
         display: none !important;
+    }
+
+    .top-level-bar {
+        position: sticky;
+        top: 0;
     }
 }

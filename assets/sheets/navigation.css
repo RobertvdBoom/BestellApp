@@ -63,6 +63,7 @@ button {
     background-size: 300%;
     background-position: center left;
     transition: background-position 0.5s;
+    
 }
 
 button:hover {

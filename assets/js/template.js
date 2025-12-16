@@ -69,7 +69,7 @@ function renderFavDishes() {
                     <p>${dishData[element.category][element.index].dishDescription}</p>
                 </div>
                 <div class="dish-card-price-and-button-fav">
-                    <div>${dishData[element.category][element.index].dishPrice.toFixed(2)} €</div>
+                    <p>${dishData[element.category][element.index].dishPrice.toFixed(2)} €</p>
                     <button onclick="isInBasket('${favDishes[index].category}', ${element.index})">+</button>
                 </div>
             </div>
