@@ -57,7 +57,7 @@
                         </svg>
                         (621)
                     </span>
-                    <span>Mindestbestellwert: 18.50€</span>
+                    <span>Lieferung ab: 18.50€</span>
                     <span></span>
                 </div>
             </section>
@@ -135,9 +135,9 @@
         <aside id="basket" class="mobile-d-none">
             <h2>Warenkorb</h2>
             <div class="delivery-or-pickup-container">
-                    <button class="btn-delivery" onclick="addDeliveryCost()">Lieferung</button>
-                    <button class="btn-pickup" onclick="removeDeliveryCost()">Abholung</button>
-                </div>
+                <button class="btn-delivery" onclick="addDeliveryCost()">Lieferung</button>
+                <button class="btn-pickup" onclick="removeDeliveryCost()">Abholung</button>
+            </div>
             <section id="basket-container">
 
                 <div id="basket-items-container">
@@ -149,24 +149,24 @@
 
 
             </section>
-            
-                <div class="cost-in-basket-container">
-                    <p>Lieferkosten:</p>
-                    <p id="basket-delivery-cost">0.00 €</p>
-                </div>
 
-                <div class="cost-in-basket-container">
-                    <p>Summe:</p>
-                    <p id="basket-total-container">0.00 €</p>
-                </div>
-                <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
-            
+            <div class="cost-in-basket-container">
+                <p>Lieferkosten:</p>
+                <p id="basket-delivery-cost">0.00 €</p>
+            </div>
+
+            <div class="cost-in-basket-container">
+                <p>Summe:</p>
+                <p id="basket-total-container">0.00 €</p>
+            </div>
+            <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
+
 
         </aside>
 
     </div>
 
-
+    
 
     <footer>
         <address>
@@ -183,6 +183,10 @@
         </div>
 
     </footer>
+    <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
+        <button><h2>Warenkorb Öffnen!</h2></button>
+    </div>
+
 
 </body>
 <script src="/assets/js/template.js"></script>

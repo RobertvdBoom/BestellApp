@@ -86,3 +86,16 @@ aside h2{
     gap: 20px;
     margin-top: 20px;
 }
+
+.mobile-basket-opener {
+    width: 100%;
+    display: flex;
+    position: sticky;
+    bottom: 0;
+}
+
+.mobile-basket-opener button{
+    width: 100%;
+    height: 7vh;
+    height: 7dvh;
+}
