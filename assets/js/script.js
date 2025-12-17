@@ -62,6 +62,7 @@ function pushItemToBasket(category, index) {
       "dishName": dishData[category][index].dishName,
       "dishPrice": dishData[category][index].dishPrice,
       "dishAmount": 1,
+      "note" : ""
     }
     itemBasket.push(itemObjectInBasket);
   }
@@ -166,3 +167,35 @@ function closeOpenedWindow() {
   openedWindow.close();
 }
 
+
+// click -> render note buttons new -> insert current note -> open dialog
+function addNote(noteIndex) {
+  renderNoteCommitButtons(noteIndex);
+  noteContainerRef = document.getElementById('meinMehrzeiler');
+  noteContainerRef.innerHTML = "";
+  noteContainerRef.innerHTML += itemBasket[noteIndex].note;
+  openNoteDialog();
+}
+
+let dialogRefNote = document.getElementById('basket-note-dialog');
+
+function openNoteDialog() {
+  dialogRefNote.showModal();
+}
+
+function closeNoteDialog() {
+  noteContainerRef = document.getElementById('meinMehrzeiler');
+  noteContainerRef.innerHTML = "";
+  dialogRefNote.close();
+}
+
+function commitNote(index) {
+  console.log("old Note is:");
+  console.log(itemBasket[index].note);
+  noteContainerRef = document.getElementById('meinMehrzeiler');
+  let noteToSave = noteContainerRef.innerHTML;
+  itemBasket[index].note = noteToSave;
+  console.log("new Note is:");
+  console.log(itemBasket[index].note);
+  dialogRefNote.close();
+}

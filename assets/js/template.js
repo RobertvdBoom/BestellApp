@@ -107,7 +107,7 @@ function renderBasketItems() {
                             <span id="item-price-0">${elementTotal} €</span>
                         </div>
                         <div class="ds-flex-basket">
-                            <span>Anmerkung hinzufügen</span>
+                            <button onclick="addNote(${index})"> Anmerkung! </button>
                             <div >
                                 <button onclick="itemMinusOne(${index})">-</button>
                                 <span>${element.dishAmount}</span>
@@ -134,4 +134,13 @@ function calculateTotalBasket() {
     }
     total += deliveryCost;
     basketTotalRef.innerHTML = total.toFixed(2) + " €";
+}
+
+function renderNoteCommitButtons(noteIndex) {
+    let noteButtonContainerRef = document.getElementById('note-commit-container');
+    noteButtonContainerRef.innerHTML = "";
+    noteButtonContainerRef.innerHTML += `
+    <button onclick="commitNote(${noteIndex})">Anmerkung speichern!</button>
+    <button type="button" onclick="closeNoteDialog()">X</button>
+    `
 }

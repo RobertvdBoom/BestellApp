@@ -166,7 +166,7 @@
 
     </div>
 
-    
+
 
     <footer>
         <address>
@@ -184,8 +184,28 @@
 
     </footer>
     <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
-        <button><h2>Warenkorb Öffnen!</h2></button>
+        <button>
+            <h2>Warenkorb Öffnen!</h2>
+        </button>
     </div>
+
+    <dialog id="basket-note-dialog">
+        <div class="dialog-header">
+            <img src="/assets/img/icons/lotus-blume-2.png" alt="">
+            <h2>White Lotus</h2>
+        </div>
+        <div class="dialog-text-box">
+            <h2>Hier kannst du gerne eine Nachricht an den Koch senden!</h2>
+            <h3>Anmerkung:</h3>
+            <p id="current-note-container"></p>
+
+            <textarea id="meinMehrzeiler" placeholder="Hier kannst du mehr schreiben..."></textarea>
+
+        </div>
+        <div id="note-commit-container">
+
+        </div>
+    </dialog>
 
 
 </body>

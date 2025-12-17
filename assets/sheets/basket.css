@@ -35,6 +35,7 @@
     background-size: 300%;
     padding: 5px;
     overflow-y: auto;
+    color: white;
 }
 
 .item-basket-display-none {
@@ -50,6 +51,7 @@
     font-weight: 600;
     padding: 10px 5px;
     height: max(5%, 50px);
+    color: rgb(255, 255, 255);
 }
 
 .dialog-btn {
