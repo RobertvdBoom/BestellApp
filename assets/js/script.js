@@ -22,20 +22,20 @@ function isInBasket(category, index) {
   let itemIsInBasket = false;
   let itemIndex = "";
   for (let basketIndex = 0; basketIndex < itemBasket.length; basketIndex++) {
-      let itemToBeChecked = itemBasket[basketIndex].dishName;
-      if (itemToBeChecked == dishData[category][index].dishName) {
-        itemIsInBasket = true;
-        itemIndex = basketIndex;
-      }
-      else {
-        continue;
-      }
+    let itemToBeChecked = itemBasket[basketIndex].dishName;
+    if (itemToBeChecked == dishData[category][index].dishName) {
+      itemIsInBasket = true;
+      itemIndex = basketIndex;
     }
+    else {
+      continue;
+    }
+  }
 
   if (itemIsInBasket == false) {
     pushItemToBasket(category, index);
   } else {
-    itemBasket[itemIndex].dishAmount ++;
+    itemBasket[itemIndex].dishAmount++;
   }
 
 
@@ -45,7 +45,7 @@ function isInBasket(category, index) {
       if (itemToBeChecked == dishData[category][index].dishName) {
         itemIsInBasket = true;
       }
-      else if(itemIsInBasket == true){
+      else if (itemIsInBasket == true) {
         itemBasket[basketIndex]
       }
     }
@@ -57,15 +57,15 @@ function isInBasket(category, index) {
 }
 
 function pushItemToBasket(category, index) {
-    let itemObjectInBasket = {
-      "category": category,
-      "dishName": dishData[category][index].dishName,
-      "dishPrice": dishData[category][index].dishPrice,
-      "dishAmount": 1,
-      "note" : ""
-    }
-    itemBasket.push(itemObjectInBasket);
+  let itemObjectInBasket = {
+    "category": category,
+    "dishName": dishData[category][index].dishName,
+    "dishPrice": dishData[category][index].dishPrice,
+    "dishAmount": 1,
+    "note": ""
   }
+  itemBasket.push(itemObjectInBasket);
+}
 
 let delivery = false;
 
@@ -73,7 +73,7 @@ function adjustDeliveryCost() {
   if (delivery == true) {
     deliveryCost = 5;
   }
-  else if (delivery == false){
+  else if (delivery == false) {
     deliveryCost = 0;
   }
 }
@@ -96,16 +96,16 @@ function payItemsNow() {
   let basketRef = document.getElementById('basket-items-container');
   itemBasket = [];
   clearTotalAndDeliveryCost()
-  basketRef.innerHTML= "";
-  basketRef.innerHTML= "Vielen Dank für deine Bestellung, Sie sollte in  60 Minuten bei dir sein!";
+  basketRef.innerHTML = "";
+  basketRef.innerHTML = "Vielen Dank für deine Bestellung, Sie sollte in  60 Minuten bei dir sein!";
 }
 
 function payItemsAtShop() {
   let basketRef = document.getElementById('basket-items-container');
   itemBasket = [];
   clearTotalAndDeliveryCost()
-  basketRef.innerHTML= "";
-  basketRef.innerHTML= "Vielen Dank für deine Bestellung, Sie sollte in  45 Minuten abholbereit sein!";
+  basketRef.innerHTML = "";
+  basketRef.innerHTML = "Vielen Dank für deine Bestellung, Sie sollte in  45 Minuten abholbereit sein!";
 }
 
 function clearTotalAndDeliveryCost() {
@@ -115,7 +115,7 @@ function clearTotalAndDeliveryCost() {
   totalBasketRef.innerHTML = "";
 }
 
-function toggleItemBasketBoxes () {
+function toggleItemBasketBoxes() {
   let deliverCostRef = document.getElementById('basket-delivery-cost');
   let totalContainerRef = document.getElementById('basket-total-container');
   deliverCostRef.classList.toggle('item-basket-display-none');
@@ -134,7 +134,7 @@ function closeDialog() {
 
 let orderList = [];
 
-function finishOrder(){
+function finishOrder() {
   orderList.push(itemBasket);
   itemBasket = [];
   let basketContainerRef = document.getElementById('basket-items-container');
@@ -167,35 +167,26 @@ function closeOpenedWindow() {
   openedWindow.close();
 }
 
-
 // click -> render note buttons new -> insert current note -> open dialog
-function addNote(noteIndex) {
-  renderNoteCommitButtons(noteIndex);
-  noteContainerRef = document.getElementById('meinMehrzeiler');
-  noteContainerRef.innerHTML = "";
-  noteContainerRef.innerHTML += itemBasket[noteIndex].note;
-  openNoteDialog();
-}
-
 let dialogRefNote = document.getElementById('basket-note-dialog');
+let noteContainerRef = document.getElementById('meinMehrzeiler');
 
 function openNoteDialog() {
   dialogRefNote.showModal();
 }
 
 function closeNoteDialog() {
-  noteContainerRef = document.getElementById('meinMehrzeiler');
-  noteContainerRef.innerHTML = "";
   dialogRefNote.close();
 }
 
+function addNote(noteIndex) {
+  renderNoteCommitButtons(noteIndex);
+  noteContainerRef.value = itemBasket[noteIndex].note;
+  openNoteDialog();
+}
+
 function commitNote(index) {
-  console.log("old Note is:");
-  console.log(itemBasket[index].note);
-  noteContainerRef = document.getElementById('meinMehrzeiler');
-  let noteToSave = noteContainerRef.innerHTML;
+  let noteToSave = noteContainerRef.value;
   itemBasket[index].note = noteToSave;
-  console.log("new Note is:");
-  console.log(itemBasket[index].note);
-  dialogRefNote.close();
+  closeNoteDialog();
 }
