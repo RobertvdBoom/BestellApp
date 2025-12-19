@@ -139,13 +139,27 @@ function calculateTotalBasket() {
 function renderNoteCommitButtons(noteIndex) {
     let noteButtonContainerRef = document.getElementById('note-commit-container');
     noteButtonContainerRef.innerHTML = "";
-    noteButtonContainerRef.innerHTML += `
+    // noteButtonContainerRef.innerHTML += `
+    // <button onclick="commitNote(${noteIndex})">Anmerkung speichern!</button>
+    // <button onclick="deleteNote(${noteIndex})>Anmerkung Löschen</button>
+    // <button type="button" onclick="closeNoteDialog()">X</button>
+    // `
+
+    if (itemBasket[noteIndex].note !== "") {
+        noteButtonContainerRef.innerHTML += `
+    <button onclick="commitNote(${noteIndex})">Anmerkung speichern!</button>
+    <button onclick="deleteNote(${noteIndex})">Anmerkung Löschen</button>
+    <button type="button" onclick="closeNoteDialog()">X</button>
+    `
+    } else {
+        noteButtonContainerRef.innerHTML += `
     <button onclick="commitNote(${noteIndex})">Anmerkung speichern!</button>
     <button type="button" onclick="closeNoteDialog()">X</button>
     `
+    }
 }
 
-function renderOrderSummary () {
+function renderOrderSummary() {
     let orderSummaryContainerRef = document.getElementById('order-summary-container');
     orderSummaryContainerRef.innerHTML = "";
     for (let index = 0; index < itemBasket.length; index++) {
@@ -156,6 +170,7 @@ function renderOrderSummary () {
         if (element.note != "") {
             orderSummaryContainerRef.innerHTML += `
             <span class="note-in-summary">Anmerkung: ${element.note}</span>
+            <button onclick="deleteNote(${index})>X</button>
         `
         }
     }

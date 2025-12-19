@@ -208,3 +208,8 @@ function commitNote(index) {
   itemBasket[index].note = noteToSave;
   closeNoteDialog();
 }
+
+function deleteNote(index) {
+  itemBasket[index].note = "";
+  closeNoteDialog();
+}
