@@ -69,6 +69,19 @@ function pushItemToBasket(category, index) {
 
 let delivery = false;
 
+function setDeliveryBoxActive () {
+  let deliveryBoxRef = document.getElementById('delivery-option-button');
+  let pickupBoxRef = document.getElementById('pickup-option-button');
+  if (delivery == true) {
+    deliveryBoxRef.classList.add("active-category");
+    pickupBoxRef.classList.remove("active-category");
+  }
+  else if (delivery == false) {
+    pickupBoxRef.classList.add("active-category");
+    deliveryBoxRef.classList.remove("active-category");
+  }
+}
+
 function adjustDeliveryCost() {
   if (delivery == true) {
     deliveryCost = 5;
@@ -83,6 +96,7 @@ function addDeliveryCost() {
   adjustDeliveryCost();
   renderDeliveryCost();
   calculateTotalBasket();
+  setDeliveryBoxActive();
 }
 
 function removeDeliveryCost() {
@@ -90,6 +104,7 @@ function removeDeliveryCost() {
   adjustDeliveryCost();
   renderDeliveryCost();
   calculateTotalBasket();
+  setDeliveryBoxActive();
 }
 
 function payItemsNow() {
@@ -115,6 +130,8 @@ function clearTotalAndDeliveryCost() {
   totalBasketRef.innerHTML = "";
 }
 
+
+//USE CASE?
 function toggleItemBasketBoxes() {
   let deliverCostRef = document.getElementById('basket-delivery-cost');
   let totalContainerRef = document.getElementById('basket-total-container');
@@ -125,6 +142,7 @@ function toggleItemBasketBoxes() {
 let dialogRef = document.getElementById('basket-dialog');
 
 function openDialog() {
+  renderOrderSummary();
   dialogRef.showModal();
 }
 

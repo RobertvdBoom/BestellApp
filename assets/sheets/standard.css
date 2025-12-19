@@ -40,6 +40,11 @@ h1 {
     margin-block-start: 40px;
 }
 
+h3 {
+    margin-block: 0;
+    margin-bottom: 5px;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -86,13 +91,6 @@ li a{
 
 .d_none{
     display: none;
-}
-
-.ds-flex-basket {
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-    align-items: center;
 }
 
 aside {

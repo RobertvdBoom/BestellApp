@@ -118,9 +118,13 @@
                 </div>
                 <div class="dialog-text-box">
                     <h2>Danke für deine Bestellung!</h2>
-                    <p>Möchtest du bar (vor Ort) oder mit karte zahlen?</p>
+                    <h3>Hier ist die Zusammenfassung deiner Bestellung:</h3>
+                    <div id="order-summary-container" class="order-summary">
+                        <p></p>
+                    </div>
+                    
                 </div>
-
+                <p>Möchtest du bar (vor Ort) oder mit karte zahlen?</p>
                 <div class="dialog-payment-buttons-container">
                     <button>Bar (vor Ort)</button>
                     <button>Online mit Karte</button>
@@ -132,11 +136,11 @@
         </main>
 
 
-        <aside id="basket" class="mobile-d-none">
+        <aside id="basket" class="mobile-d-none basket">
             <h2>Warenkorb</h2>
             <div class="delivery-or-pickup-container">
-                <button class="btn-delivery" onclick="addDeliveryCost()">Lieferung</button>
-                <button class="btn-pickup" onclick="removeDeliveryCost()">Abholung</button>
+                <button id="delivery-option-button" class="btn-delivery" onclick="addDeliveryCost()">Lieferung</button>
+                <button id="pickup-option-button" class="btn-pickup" onclick="removeDeliveryCost()">Abholung</button>
             </div>
             <section id="basket-container">
 

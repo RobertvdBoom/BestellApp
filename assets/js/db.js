@@ -29,7 +29,7 @@ let dishData =
             "dishInfoForWACG": "Placeholder, in Case needed"
         },
         {
-            "dishName": "Tempura-Gemüse",
+            "dishName": "Tempura - Gemüse",
             "dishID": "s010004",
             "dishPrice": 7.20,
             "dishDescription": "Knusprig frittiertes Gemüse im leichten Tempurateig, serviert mit Dip-Sauce.",

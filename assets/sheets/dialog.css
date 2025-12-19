@@ -47,3 +47,15 @@ dialog[open]::backdrop {
   height: 100%;
   width: 45%;
 }
+
+.note-in-summary {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: red;
+}
+
+.order-summary {
+  height: 400px;
+  max-height: 400px;
+  overflow-y: auto;
+}

@@ -12,7 +12,7 @@ let dishCardTemplate = `
                 </div>
             </div>
         </div>
-        `
+        `;
 let activeCategory = "starters";
 
 function renderDishes(category) {
@@ -102,12 +102,12 @@ function renderBasketItems() {
         elementTotal = elementTotal.toFixed(2);
         basketRef.innerHTML += `
                     <div class="basket-item">
-                        <div class="ds-flex-basket">
+                        <div class="ds-flex-basket-l">
                             <h3>${element.dishName}</h3>
-                            <span id="item-price-0">${elementTotal} €</span>
-                        </div>
-                        <div class="ds-flex-basket">
                             <button onclick="addNote(${index})"> Anmerkung! </button>
+                        </div>
+                        <div class="ds-flex-basket-r">
+                            <span id="item-price-0">${elementTotal} €</span>
                             <div >
                                 <button onclick="itemMinusOne(${index})">-</button>
                                 <span>${element.dishAmount}</span>
@@ -143,4 +143,20 @@ function renderNoteCommitButtons(noteIndex) {
     <button onclick="commitNote(${noteIndex})">Anmerkung speichern!</button>
     <button type="button" onclick="closeNoteDialog()">X</button>
     `
+}
+
+function renderOrderSummary () {
+    let orderSummaryContainerRef = document.getElementById('order-summary-container');
+    orderSummaryContainerRef.innerHTML = "";
+    for (let index = 0; index < itemBasket.length; index++) {
+        const element = itemBasket[index];
+        orderSummaryContainerRef.innerHTML += `
+            <p>${element.dishAmount} x ${element.dishName}</p>
+        `
+        if (element.note != "") {
+            orderSummaryContainerRef.innerHTML += `
+            <span class="note-in-summary">Anmerkung: ${element.note}</span>
+        `
+        }
+    }
 }
