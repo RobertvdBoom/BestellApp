@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestell App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/assets/sheets/standard.css">
+    <script src="/assets/js/db.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sawarabi+Mincho&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/img/icons/lotus-blume-2.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <header class="top-level-bar">
+        <h2>Bestell App</h2>
+        <img src="/assets/img/icons/menu.svg" alt="menu stripes" class="desktop-d-none">
+    </header>
+
+    <div class="outer-main-container">
+        <main>
+            <section class="atf-box">
+                <div class="header-box">
+
+                    <div class="header-icon-box">
+                        <img src="/assets/img/icons/lotus-blume-2.png" alt="">
+                    </div>
+
+
+                </div>
+            </section>
+
+            <nav class="mobile-d-none">
+                <ul>
+                    <li><a onclick="renderDishes('starters')" class="" id="starters">Vorspeisen</a></li>
+                    <li><a onclick="renderDishes('mainDish')" id="mainDish">Hauptgerichte</a></li>
+                    <li><a onclick="renderDishes('dessert')" id="dessert">Nachspeisen</a></li>
+                    <li><a onclick="renderDishes('beverages')" id="beverages" class="active-category">Getränke</a></li>
+                </ul>
+            </nav>
+
+            <section>
+                <h2 id="restaurant-kitchen-header"></h2>
+                <div id="restaurant-kitchen-order-container">
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <section class="main-content-area" id="dish-container"> 
+        <div class="outer-card-container">
+            <div class="dish-card">
+                <img src="/assets/img/starters/edamame.jpg" alt="Beispielbild">
+                <div class="dish-text">
+                    <h2>Edamame mit Meersalz</h2>
+                    <p>Gedämpfte junge Sojabohnen, leicht gesalzen – ein klassischer japanischer Snack.</p>
+                </div>
+                <div class="dish-card-price-and-button">
+                    <div>4.20 €</div>
+                    <button onclick="isInBasket('starters', 0)">+</button>
+                </div>
+            </div>
+        </div>
+     
+        <div class="outer-card-container">
+            <div class="dish-card">
+                <img src="/assets/img/starters/gyoza.jpg" alt="Beispielbild">
+                <div class="dish-text">
+                    <h2>Gyoza</h2>
+                    <p>Hausgemachte japanische Teigtaschen, gefüllt mit Gemüse und Huhn, serviert mit Sojasauce.</p>
+                </div>
+                <div class="dish-card-price-and-button">
+                    <div>6.80 €</div>
+                    <button onclick="isInBasket('starters', 1)">+</button>
+                </div>
+            </div>
+        </div>
+     
+        <div class="outer-card-container">
+            <div class="dish-card">
+                <img src="/assets/img/starters/miso-soup.jpg" alt="Beispielbild">
+                <div class="dish-text">
+                    <h2>Miso Suppe</h2>
+                    <p>Traditionelle Suppe aus Miso-Paste mit Tofu, Algen und Frühlingszwiebeln.</p>
+                </div>
+                <div class="dish-card-price-and-button">
+                    <div>3.90 €</div>
+                    <button onclick="isInBasket('starters', 2)">+</button>
+                </div>
+            </div>
+        </div>
+     
+        <div class="outer-card-container">
+            <div class="dish-card">
+                <img src="/assets/img/starters/vegetable-tempura.jpg" alt="Beispielbild">
+                <div class="dish-text">
+                    <h2>Tempura - Gemüse</h2>
+                    <p>Knusprig frittiertes Gemüse im leichten Tempurateig, serviert mit Dip-Sauce.</p>
+                </div>
+                <div class="dish-card-price-and-button">
+                    <div>7.20 €</div>
+                    <button onclick="isInBasket('starters', 3)">+</button>
+                </div>
+            </div>
+        </div>
+     
+        <div class="outer-card-container">
+            <div class="dish-card">
+                <img src="/assets/img/starters/onigiri.jpg" alt="Beispielbild">
+                <div class="dish-text">
+                    <h2>Onigiri</h2>
+                    <p>Reisbällchen mit Sesam, Algen und variierenden Füllungen wie Lachs oder Umeboshi.</p>
+                </div>
+                <div class="dish-card-price-and-button">
+                    <div>5.10 €</div>
+                    <button onclick="isInBasket('starters', 4)">+</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="outer-card-scroll-container">
+                <div class="card-scroll-container">
+                    <div id="favorite-dishes"> 
+        <div class="outer-card-container dish-card-favorite-box">
+            <div class="dish-card">
+                <img src="/assets/img/starters/miso-soup.jpg" alt="Miso Suppe mit Tofu und Algen in einer Schale">
+                <div class="dish-text">
+                    <h2>Miso Suppe</h2>
+                    <p>Traditionelle Suppe aus Miso-Paste mit Tofu, Algen und Frühlingszwiebeln.</p>
+                </div>
+                <div class="dish-card-price-and-button-fav">
+                    <p>3.90 €</p>
+                    <button onclick="isInBasket('starters', 2)">+</button>
+                </div>
+            </div>
+        </div>
+     
+        <div class="outer-card-container dish-card-favorite-box">
+            <div class="dish-card">
+                <img src="/assets/img/starters/vegetable-tempura.jpg" alt="Tempura-Gemüse mit Dip-Sauce">
+                <div class="dish-text">
+                    <h2>Tempura - Gemüse</h2>
+                    <p>Knusprig frittiertes Gemüse im leichten Tempurateig, serviert mit Dip-Sauce.</p>
+                </div>
+                <div class="dish-card-price-and-button-fav">
+                    <p>7.20 €</p>
+                    <button onclick="isInBasket('starters', 3)">+</button>
+                </div>
+            </div>
+        </div>
+     
+        <div class="outer-card-container dish-card-favorite-box">
+            <div class="dish-card">
+                <img src="/assets/img/mainDish/katsu-curry.jpg" alt="Japanisches Katsu Curry mit Reis">
+                <div class="dish-text">
+                    <h2>Katsu Curry</h2>
+                    <p>Knusprig paniertes Hähnchenschnitzel mit japanischer Currysauce und Reis.</p>
+                </div>
+                <div class="dish-card-price-and-button-fav">
+                    <p>13.90 €</p>
+                    <button onclick="isInBasket('mainDish', 1)">+</button>
+                </div>
+            </div>
+        </div>
+     
+        <div class="outer-card-container dish-card-favorite-box">
+            <div class="dish-card">
+                <img src="/assets/img/mainDish/unagi-don.jpg" alt="Unagi Don – gegrillter Aal auf Reis">
+                <div class="dish-text">
+                    <h2>Unagi Don</h2>
+                    <p>Gegrillter Aal mit süß-salziger Sauce auf einem Bett aus Reis.</p>
+                </div>
+                <div class="dish-card-price-and-button-fav">
+                    <p>16.50 €</p>
+                    <button onclick="isInBasket('mainDish', 3)">+</button>
+                </div>
+            </div>
+        </div>
+     
+        <div class="outer-card-container dish-card-favorite-box">
+            <div class="dish-card">
+                <img src="/assets/img/mainDish/vegetable-sushi.jpg" alt="Vegetarisches Sushi-Set mit Nigiri und Maki">
+                <div class="dish-text">
+                    <h2>Vegetarisches Sushi-Set</h2>
+                    <p>Variation von Sushi mit Avocado, Gurke, Tofu und eingelegtem Gemüse.</p>
+                </div>
+                <div class="dish-card-price-and-button-fav">
+                    <p>14.20 €</p>
+                    <button onclick="isInBasket('mainDish', 4)">+</button>
+                </div>
+            </div>
+        </div>
+     
+        <div class="outer-card-container dish-card-favorite-box">
+            <div class="dish-card">
+                <img src="/assets/img/dessert/yuzu-cheesecake.jpg" alt="Japanischer Yuzu-Cheesecake">
+                <div class="dish-text">
+                    <h2>Yuzu Cheesecake</h2>
+                    <p>Frischer Käsekuchen mit einer zitrusartigen Yuzu-Note.</p>
+                </div>
+                <div class="dish-card-price-and-button-fav">
+                    <p>6.20 €</p>
+                    <button onclick="isInBasket('dessert', 1)">+</button>
+                </div>
+            </div>
+        </div>
+     
+        <div class="outer-card-container dish-card-favorite-box">
+            <div class="dish-card">
+                <img src="/assets/img/dessert/dorayaki.jpg" alt="Dorayaki Pfannkuchen mit Bohnenpaste">
+                <div class="dish-text">
+                    <h2>Dorayaki</h2>
+                    <p>Fluffige japanische Pfannkuchen gefüllt mit süßer roter Bohnenpaste.</p>
+                </div>
+                <div class="dish-card-price-and-button-fav">
+                    <p>4.90 €</p>
+                    <button onclick="isInBasket('dessert', 0)">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+                </div>
+            </section>
+
+
+
+    <footer>
+        <address>
+            <span>Diese Website wurde erstellt von: <br>Robert van den Boom</span> <br>
+            <a href="mailto:vdboom.robert@gmail.com">vdboom.robert@gmail.com</a>
+        </address>
+        <div class="footer-links">
+            <a href="https://www.flaticon.com/de/kostenlose-icons/lotus" title="lotus Icons" target="_blank">Lotus Icons
+                erstellt von
+                pikslgrafik - Flaticon</a>
+            <a href="impressum.html" target="_blank" rel="noopener noreferrer">Impressum</a>
+            <a href="datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutz</a>
+
+</body>
+<script src="/assets/js/template.js"></script>
+<script src="/assets/js/script.js"></script>
+
+</html>

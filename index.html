@@ -126,11 +126,10 @@
                 </div>
                 <p>Möchtest du bar (vor Ort) oder mit karte zahlen?</p>
                 <div class="dialog-payment-buttons-container">
-                    <button>Bar (vor Ort)</button>
-                    <button>Online mit Karte</button>
-                </div>
-                <button type="button" onclick="finishOrder()">Bestellung Abschließen!</button>
-                <button type="button" onclick="closeDialog()">X</button>
+                    <button onclick="finishOrder()">Bar (vor Ort)</button>
+                    <button onclick="finishOrder()">Online mit Karte</button>
+                    <button type="button" onclick="closeDialog()" class="close-basket-dialog-btn">X</button>
+                </div>                
             </dialog>
 
         </main>

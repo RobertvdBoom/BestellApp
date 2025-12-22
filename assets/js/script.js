@@ -107,6 +107,8 @@ function removeDeliveryCost() {
   setDeliveryBoxActive();
 }
 
+
+// Check usability up to next section 
 function payItemsNow() {
   let basketRef = document.getElementById('basket-items-container');
   itemBasket = [];
@@ -161,9 +163,11 @@ function finishOrder() {
   console.log(orderList);
   console.log("item basket:");
   console.log(itemBasket);
+  
   renderBasketItems();
   closeDialog();
-  resetBasketItemsContainer()
+  resetBasketItemsContainer();
+  renderKitchenOrderList();
 }
 
 
@@ -213,3 +217,40 @@ function deleteNote(index) {
   itemBasket[index].note = "";
   closeNoteDialog();
 }
+
+function payOnline() {
+  //open new tab ? 
+  //successful payment ->
+
+  // open page 
+}
+
+let currentTestTime = new Date();
+
+function createOrderID() {
+  let orderID = currentTestTime.getFullYear().toString() + (currentTestTime.getMonth()+1).toString() + currentTestTime.getDate().toString();
+  console.log(orderID);
+}
+
+createOrderID();
+
+// render kitchen order button
+
+function renderKitchenOrderList() {
+    open("cooking-instruction.html", "_blank")
+    let kitchenOrderRef = document.getElementById('restaurant-kitchen-order-container');
+    for (let index = 0; index < orderList.length; index++) {
+        const element = orderList[index];
+        kitchenOrderRef.innerHTML += `
+            <p>${element.dishAmount} x ${element.dishName}</p>
+        `
+        if (element.note != "") {
+            kitchenOrderRef.innerHTML += `
+            <span class="note-in-summary">Anmerkung: ${element.note}</span>
+            <button onclick="deleteNote(${index})>X</button>
+        `
+        }
+    }
+}
+// open dialog at kitchen 
+// 

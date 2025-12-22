@@ -45,7 +45,7 @@ dialog[open]::backdrop {
 
 .dialog-payment-buttons-container button{
   height: 100%;
-  width: 45%;
+  width: 40%;
 }
 
 .note-in-summary {
@@ -58,4 +58,23 @@ dialog[open]::backdrop {
   height: 400px;
   max-height: 400px;
   overflow-y: auto;
+  font-size: 1.2rem;
+}
+
+dialog {
+  background-color: rgb(102, 102, 102);
+  border: 3px solid orangered;
+  color: white;
+}
+
+dialog h2{
+  font-size: 28px;
+}
+
+dialog button{
+  font-size: 18px;
+}
+
+.close-basket-dialog-btn {
+  width: 10% !important;
 }
