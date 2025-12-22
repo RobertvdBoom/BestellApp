@@ -121,3 +121,16 @@ aside h2{
     width: 40%;
     gap: 5px;
 }
+
+.item-basket-buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+}
+
+.item-basket-buttons-container span{
+    width: 20px;
+    text-align: center;
+}
