@@ -189,3 +189,36 @@ function renderOrderSummary() {
         }
     }
 }
+
+// render kitchen order -> Later on feature for the backend side / restaurant side to receive the order
+
+function renderKitchenOrderList() {
+  let kitchenOrderRef = document.getElementById('restaurant-kitchen-order-container');
+  kitchenOrderRef.innerHTML = "";
+  for (let index = 0; index < orderList.length; index++) {
+    const element = orderList[index];
+    kitchenOrderRef.innerHTML += `
+        <div>
+            <h3>Bestellnummer: ${element.oderID}</h3>
+            <p>Time of order: ${element.orderTime}</p>
+        </div>
+        `
+    kitchenOrderRef.innerHTML += createOrderItems(index);
+  }
+}
+
+function createOrderItems(indexOfOrderList) {
+  let orderListItemHTML = "";
+  for (let index = 0; index < orderList[indexOfOrderList].orderItems.length; index++) {
+    let element = orderList[indexOfOrderList].orderItems[index];
+    orderListItemHTML += `
+      <p>${element.dishAmount} x ${element.dishName}</p>
+    `
+    if (element.note != "") {
+      orderListItemHTML += `
+        <span class="note-in-summary">Anmerkung: ${element.note}</span>
+    `
+    }
+  }
+  return orderListItemHTML;
+}

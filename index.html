@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/assets/sheets/standard.css">
     <script src="/assets/js/db.js"></script>
-
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,34 +14,24 @@
         rel="stylesheet">
     <link rel="shortcut icon" href="/assets/img/icons/lotus-blume-2.png" type="image/x-icon">
 </head>
-
 <body>
-
     <header class="top-level-bar">
         <h2>Bestell App</h2>
         <img src="/assets/img/icons/menu.svg" alt="menu stripes" class="desktop-d-none">
     </header>
-
     <div class="outer-main-container">
         <main>
             <section class="atf-box">
                 <div class="header-box">
-
                     <div class="header-icon-box">
                         <img src="/assets/img/icons/lotus-blume-2.png" alt="">
                     </div>
-
-
                 </div>
             </section>
             <!-- <div class="resp-menu-btn-container">
                 <button class="menu_btn desktop-d-none" onclick="toggleRespMenu()"><img src="/assets/img/icons/menu.svg"
                         alt="menu stripes"></button>
             </div> -->
-
-
-
-
             <section class="restaurant-header">
                 <!-- 白蓮 - rework this section for better visibility, check again at 320px width-->
                 <h1>白蓮 - White Lotus</h1>
@@ -61,20 +48,11 @@
                     <span></span>
                 </div>
             </section>
-
-
-
             <section class="outer-card-scroll-container">
                 <div class="card-scroll-container">
                     <div id="favorite-dishes"></div>
                 </div>
             </section>
-
-
-
-
-
-
             <nav class="mobile-d-none">
                 <ul>
                     <li><a onclick="renderDishes('starters')" class="active-category" id="starters">Vorspeisen</a></li>
@@ -83,22 +61,6 @@
                     <li><a onclick="renderDishes('beverages')" id="beverages">Getränke</a></li>
                 </ul>
             </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <section class="main-content-area" id="dish-container">
             </section>
             <!-- <nav id="resp_menu" class="resp_menu_box resp_menu_closed desktop-d-none">
@@ -110,7 +72,6 @@
                 </div>
                 <button onclick="toggleRespMenu()"><strong>X</strong></button>
             </nav> -->
-
             <dialog id="basket-dialog">
                 <div class="dialog-header">
                     <img src="/assets/img/icons/lotus-blume-2.png" alt="">
@@ -122,7 +83,6 @@
                     <div id="order-summary-container" class="order-summary">
                         <p></p>
                     </div>
-                    
                 </div>
                 <p>Möchtest du bar (vor Ort) oder mit karte zahlen?</p>
                 <div class="dialog-payment-buttons-container">
@@ -131,10 +91,7 @@
                     <button type="button" onclick="closeDialog()" class="close-basket-dialog-btn">X</button>
                 </div>                
             </dialog>
-
         </main>
-
-
         <aside id="basket" class="mobile-d-none basket">
             <h2>Warenkorb</h2>
             <div class="delivery-or-pickup-container">
@@ -142,32 +99,22 @@
                 <button id="pickup-option-button" class="btn-pickup" onclick="removeDeliveryCost()">Abholung</button>
             </div>
             <section id="basket-container">
-
                 <div id="basket-items-container">
                     <p>Wir freuen uns auf deine Bestellung!</p>
-
                 </div>
-
             </section>
-
             <div class="cost-in-basket-container">
                 <p>Lieferkosten:</p>
                 <p id="basket-delivery-cost">0.00 €</p>
             </div>
-
             <div class="cost-in-basket-container">
                 <p>Summe:</p>
                 <p id="basket-total-container">0.00 €</p>
             </div>
             <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
-
             <button onclick="openOrderListDialog()">Order List Dialog</button>
         </aside>
-
     </div>
-
-
-
     <footer>
         <address>
             <span>Diese Website wurde erstellt von: <br>Robert van den Boom</span> <br>
@@ -179,16 +126,14 @@
                 pikslgrafik - Flaticon</a>
             <a href="impressum.html" target="_blank" rel="noopener noreferrer">Impressum</a>
             <a href="datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutz</a>
-
         </div>
-
     </footer>
     <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
         <button>
             <h2>Warenkorb Öffnen!</h2>
         </button>
     </div>
-
+    
     <dialog id="basket-note-dialog">
         <div class="dialog-header">
             <img src="/assets/img/icons/lotus-blume-2.png" alt="">
@@ -206,6 +151,7 @@
 
         </div>
     </dialog>
+
     <dialog id="order-dialog-for-restaurant">
         <h2 id="restaurant-kitchen-header"></h2>
         <section id="restaurant-kitchen-order-container">
@@ -216,5 +162,4 @@
 </body>
 <script src="/assets/js/template.js"></script>
 <script src="/assets/js/script.js"></script>
-
 </html>

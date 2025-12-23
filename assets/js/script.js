@@ -31,14 +31,11 @@ function isInBasket(category, index) {
       continue;
     }
   }
-
   if (itemIsInBasket == false) {
     pushItemToBasket(category, index);
   } else {
     itemBasket[itemIndex].dishAmount++;
   }
-
-
   if (itemBasket.length >= 1) {
     for (let basketIndex = 0; basketIndex < itemBasket.length; basketIndex++) {
       let itemToBeChecked = itemBasket[basketIndex].dishName;
@@ -107,7 +104,6 @@ function removeDeliveryCost() {
   setDeliveryBoxActive();
 }
 
-
 // Check usability up to next section 
 function payItemsNow() {
   let basketRef = document.getElementById('basket-items-container');
@@ -132,15 +128,6 @@ function clearTotalAndDeliveryCost() {
   totalBasketRef.innerHTML = "";
 }
 
-
-//USE CASE -> cant find anywhere else, delete?
-// function toggleItemBasketBoxes() {
-//   let deliverCostRef = document.getElementById('basket-delivery-cost');
-//   let totalContainerRef = document.getElementById('basket-total-container');
-//   deliverCostRef.classList.toggle('item-basket-display-none');
-//   totalContainerRef.classList.toggle('item-basket-display-none');
-// }
-
 let dialogRef = document.getElementById('basket-dialog');
 
 function openDialog() {
@@ -155,59 +142,35 @@ function closeDialog() {
 let orderList = [];
 
 function finishOrder() {
-  // orderList.push(itemBasket);
   convertItemBasketToOrderList();
-  itemBasket = [];
-  let basketContainerRef = document.getElementById('basket-items-container');
-  basketContainerRef.innerHTML = "";
-  console.log("order list:");
-  console.log(orderList);
-  console.log("item basket:");
-  console.log(itemBasket);
-
   renderBasketItems();
   closeDialog();
   resetBasketItemsContainer();
 }
 
-
 function convertItemBasketToOrderList() {
-
   let timeOfOrder = new Date();
   let element = { orderTime: timeOfOrder, orderItems: itemBasket, oderID: (Number(createOrderID()) + orderNumber) };
   orderList.push(element);
   orderNumber++;
+  itemBasket = [];
 }
-
 
 function resetBasketItemsContainer() {
   let basketRef = document.getElementById('basket-items-container');
   basketRef.innerHTML = "Vielen Dank für deine Bestellung! Dein Essen sollte in 60 Minuten bei dir sein!";
 }
-// save order List to Local Storage
-// 
-
-// Global variable to store a reference to the opened window
-let openedWindow;
-
-function openWindow() {
-  openedWindow = window.open("successfulOrder.html");
-}
-
-function closeOpenedWindow() {
-  openedWindow.close();
-}
 
 // click -> render note buttons new -> insert current note -> open dialog
-let dialogRefNote = document.getElementById('basket-note-dialog');
+let dialogNoteRef = document.getElementById('basket-note-dialog');
 let noteContainerRef = document.getElementById('meinMehrzeiler');
 
 function openNoteDialog() {
-  dialogRefNote.showModal();
+  dialogNoteRef.showModal();
 }
 
 function closeNoteDialog() {
-  dialogRefNote.close();
+  dialogNoteRef.close();
 }
 
 function addNote(noteIndex) {
@@ -234,39 +197,6 @@ function createOrderID() {
   return orderID = currentTestTime.getFullYear().toString() + (currentTestTime.getMonth() + 1).toString() + currentTestTime.getDate().toString() + currentTestTime.getHours().toString();
 }
 
-// render kitchen order -> Later on feature for the backend side / restaurant side to receive the order
-
-function renderKitchenOrderList() {
-  let kitchenOrderRef = document.getElementById('restaurant-kitchen-order-container');
-  kitchenOrderRef.innerHTML = "";
-  for (let index = 0; index < orderList.length; index++) {
-    const element = orderList[index];
-    kitchenOrderRef.innerHTML += `
-        <div>
-            <h3>Bestellnummer: ${element.oderID}</h3>
-            <p>Time of order: ${element.orderTime}</p>
-        </div>
-        `
-    kitchenOrderRef.innerHTML += createOrderItems(index);
-  }
-}
-
-function createOrderItems(indexOfOrderList) {
-  let orderListItemHTML = "";
-  for (let index = 0; index < orderList[indexOfOrderList].orderItems.length; index++) {
-    let element = orderList[indexOfOrderList].orderItems[index];
-    orderListItemHTML += `
-      <p>${element.dishAmount} x ${element.dishName}</p>
-    `
-    if (element.note != "") {
-      orderListItemHTML += `
-        <span class="note-in-summary">Anmerkung: ${element.note}</span>
-    `
-    }
-  }
-  return orderListItemHTML;
-}
-
 let restaurantOrderContainer = document.getElementById('order-dialog-for-restaurant');
 
 function openOrderListDialog() {
@@ -277,3 +207,5 @@ function openOrderListDialog() {
 function closeOrderListDialog() {
   restaurantOrderContainer.close();
 }
+
+// save order List to Local Storage
