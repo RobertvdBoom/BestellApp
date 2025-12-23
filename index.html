@@ -161,7 +161,7 @@
             </div>
             <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
 
-
+            <button onclick="openOrderListDialog()">Order List Dialog</button>
         </aside>
 
     </div>
@@ -206,7 +206,12 @@
 
         </div>
     </dialog>
-
+    <dialog id="order-dialog-for-restaurant">
+        <h2 id="restaurant-kitchen-header"></h2>
+        <section id="restaurant-kitchen-order-container">
+        </section>
+        <button onclick="closeOrderListDialog()">close</button>
+    </dialog>
 
 </body>
 <script src="/assets/js/template.js"></script>

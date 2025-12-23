@@ -69,7 +69,7 @@ function pushItemToBasket(category, index) {
 
 let delivery = false;
 
-function setDeliveryBoxActive () {
+function setDeliveryBoxActive() {
   let deliveryBoxRef = document.getElementById('delivery-option-button');
   let pickupBoxRef = document.getElementById('pickup-option-button');
   if (delivery == true) {
@@ -133,13 +133,13 @@ function clearTotalAndDeliveryCost() {
 }
 
 
-//USE CASE?
-function toggleItemBasketBoxes() {
-  let deliverCostRef = document.getElementById('basket-delivery-cost');
-  let totalContainerRef = document.getElementById('basket-total-container');
-  deliverCostRef.classList.toggle('item-basket-display-none');
-  totalContainerRef.classList.toggle('item-basket-display-none');
-}
+//USE CASE -> cant find anywhere else, delete?
+// function toggleItemBasketBoxes() {
+//   let deliverCostRef = document.getElementById('basket-delivery-cost');
+//   let totalContainerRef = document.getElementById('basket-total-container');
+//   deliverCostRef.classList.toggle('item-basket-display-none');
+//   totalContainerRef.classList.toggle('item-basket-display-none');
+// }
 
 let dialogRef = document.getElementById('basket-dialog');
 
@@ -155,7 +155,8 @@ function closeDialog() {
 let orderList = [];
 
 function finishOrder() {
-  orderList.push(itemBasket);
+  // orderList.push(itemBasket);
+  convertItemBasketToOrderList();
   itemBasket = [];
   let basketContainerRef = document.getElementById('basket-items-container');
   basketContainerRef.innerHTML = "";
@@ -163,11 +164,19 @@ function finishOrder() {
   console.log(orderList);
   console.log("item basket:");
   console.log(itemBasket);
-  
+
   renderBasketItems();
   closeDialog();
   resetBasketItemsContainer();
-  renderKitchenOrderList();
+}
+
+
+function convertItemBasketToOrderList() {
+
+  let timeOfOrder = new Date();
+  let element = { orderTime: timeOfOrder, orderItems: itemBasket, oderID: (Number(createOrderID()) + orderNumber) };
+  orderList.push(element);
+  orderNumber++;
 }
 
 
@@ -218,39 +227,53 @@ function deleteNote(index) {
   closeNoteDialog();
 }
 
-function payOnline() {
-  //open new tab ? 
-  //successful payment ->
-
-  // open page 
-}
-
 let currentTestTime = new Date();
+let orderNumber = 0;
 
 function createOrderID() {
-  let orderID = currentTestTime.getFullYear().toString() + (currentTestTime.getMonth()+1).toString() + currentTestTime.getDate().toString();
-  console.log(orderID);
+  return orderID = currentTestTime.getFullYear().toString() + (currentTestTime.getMonth() + 1).toString() + currentTestTime.getDate().toString() + currentTestTime.getHours().toString();
 }
 
-createOrderID();
-
-// render kitchen order button
+// render kitchen order -> Later on feature for the backend side / restaurant side to receive the order
 
 function renderKitchenOrderList() {
-    open("cooking-instruction.html", "_blank")
-    let kitchenOrderRef = document.getElementById('restaurant-kitchen-order-container');
-    for (let index = 0; index < orderList.length; index++) {
-        const element = orderList[index];
-        kitchenOrderRef.innerHTML += `
-            <p>${element.dishAmount} x ${element.dishName}</p>
+  let kitchenOrderRef = document.getElementById('restaurant-kitchen-order-container');
+  kitchenOrderRef.innerHTML = "";
+  for (let index = 0; index < orderList.length; index++) {
+    const element = orderList[index];
+    kitchenOrderRef.innerHTML += `
+        <div>
+            <h3>Bestellnummer: ${element.oderID}</h3>
+            <p>Time of order: ${element.orderTime}</p>
+        </div>
         `
-        if (element.note != "") {
-            kitchenOrderRef.innerHTML += `
-            <span class="note-in-summary">Anmerkung: ${element.note}</span>
-            <button onclick="deleteNote(${index})>X</button>
-        `
-        }
-    }
+    kitchenOrderRef.innerHTML += createOrderItems(index);
+  }
 }
-// open dialog at kitchen 
-// 
+
+function createOrderItems(indexOfOrderList) {
+  let orderListItemHTML = "";
+  for (let index = 0; index < orderList[indexOfOrderList].orderItems.length; index++) {
+    let element = orderList[indexOfOrderList].orderItems[index];
+    orderListItemHTML += `
+      <p>${element.dishAmount} x ${element.dishName}</p>
+    `
+    if (element.note != "") {
+      orderListItemHTML += `
+        <span class="note-in-summary">Anmerkung: ${element.note}</span>
+    `
+    }
+  }
+  return orderListItemHTML;
+}
+
+let restaurantOrderContainer = document.getElementById('order-dialog-for-restaurant');
+
+function openOrderListDialog() {
+  restaurantOrderContainer.showModal();
+  renderKitchenOrderList();
+}
+
+function closeOrderListDialog() {
+  restaurantOrderContainer.close();
+}
