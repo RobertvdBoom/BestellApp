@@ -134,3 +134,9 @@ aside h2{
     width: 20px;
     text-align: center;
 }
+
+.order-list {
+    width: 30%;
+    height: auto;
+    background: grey;
+}

@@ -72,7 +72,7 @@
                 </div>
                 <button onclick="toggleRespMenu()"><strong>X</strong></button>
             </nav> -->
-            <dialog id="basket-dialog">
+            <dialog id="basket-dialog" class="mobile-basket-dialog">
                 <div class="dialog-header">
                     <img src="/assets/img/icons/lotus-blume-2.png" alt="">
                     <h2>White Lotus</h2>
@@ -96,7 +96,7 @@
             <h2>Warenkorb</h2>
             <div class="delivery-or-pickup-container">
                 <button id="delivery-option-button" class="btn-delivery" onclick="addDeliveryCost()">Lieferung</button>
-                <button id="pickup-option-button" class="btn-pickup" onclick="removeDeliveryCost()">Abholung</button>
+                <button id="pickup-option-button" class="btn-pickup active-category" onclick="removeDeliveryCost()">Abholung</button>
             </div>
             <section id="basket-container">
                 <div id="basket-items-container">
@@ -112,7 +112,7 @@
                 <p id="basket-total-container">0.00 €</p>
             </div>
             <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
-            <button onclick="openOrderListDialog()">Order List Dialog</button>
+            <button class="order-list" onclick="openOrderListDialog()">Order List Dialog</button>
         </aside>
     </div>
     <footer>
@@ -129,7 +129,7 @@
         </div>
     </footer>
     <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
-        <button>
+        <button onclick="openDialog()">
             <h2>Warenkorb Öffnen!</h2>
         </button>
     </div>
@@ -153,7 +153,7 @@
     </dialog>
 
     <dialog id="order-dialog-for-restaurant">
-        <h2 id="restaurant-kitchen-header"></h2>
+        <h2 id="restaurant-kitchen-header">Test</h2>
         <section id="restaurant-kitchen-order-container">
         </section>
         <button onclick="closeOrderListDialog()">close</button>

@@ -1,20 +1,22 @@
 @media (max-width: 800px) {
-    
+
     .dish-card {
         flex-direction: column;
         height: auto;
     }
-    .dish-card img{
+
+    .dish-card img {
         width: 100%;
-        
-        aspect-ratio: 2/1  ;
+
+        aspect-ratio: 2/1;
     }
+
     .dish-card-price-and-button {
         width: 100%;
         align-items: center;
     }
 
-    .dish-card-price-and-button button{
+    .dish-card-price-and-button button {
         width: 50%;
         padding: 1rem;
         display: flex;
@@ -23,28 +25,28 @@
         font-size: 20px;
         margin-top: 20px;
     }
-    
+
     .dish-card-price-and-button-fav {
         width: 100%;
         align-items: center;
     }
 
-    .dish-card-price-and-button-fav button{
+    .dish-card-price-and-button-fav button {
         width: 50%;
     }
-    
+
     .dish-text {
         width: 100%;
         text-align: center;
     }
 
-    .outer-card-container{
+    .outer-card-container {
         display: flex;
         flex: 1;
         min-width: 65vw;
     }
 
-    .mobile-d-none{
+    .mobile-d-none {
         display: none;
     }
 
@@ -56,9 +58,9 @@
 }
 
 @media (min-width: 801px) {
-    
 
-    .dish-card img{
+
+    .dish-card img {
         max-width: 40%;
     }
 }
@@ -69,7 +71,7 @@
         display: none;
     }
 
-    
+
 }
 
 @media (max-width: 1100px) {
@@ -81,5 +83,20 @@
     .top-level-bar {
         position: sticky;
         top: 0;
+    }
+
+    .mobile-basket-dialog:open {
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    dialog:open {
+        max-width: 100vw;
+        max-height: 100vh;
     }
 }
