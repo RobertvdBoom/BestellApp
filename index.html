@@ -92,6 +92,9 @@
                 </div>                
             </dialog>
         </main>
+
+
+
         <aside id="basket" class="mobile-d-none basket">
             <h2>Warenkorb</h2>
             <div class="delivery-or-pickup-container">
@@ -115,6 +118,32 @@
             <button class="order-list" onclick="openOrderListDialog()">Order List Dialog</button>
         </aside>
     </div>
+
+    <dialog id="mobile-basket-dialog">
+        <h2>Warenkorb</h2>
+            <div class="delivery-or-pickup-container">
+                <button name="" id="delivery-option-button" class="btn-delivery" onclick="addDeliveryCost()">Lieferung</button>
+                <button id="pickup-option-button" class="btn-pickup active-category" onclick="removeDeliveryCost()">Abholung</button>
+            </div>
+            <section id="basket-container">
+                <div id="mobile-basket-items-container">
+                    <p>Wir freuen uns auf deine Bestellung!</p>
+                </div>
+            </section>
+            <div class="cost-in-basket-container">
+                <p>Lieferkosten:</p>
+                <p id="basket-delivery-cost">0.00 €</p>
+            </div>
+            <div class="cost-in-basket-container">
+                <p>Summe:</p>
+                <p id="basket-total-container">0.00 €</p>
+            </div>
+            <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
+            <button class="order-list" onclick="openOrderListDialog()">Order List Dialog</button>
+    </dialog>
+
+
+
     <footer>
         <address>
             <span>Diese Website wurde erstellt von: <br>Robert van den Boom</span> <br>
@@ -129,7 +158,7 @@
         </div>
     </footer>
     <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
-        <button onclick="openDialog()">
+        <button onclick="openDialogMobile()">
             <h2>Warenkorb Öffnen!</h2>
         </button>
     </div>

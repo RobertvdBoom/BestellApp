@@ -3,6 +3,7 @@
     .dish-card {
         flex-direction: column;
         height: auto;
+        gap: 20px;
     }
 
     .dish-card img {

@@ -129,6 +129,17 @@ function clearTotalAndDeliveryCost() {
 }
 
 let dialogRef = document.getElementById('basket-dialog');
+let bodyRef = document.getElementsByTagName('body');
+let mobileDialogRef = document.getElementById('mobile-basket-dialog');
+
+function openDialogMobile() {
+  // bodyRef.classList.toggle('body-scroll-none');
+  openDialog();
+}
+
+function closeDialogMobile () {
+  closeDialog();
+}
 
 function openDialog() {
   renderOrderSummary();
