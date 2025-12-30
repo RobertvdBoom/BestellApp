@@ -66,6 +66,8 @@ function pushItemToBasket(category, index) {
 
 let delivery = false;
 
+
+//UPDATE FROM HERE
 function setDeliveryBoxActive() {
   let deliveryBoxRef = document.getElementById('delivery-option-button');
   let pickupBoxRef = document.getElementById('pickup-option-button');
@@ -78,6 +80,8 @@ function setDeliveryBoxActive() {
     deliveryBoxRef.classList.remove("active-category");
   }
 }
+//UPDATE UNTIL HERE
+
 
 function adjustDeliveryCost() {
   if (delivery == true) {
@@ -128,6 +132,9 @@ function clearTotalAndDeliveryCost() {
   totalBasketRef.innerHTML = "";
 }
 
+// up to here
+
+
 let dialogRef = document.getElementById('basket-dialog');
 let bodyRef = document.getElementsByTagName('body');
 let mobileDialogRef = document.getElementById('mobile-basket-dialog');
@@ -167,14 +174,18 @@ function convertItemBasketToOrderList() {
   itemBasket = [];
 }
 
+
+// rework for reference on this and index html
 function resetBasketItemsContainer() {
   let basketRef = document.getElementById('basket-items-container');
   basketRef.innerHTML = "Vielen Dank für deine Bestellung! Dein Essen sollte in 60 Minuten bei dir sein!";
 }
 
+// FULL NOTE SECTION
+
 // click -> render note buttons new -> insert current note -> open dialog
 let dialogNoteRef = document.getElementById('basket-note-dialog');
-let noteContainerRef = document.getElementById('meinMehrzeiler');
+let noteContainerRef = document.getElementById('note-text-area');
 
 function openNoteDialog() {
   dialogNoteRef.showModal();
@@ -200,6 +211,8 @@ function deleteNote(index) {
   itemBasket[index].note = "";
   closeNoteDialog();
 }
+
+// restaurant side dialog + budget backend '-'
 
 let currentTestTime = new Date();
 let orderNumber = 0;

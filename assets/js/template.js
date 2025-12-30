@@ -38,6 +38,8 @@ function renderDishes(category) {
     }
 }
 
+// Update for mobile too? rewrite to add based on bool? 
+
 function activateCategoryActiveBorder(category) {
     let oldButtonContentRef = document.getElementById(activeCategory);
     let newButtonContentRef = document.getElementById(category);
@@ -84,6 +86,8 @@ renderFavDishes();
 
 let deliveryCost = 0;
 
+// update to new reference, render at both mobile and desktop
+
 function renderDeliveryCost() {
     let deliveryCostRef = document.getElementById('basket-delivery-cost');
     deliveryCostRef.innerHTML = "";
@@ -92,6 +96,8 @@ function renderDeliveryCost() {
 }
 
 // renderDeliveryCost();
+
+// update to render on both references -> update index.html containers
 
 function renderBasketItems() {
     let basketRef = document.getElementById('basket-items-container');
@@ -154,6 +160,8 @@ function renderBasketItems() {
     calculateTotalBasket();
 }
 
+// no need to touch probably 
+
 function itemInBasketToTrash(index) {
     itemBasket.splice(index, 1);
     renderBasketItems();
@@ -163,6 +171,7 @@ let itemBasket = [];
 
 // renderBasketItems();
 
+// update reference + index-html reference style
 function calculateTotalBasket() {
     let basketTotalRef = document.getElementById('basket-total-container');
     basketTotalRef.innerHTML = "";
@@ -174,6 +183,8 @@ function calculateTotalBasket() {
     total += deliveryCost;
     basketTotalRef.innerHTML = total.toFixed(2) + " €";
 }
+
+// update reference 
 
 function renderNoteCommitButtons(noteIndex) {
     let noteButtonContainerRef = document.getElementById('note-commit-container');
@@ -197,6 +208,10 @@ function renderNoteCommitButtons(noteIndex) {
     `
     }
 }
+
+
+
+// From here on, its all fine '-'
 
 function renderOrderSummary() {
     let orderSummaryContainerRef = document.getElementById('order-summary-container');
@@ -247,4 +262,6 @@ function createOrderItems(indexOfOrderList) {
   }
   return orderListItemHTML;
 }
+
+const cartContainers = document.querySelectorAll('.cart-items');
 
