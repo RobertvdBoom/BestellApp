@@ -98,11 +98,11 @@
         <aside id="basket" class="mobile-d-none basket">
             <h2>Warenkorb</h2>
             <div class="delivery-or-pickup-container">
-                <button id="delivery-option-button" class="btn-delivery" onclick="addDeliveryCost()">Lieferung</button>
-                <button id="pickup-option-button" class="btn-pickup active-category" onclick="removeDeliveryCost()">Abholung</button>
+                <button name="" id="delivery-option-button" class="btn-delivery delivery-option-button" onclick="addDeliveryCost()">Lieferung</button>
+                <button id="pickup-option-button" class="btn-pickup active-category pickup-option-button" onclick="removeDeliveryCost()">Abholung</button>
             </div>
             <section id="basket-container">
-                <div id="basket-items-container">
+                <div id="basket-items-container" class="basket-items-anchor">
                     <p>Wir freuen uns auf deine Bestellung!</p>
                 </div>
             </section>
@@ -121,12 +121,13 @@
 
     <dialog id="mobile-basket-dialog">
         <h2>Warenkorb</h2>
+        <button onclick="closeDialogMobile()">x</button>
             <div class="delivery-or-pickup-container">
-                <button name="" id="delivery-option-button" class="btn-delivery" onclick="addDeliveryCost()">Lieferung</button>
-                <button id="pickup-option-button" class="btn-pickup active-category" onclick="removeDeliveryCost()">Abholung</button>
+                <button name="" id="delivery-option-button" class="btn-delivery delivery-option-button" onclick="addDeliveryCost()">Lieferung</button>
+                <button id="pickup-option-button" class="btn-pickup active-category pickup-option-button" onclick="removeDeliveryCost()">Abholung</button>
             </div>
             <section id="basket-container">
-                <div id="mobile-basket-items-container">
+                <div id="mobile-basket-items-container" class="basket-items-anchor">
                     <p>Wir freuen uns auf deine Bestellung!</p>
                 </div>
             </section>

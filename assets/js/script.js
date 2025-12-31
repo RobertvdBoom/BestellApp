@@ -65,19 +65,25 @@ function pushItemToBasket(category, index) {
 }
 
 let delivery = false;
+// JUST FOR REFERENCE: 
+  // document.querySelectorAll(".delivery-option-button").forEach(box => {
+  // box.classList.add("active");});
 
+  // document.querySelectorAll(".pickup-option-button").forEach(box => {
+  // box.classList.add("active");});
 
 //UPDATE FROM HERE
 function setDeliveryBoxActive() {
-  let deliveryBoxRef = document.getElementById('delivery-option-button');
-  let pickupBoxRef = document.getElementById('pickup-option-button');
+  let deliveryBoxRef =  document.querySelectorAll('.delivery-option-button');
+  let pickupBoxRef =  document.querySelectorAll('.pickup-option-button');
+
   if (delivery == true) {
-    deliveryBoxRef.classList.add("active-category");
-    pickupBoxRef.classList.remove("active-category");
+    deliveryBoxRef.forEach(box => { box.classList.add("active-category");});
+    pickupBoxRef.forEach(box => { box.classList.remove("active-category");});
   }
   else if (delivery == false) {
-    pickupBoxRef.classList.add("active-category");
-    deliveryBoxRef.classList.remove("active-category");
+    pickupBoxRef.forEach(box => { box.classList.add("active-category");});
+    deliveryBoxRef.forEach(box => { box.classList.remove("active-category");});
   }
 }
 //UPDATE UNTIL HERE
@@ -136,16 +142,14 @@ function clearTotalAndDeliveryCost() {
 
 
 let dialogRef = document.getElementById('basket-dialog');
-let bodyRef = document.getElementsByTagName('body');
 let mobileDialogRef = document.getElementById('mobile-basket-dialog');
 
 function openDialogMobile() {
-  // bodyRef.classList.toggle('body-scroll-none');
-  openDialog();
+  mobileDialogRef.showModal();
 }
 
 function closeDialogMobile () {
-  closeDialog();
+  mobileDialogRef.close();
 }
 
 function openDialog() {
@@ -174,11 +178,12 @@ function convertItemBasketToOrderList() {
   itemBasket = [];
 }
 
-
+// Not even using this one here currently tho
 // rework for reference on this and index html
 function resetBasketItemsContainer() {
-  let basketRef = document.getElementById('basket-items-container');
-  basketRef.innerHTML = "Vielen Dank für deine Bestellung! Dein Essen sollte in 60 Minuten bei dir sein!";
+  let basketRef = document.querySelectorAll('.basket-items-anchor');
+  basketRef.forEach(box => {box.innerHTML ="Vielen Dank für deine Bestellung! Dein Essen sollte in 60 Minuten bei dir sein!";});
+  // basketRef.innerHTML = "Vielen Dank für deine Bestellung! Dein Essen sollte in 60 Minuten bei dir sein!";
 }
 
 // FULL NOTE SECTION
@@ -232,4 +237,6 @@ function closeOrderListDialog() {
   restaurantOrderContainer.close();
 }
 
+
 // save order List to Local Storage
+

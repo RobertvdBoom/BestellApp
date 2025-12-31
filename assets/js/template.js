@@ -99,20 +99,28 @@ function renderDeliveryCost() {
 
 // update to render on both references -> update index.html containers
 
+// create inner html and insert 
+
+// rework this for whole document
+
+
 function renderBasketItems() {
-    let basketRef = document.getElementById('basket-items-container');
-    let mobileBasketRef = document.getElementById('mobile-basket-items-container');
+    let basketRef = document.querySelectorAll('.basket-items-anchor');
     basketRef.innerHTML = "";
-    mobileBasketRef.innerHTML = "";
+    basketRef.forEach(box => {box.innerHTML = createBasketItems();});
+    calculateTotalBasket();
+}
+
+function createBasketItems() {
+    let content = "";
     if (itemBasket.length == 0) {
-        basketRef.innerHTML = "<p>Wir freuen uns auf deine Bestellung!</p>";
-        mobileBasketRef.innerHTML = "<p>Wir freuen uns auf deine Bestellung!</p>";
+        content = "<p>Wir freuen uns auf deine Bestellung!</p>";
     }
     for (let index = 0; index < itemBasket.length; index++) {
         let element = itemBasket[index];
         elementTotal = element.dishPrice * element.dishAmount;
         elementTotal = elementTotal.toFixed(2);
-        basketRef.innerHTML += `
+        content += `
                     <div class="basket-item">
                         <div class="ds-flex-basket-l">
                             <h3>${element.dishName}</h3>
@@ -134,30 +142,8 @@ function renderBasketItems() {
                         </div>
                     </div>
     `
-        mobileBasketRef.innerHTML += `
-                    <div class="basket-item">
-                        <div class="ds-flex-basket-l">
-                            <h3>${element.dishName}</h3>
-                            <button onclick="addNote(${index})"> Anmerkung! </button>
-                        </div>
-                        <div class="ds-flex-basket-r">
-                            <span id="item-price-0">${elementTotal} €</span>
-                            <div class="item-basket-buttons-container">
-                                <button class="basket-trash-btn" onclick="itemInBasketToTrash(${index})">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-                                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-                                </svg>
-                                </button>
-                                <button onclick="itemMinusOne(${index})">-</button>
-                                <span>${element.dishAmount}</span>
-                                <button onclick="itemPlusOne(${index})">+</button>
-                            </div>
-                        </div>
-                    </div>
-        `
     }
-    calculateTotalBasket();
+    return content;
 }
 
 // no need to touch probably 
