@@ -40,6 +40,8 @@ function renderDishes(category) {
 
 // Update for mobile too? rewrite to add based on bool? 
 
+// update later on for responsive menu? 
+
 function activateCategoryActiveBorder(category) {
     let oldButtonContentRef = document.getElementById(activeCategory);
     let newButtonContentRef = document.getElementById(category);
@@ -47,6 +49,8 @@ function activateCategoryActiveBorder(category) {
     newButtonContentRef.classList.add("active-category");
     activeCategory = category;
 }
+
+// until here update ->query selector all 
 
 renderDishes("starters");
 
@@ -82,17 +86,15 @@ function renderFavDishes() {
 
 renderFavDishes();
 
-// Basket 
-
 let deliveryCost = 0;
 
 // update to new reference, render at both mobile and desktop
 
 function renderDeliveryCost() {
-    let deliveryCostRef = document.getElementById('basket-delivery-cost');
-    deliveryCostRef.innerHTML = "";
-    deliveryCostRef.innerHTML += deliveryCost.toFixed(2) + " €";
-
+    let deliveryCostRef = document.querySelectorAll('.basket-delivery-cost');
+    deliveryCostRef.forEach(box => {
+        box.innerHTML = deliveryCost.toFixed(2) + " €";
+    });
 }
 
 // renderDeliveryCost();
@@ -159,15 +161,24 @@ let itemBasket = [];
 
 // update reference + index-html reference style
 function calculateTotalBasket() {
-    let basketTotalRef = document.getElementById('basket-total-container');
-    basketTotalRef.innerHTML = "";
+    let basketTotalRef = document.querySelectorAll('.basket-total-container');
+    let total = addUpBasketItems();
+    basketTotalRef.forEach(box => {
+    box.innerHTML = "";
+    box.innerHTML = total;
+    })
+    
+}
+
+function addUpBasketItems() {
     let total = 0;
     for (let index = 0; index < itemBasket.length; index++) {
         let element = itemBasket[index];
         total += element.dishAmount * element.dishPrice;
     }
     total += deliveryCost;
-    basketTotalRef.innerHTML = total.toFixed(2) + " €";
+    return total.toFixed(2) + " €"; 
+
 }
 
 // update reference 
@@ -175,12 +186,6 @@ function calculateTotalBasket() {
 function renderNoteCommitButtons(noteIndex) {
     let noteButtonContainerRef = document.getElementById('note-commit-container');
     noteButtonContainerRef.innerHTML = "";
-    // noteButtonContainerRef.innerHTML += `
-    // <button onclick="commitNote(${noteIndex})">Anmerkung speichern!</button>
-    // <button onclick="deleteNote(${noteIndex})>Anmerkung Löschen</button>
-    // <button type="button" onclick="closeNoteDialog()">X</button>
-    // `
-
     if (itemBasket[noteIndex].note !== "") {
         noteButtonContainerRef.innerHTML += `
     <button onclick="commitNote(${noteIndex})">Anmerkung speichern!</button>
@@ -195,9 +200,7 @@ function renderNoteCommitButtons(noteIndex) {
     }
 }
 
-
-
-// From here on, its all fine '-'
+// From here on, its all fine '-' - single use case / container
 
 function renderOrderSummary() {
     let orderSummaryContainerRef = document.getElementById('order-summary-container');
@@ -224,10 +227,10 @@ function renderKitchenOrderList() {
   for (let index = 0; index < orderList.length; index++) {
     const element = orderList[index];
     kitchenOrderRef.innerHTML += `
-        <div>
+        <li>
             <h3>Bestellnummer: ${element.oderID}</h3>
-            <p>Time of order: ${element.orderTime}</p>
-        </div>
+        </li>
+        <p>Time of order: ${element.orderTime}</p>
         `
     kitchenOrderRef.innerHTML += createOrderItems(index);
   }

@@ -34,7 +34,7 @@
             </div> -->
             <section class="restaurant-header">
                 <!-- 白蓮 - rework this section for better visibility, check again at 320px width-->
-                <h1>白蓮 - White Lotus</h1>
+                <h1>White Lotus</h1>
                 <div id="restaurant-info">
                     <span class="rating">Bewertung: 4,7
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="gold" xmlns="http://www.w3.org/2000/svg">
@@ -108,11 +108,11 @@
             </section>
             <div class="cost-in-basket-container">
                 <p>Lieferkosten:</p>
-                <p id="basket-delivery-cost">0.00 €</p>
+                <p class="basket-delivery-cost">0.00 €</p>
             </div>
             <div class="cost-in-basket-container">
                 <p>Summe:</p>
-                <p id="basket-total-container">0.00 €</p>
+                <p class="basket-total-container">0.00 €</p>
             </div>
             <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
             <button class="order-list" onclick="openOrderListDialog()">Order List Dialog</button>
@@ -133,11 +133,11 @@
             </section>
             <div class="cost-in-basket-container">
                 <p>Lieferkosten:</p>
-                <p id="basket-delivery-cost">0.00 €</p>
+                <p class="basket-delivery-cost">0.00 €</p>
             </div>
             <div class="cost-in-basket-container">
                 <p>Summe:</p>
-                <p id="basket-total-container">0.00 €</p>
+                <p class="basket-total-container">0.00 €</p>
             </div>
             <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
             <button class="order-list" onclick="openOrderListDialog()">Order List Dialog</button>
@@ -183,8 +183,12 @@
     </dialog>
 
     <dialog id="order-dialog-for-restaurant">
-        <h2 id="restaurant-kitchen-header">Test</h2>
-        <section id="restaurant-kitchen-order-container">
+        <p>In diesem Container landen alle Bestellungen, damit das Restaurant eine Aufstellung der Speisen hat. Auch Anmerkungen werden hier angezeigt, damit man in einem weiteren Schritt das Dokument in der Küche ausdrucken kann. Die Bestellungen werden auch im Local Storage gespeichert um den Speichervorgang für die Website der Küche zu simulieren. Dadurch kann ich es hoffentlich beim/nach dem Backend Kurs nochmal verwenden.</p>
+        <h2 id="restaurant-kitchen-header">Current Orders:</h2>
+        <section>
+            <ol id="restaurant-kitchen-order-container">
+
+            </ol>
         </section>
         <button onclick="closeOrderListDialog()">close</button>
     </dialog>

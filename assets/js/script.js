@@ -72,7 +72,7 @@ let delivery = false;
   // document.querySelectorAll(".pickup-option-button").forEach(box => {
   // box.classList.add("active");});
 
-//UPDATE FROM HERE
+//DONE
 function setDeliveryBoxActive() {
   let deliveryBoxRef =  document.querySelectorAll('.delivery-option-button');
   let pickupBoxRef =  document.querySelectorAll('.pickup-option-button');
@@ -86,7 +86,6 @@ function setDeliveryBoxActive() {
     deliveryBoxRef.forEach(box => { box.classList.remove("active-category");});
   }
 }
-//UPDATE UNTIL HERE
 
 
 function adjustDeliveryCost() {
