@@ -50,6 +50,7 @@ function isInBasket(category, index) {
   else {
     pushItemToBasket(category, index);
   }
+  storeItemBasketInLocalStorage();
   renderBasketItems();
 }
 

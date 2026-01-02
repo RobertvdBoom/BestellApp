@@ -254,3 +254,17 @@ function createOrderItems(indexOfOrderList) {
 
 const cartContainers = document.querySelectorAll('.cart-items');
 
+let testVariable = localStorage.setItem('itemBasket', JSON.stringify(itemBasket));
+
+function storeItemBasketInLocalStorage() {
+    localStorage.setItem('itemBasket', JSON.stringify(itemBasket));
+}
+
+function fetchLocalStorage() {
+    itemBasket = JSON.parse(localStorage.getItem("itemBasket"));
+}
+
+function init() {
+    fetchLocalStorage();
+    renderBasketItems();
+}
