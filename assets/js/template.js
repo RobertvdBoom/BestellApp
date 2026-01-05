@@ -1,3 +1,7 @@
+let deliveryCost = 0;
+let activeCategory = "starters";
+let itemBasket = [];
+
 let dishCardTemplate = ` 
         <div class="outer-card-container">
             <div class="dish-card">
@@ -13,7 +17,6 @@ let dishCardTemplate = `
             </div>
         </div>
         `;
-let activeCategory = "starters";
 
 function renderDishes(category) {
     activateCategoryActiveBorder(category);
@@ -37,22 +40,6 @@ function renderDishes(category) {
     `
     }
 }
-
-// Update for mobile too? rewrite to add based on bool? 
-
-// update later on for responsive menu? 
-
-function activateCategoryActiveBorder(category) {
-    let oldButtonContentRef = document.getElementById(activeCategory);
-    let newButtonContentRef = document.getElementById(category);
-    oldButtonContentRef.classList.remove("active-category");
-    newButtonContentRef.classList.add("active-category");
-    activeCategory = category;
-}
-
-// until here update ->query selector all 
-
-renderDishes("starters");
 
 let favDishes = [{ "category": "starters", "index": 2 },
 { "category": "starters", "index": 3 },
@@ -84,12 +71,6 @@ function renderFavDishes() {
     }
 }
 
-renderFavDishes();
-
-let deliveryCost = 0;
-
-// update to new reference, render at both mobile and desktop
-
 function renderDeliveryCost() {
     let deliveryCostRef = document.querySelectorAll('.basket-delivery-cost');
     deliveryCostRef.forEach(box => {
@@ -97,14 +78,7 @@ function renderDeliveryCost() {
     });
 }
 
-// renderDeliveryCost();
-
-// update to render on both references -> update index.html containers
-
-// create inner html and insert 
-
 // rework this for whole document
-
 
 function renderBasketItems() {
     let basketRef = document.querySelectorAll('.basket-items-anchor');
@@ -131,7 +105,7 @@ function createBasketItems() {
                         <div class="ds-flex-basket-r">
                             <span id="item-price-0">${elementTotal} €</span>
                             <div class="item-basket-buttons-container">
-                                <button class="basket-trash-btn" onclick="itemInBasketToTrash(${index})">
+                                <button class="basket-trash-btn" onclick="itemFromBasketToTrash(${index})">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
                                 <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
@@ -148,18 +122,11 @@ function createBasketItems() {
     return content;
 }
 
-// no need to touch probably 
-
-function itemInBasketToTrash(index) {
+function itemFromBasketToTrash(index) {
     itemBasket.splice(index, 1);
     renderBasketItems();
 }
 
-let itemBasket = [];
-
-// renderBasketItems();
-
-// update reference + index-html reference style
 function calculateTotalBasket() {
     let basketTotalRef = document.querySelectorAll('.basket-total-container');
     let total = addUpBasketItems();
@@ -167,7 +134,6 @@ function calculateTotalBasket() {
     box.innerHTML = "";
     box.innerHTML = total;
     })
-    
 }
 
 function addUpBasketItems() {
@@ -177,12 +143,10 @@ function addUpBasketItems() {
         total += element.dishAmount * element.dishPrice;
     }
     total += deliveryCost;
-    return total.toFixed(2) + " €"; 
-
+    return total.toFixed(2) + " €";
 }
 
-// update reference 
-
+// From here on, its all fine '-' - single use case / container
 function renderNoteCommitButtons(noteIndex) {
     let noteButtonContainerRef = document.getElementById('note-commit-container');
     noteButtonContainerRef.innerHTML = "";
@@ -199,8 +163,6 @@ function renderNoteCommitButtons(noteIndex) {
     `
     }
 }
-
-// From here on, its all fine '-' - single use case / container
 
 function renderOrderSummary() {
     let orderSummaryContainerRef = document.getElementById('order-summary-container');
@@ -219,8 +181,20 @@ function renderOrderSummary() {
     }
 }
 
-// render kitchen order -> Later on feature for the backend side / restaurant side to receive the order
+// work in progress
+const cartContainers = document.querySelectorAll('.cart-items');
 
+let testVariable = localStorage.setItem('itemBasket', JSON.stringify(itemBasket));
+
+function storeItemBasketInLocalStorage() {
+    localStorage.setItem('itemBasket', JSON.stringify(itemBasket));
+}
+
+function fetchLocalStorage() {
+    itemBasket = JSON.parse(localStorage.getItem("itemBasket"));
+}
+
+// render kitchen order -> Later on feature for the backend side / restaurant side to receive the order
 function renderKitchenOrderList() {
   let kitchenOrderRef = document.getElementById('restaurant-kitchen-order-container');
   kitchenOrderRef.innerHTML = "";
@@ -250,21 +224,4 @@ function createOrderItems(indexOfOrderList) {
     }
   }
   return orderListItemHTML;
-}
-
-const cartContainers = document.querySelectorAll('.cart-items');
-
-let testVariable = localStorage.setItem('itemBasket', JSON.stringify(itemBasket));
-
-function storeItemBasketInLocalStorage() {
-    localStorage.setItem('itemBasket', JSON.stringify(itemBasket));
-}
-
-function fetchLocalStorage() {
-    itemBasket = JSON.parse(localStorage.getItem("itemBasket"));
-}
-
-function init() {
-    fetchLocalStorage();
-    renderBasketItems();
 }

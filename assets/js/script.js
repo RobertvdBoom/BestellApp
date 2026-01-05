@@ -1,3 +1,19 @@
+function init() {
+  renderDishes(activeCategory);
+  renderFavDishes();
+  fetchLocalStorage();
+  renderBasketItems();
+  // load local storage & 
+}
+
+function activateCategoryActiveBorder(category) {
+    let oldButtonContentRef = document.getElementById(activeCategory);
+    let newButtonContentRef = document.getElementById(category);
+    oldButtonContentRef.classList.remove("active-category");
+    newButtonContentRef.classList.add("active-category");
+    activeCategory = category;
+}
+
 function toggleRespMenu() {
   document.getElementById("resp_menu").classList.toggle("resp_menu_closed");
 }
@@ -66,14 +82,7 @@ function pushItemToBasket(category, index) {
 }
 
 let delivery = false;
-// JUST FOR REFERENCE: 
-  // document.querySelectorAll(".delivery-option-button").forEach(box => {
-  // box.classList.add("active");});
 
-  // document.querySelectorAll(".pickup-option-button").forEach(box => {
-  // box.classList.add("active");});
-
-//DONE
 function setDeliveryBoxActive() {
   let deliveryBoxRef =  document.querySelectorAll('.delivery-option-button');
   let pickupBoxRef =  document.querySelectorAll('.pickup-option-button');
@@ -87,7 +96,6 @@ function setDeliveryBoxActive() {
     deliveryBoxRef.forEach(box => { box.classList.remove("active-category");});
   }
 }
-
 
 function adjustDeliveryCost() {
   if (delivery == true) {
@@ -114,33 +122,6 @@ function removeDeliveryCost() {
   setDeliveryBoxActive();
 }
 
-// Check usability up to next section 
-function payItemsNow() {
-  let basketRef = document.getElementById('basket-items-container');
-  itemBasket = [];
-  clearTotalAndDeliveryCost()
-  basketRef.innerHTML = "";
-  basketRef.innerHTML = "Vielen Dank für deine Bestellung, Sie sollte in  60 Minuten bei dir sein!";
-}
-
-function payItemsAtShop() {
-  let basketRef = document.getElementById('basket-items-container');
-  itemBasket = [];
-  clearTotalAndDeliveryCost()
-  basketRef.innerHTML = "";
-  basketRef.innerHTML = "Vielen Dank für deine Bestellung, Sie sollte in  45 Minuten abholbereit sein!";
-}
-
-function clearTotalAndDeliveryCost() {
-  let deliverCostRef = document.getElementById('basket-delivery-cost');
-  let totalBasketRef = document.getElementById('basket-total-container');
-  deliverCostRef.innerHTML = "";
-  totalBasketRef.innerHTML = "";
-}
-
-// up to here
-
-
 let dialogRef = document.getElementById('basket-dialog');
 let mobileDialogRef = document.getElementById('mobile-basket-dialog');
 
@@ -163,13 +144,6 @@ function closeDialog() {
 
 let orderList = [];
 
-function finishOrder() {
-  convertItemBasketToOrderList();
-  renderBasketItems();
-  closeDialog();
-  resetBasketItemsContainer();
-}
-
 function convertItemBasketToOrderList() {
   let timeOfOrder = new Date();
   let element = { orderTime: timeOfOrder, orderItems: itemBasket, oderID: (Number(createOrderID()) + orderNumber) };
@@ -178,16 +152,19 @@ function convertItemBasketToOrderList() {
   itemBasket = [];
 }
 
-// Not even using this one here currently tho
-// rework for reference on this and index html
+function finishOrder() {
+  convertItemBasketToOrderList();
+  renderBasketItems();
+  closeDialog();
+  resetBasketItemsContainer();
+}
+
 function resetBasketItemsContainer() {
   let basketRef = document.querySelectorAll('.basket-items-anchor');
   basketRef.forEach(box => {box.innerHTML ="Vielen Dank für deine Bestellung! Dein Essen sollte in 60 Minuten bei dir sein!";});
-  // basketRef.innerHTML = "Vielen Dank für deine Bestellung! Dein Essen sollte in 60 Minuten bei dir sein!";
 }
 
 // FULL NOTE SECTION
-
 // click -> render note buttons new -> insert current note -> open dialog
 let dialogNoteRef = document.getElementById('basket-note-dialog');
 let noteContainerRef = document.getElementById('note-text-area');
@@ -218,7 +195,6 @@ function deleteNote(index) {
 }
 
 // restaurant side dialog + budget backend '-'
-
 let currentTestTime = new Date();
 let orderNumber = 0;
 
@@ -236,7 +212,3 @@ function openOrderListDialog() {
 function closeOrderListDialog() {
   restaurantOrderContainer.close();
 }
-
-
-// save order List to Local Storage
-
