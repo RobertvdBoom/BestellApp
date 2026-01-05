@@ -3,6 +3,7 @@ function init() {
   renderFavDishes();
   fetchLocalStorage();
   renderBasketItems();
+  fetchLocalStorage();
   // load local storage & 
 }
 

@@ -41,7 +41,8 @@ function renderDishes(category) {
     }
 }
 
-let favDishes = [{ "category": "starters", "index": 2 },
+let favDishes = [
+{ "category": "starters", "index": 2 },
 { "category": "starters", "index": 3 },
 { "category": "mainDish", "index": 1 },
 { "category": "mainDish", "index": 3 },
@@ -85,6 +86,7 @@ function renderBasketItems() {
     basketRef.innerHTML = "";
     basketRef.forEach(box => {box.innerHTML = createBasketItems();});
     calculateTotalBasket();
+    storeItemBasketInLocalStorage()
 }
 
 function createBasketItems() {
@@ -116,8 +118,7 @@ function createBasketItems() {
                                 <button onclick="itemPlusOne(${index})">+</button>
                             </div>
                         </div>
-                    </div>
-    `
+                    </div>`
     }
     return content;
 }
@@ -154,13 +155,11 @@ function renderNoteCommitButtons(noteIndex) {
         noteButtonContainerRef.innerHTML += `
     <button onclick="commitNote(${noteIndex})">Anmerkung speichern!</button>
     <button onclick="deleteNote(${noteIndex})">Anmerkung Löschen</button>
-    <button type="button" onclick="closeNoteDialog()">X</button>
-    `
+    <button type="button" onclick="closeNoteDialog()">X</button>`
     } else {
         noteButtonContainerRef.innerHTML += `
     <button onclick="commitNote(${noteIndex})">Anmerkung speichern!</button>
-    <button type="button" onclick="closeNoteDialog()">X</button>
-    `
+    <button type="button" onclick="closeNoteDialog()">X</button>`
     }
 }
 
@@ -175,21 +174,17 @@ function renderOrderSummary() {
         if (element.note != "") {
             orderSummaryContainerRef.innerHTML += `
             <span class="note-in-summary">Anmerkung: ${element.note}</span>
-            <button onclick="deleteNote(${index})>X</button>
-        `
+            <button onclick="deleteNote(${index})>X</button>`
         }
     }
 }
 
-// work in progress
-const cartContainers = document.querySelectorAll('.cart-items');
 
-let testVariable = localStorage.setItem('itemBasket', JSON.stringify(itemBasket));
-
+// in progress: local storage
 function storeItemBasketInLocalStorage() {
     localStorage.setItem('itemBasket', JSON.stringify(itemBasket));
 }
-
+// rework to general function? 
 function fetchLocalStorage() {
     itemBasket = JSON.parse(localStorage.getItem("itemBasket"));
 }
