@@ -36,12 +36,12 @@
                 <h1 lang="en">White Lotus</h1>
                 <div id="restaurant-info">
                     <span class="rating">Bewertung: 4,7
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="gold" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="gold" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                             <path
                                 d="M12 2L14.94 8.63L22 9.27L16.5 14.14L18.18 21.02L12 17.27L5.82 21.02L7.5 14.14L2 9.27L9.06 8.63L12 2Z"
                                 stroke="black" stroke-width="0.75" fill="gold" />
                         </svg>
-                        (621)
+                        bei 621 Bewertungen
                     </span>
                     <span>Lieferung ab: 18.50€</span>
                     <span></span>
@@ -54,10 +54,10 @@
             </section>
             <nav class="mobile-d-none">
                 <ul>
-                    <li><a onclick="renderDishes('starters')" class="active-category" id="starters">Vorspeisen</a></li>
-                    <li><a onclick="renderDishes('mainDish')" id="mainDish">Hauptgerichte</a></li>
-                    <li><a onclick="renderDishes('dessert')" id="dessert">Nachspeisen</a></li>
-                    <li><a onclick="renderDishes('beverages')" id="beverages">Getränke</a></li>
+                    <li><a onclick="renderDishes('starters')" class="active-category" id="starters" role="navigation">Vorspeisen</a></li>
+                    <li><a onclick="renderDishes('mainDish')" id="mainDish" role="navigation">Hauptgerichte</a></li>
+                    <li><a onclick="renderDishes('dessert')" id="dessert" role="navigation">Nachspeisen</a></li>
+                    <li><a onclick="renderDishes('beverages')" id="beverages" role="navigation">Getränke</a></li>
                 </ul>
             </nav>
             <section class="main-content-area" id="dish-container">
@@ -94,8 +94,8 @@
 
 
 
-        <aside id="basket" class="mobile-d-none basket">
-            <h2>Warenkorb</h2>
+        <aside id="basket" class="mobile-d-none basket" role="complementary" aria-label="Warenkorb">
+            <h2 id="basket-header">Warenkorb</h2>
             <div class="delivery-or-pickup-container">
                 <button name="" id="delivery-option-button" class="btn-delivery delivery-option-button" onclick="addDeliveryCost()">Lieferung</button>
                 <button id="pickup-option-button" class="btn-pickup active-category pickup-option-button" onclick="removeDeliveryCost()">Abholung</button>

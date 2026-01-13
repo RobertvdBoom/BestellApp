@@ -30,6 +30,12 @@ button {
     border: none;
     height: 1.5rem;
     border-radius: 4px;
+    font-size: 16px;
+}
+
+button:focus {
+    outline: 3px solid rgb(214, 213, 213);
+    outline-offset: 1px;
 }
 
 h1 {
