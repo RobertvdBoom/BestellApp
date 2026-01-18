@@ -24,7 +24,15 @@ nav a {
     font-weight: 500;
     padding: 0.75rem;
     border-radius: 40px;
-    background-color: #250e00;
+    background-color: #cc4e00;
+    
+    background-size: 300%;
+    background-position: center left;
+    border: 2px solid transparent;
+    transition: background-position 0.5s;
+}
+
+nav a:hover {
     background: linear-gradient(
         15deg,
         #bd4107,
@@ -35,13 +43,6 @@ nav a {
         #f88007,
         #ff0000
     );
-    background-size: 300%;
-    background-position: center left;
-    border: 2px solid transparent;
-    transition: background-position 0.5s;
-}
-
-nav a:hover {
     cursor: pointer;
     background-size: 330%;
     background-position: center right;
