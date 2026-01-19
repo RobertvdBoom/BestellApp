@@ -76,3 +76,8 @@ dialog button{
 .close-basket-dialog-btn {
   width: 10% !important;
 }
+
+#order-dialog-for-restaurant {
+  max-width: 70%;
+  min-height: 70%;
+}
