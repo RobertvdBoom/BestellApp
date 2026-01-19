@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,17 +18,15 @@
 <body onload="init()">
     <header class="top-level-bar">
         <h2>Bestell App</h2>
-        <button class="resp-btn">
+        <button class="resp-btn" onclick="toggleRespMenu()">
             <img src="/assets/img/icons/menu.svg" alt="menu stripes" class="desktop-d-none">
         </button>
-        
-
     </header>
     <div class="outer-main-container">
         <main>
             <section class="atf-box">
                 <div class="header-box">
-                    <div class="header-icon-box" onclick="toggleRespMenu()">
+                    <div class="header-icon-box">
                         <img src="/assets/img/icons/lotus-blume-2.png" alt="">
                     </div>
                 </div>
@@ -43,13 +40,7 @@
             <section class="restaurant-header">
                 <h1 lang="en">White Lotus</h1>
                 <div id="restaurant-info">
-                    <span class="rating">Bewertung: 4,7 Sterne
-                        <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="gold" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                            <path
-                                d="M12 2L14.94 8.63L22 9.27L16.5 14.14L18.18 21.02L12 17.27L5.82 21.02L7.5 14.14L2 9.27L9.06 8.63L12 2Z"
-                                stroke="black" stroke-width="0.75" fill="gold" />
-                        </svg> -->
-                    </span>
+                    <span class="rating">Bewertung: 4,7 Sterne</span>
                     <span>Lieferung ab: 18.50€</span>
                     <span></span>
                 </div>
