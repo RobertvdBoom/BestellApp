@@ -29,12 +29,16 @@ button {
     background-color: #cc4e00;
     color: #FFFFFF;
     border: none;
-    height: 1.5rem;
+    min-height: 1.5rem;
+    min-width: 1.5rem;
     border-radius: 4px;
     font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-button:focus {
+button:focus-visible {
     outline: 3px solid rgb(214, 213, 213);
     outline-offset: 1px;
 }
@@ -105,4 +109,13 @@ aside {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.resp-btn {
+    background: rgba(255, 255, 255, 0);
+    height: 40px;
+}
+
+.resp-btn img {
+    height: 40px;
 }

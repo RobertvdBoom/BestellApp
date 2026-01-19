@@ -19,7 +19,7 @@
 
     .dish-card-price-and-button button {
         width: 50%;
-        padding: 1rem;
+        padding: 5px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -86,7 +86,9 @@
         top: 0;
     }
 
-    .mobile-basket-dialog:open {
+    dialog:open {
+        max-width: 100vw;
+        max-height: 100vh;
         width: 100%;
         height: 100vh;
         height: 100dvh;
@@ -96,8 +98,13 @@
         justify-content: space-between;
     }
 
-    dialog:open {
-        max-width: 100vw;
-        max-height: 100vh;
+    .mobile-basket-dialog:open {
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 }

@@ -49,9 +49,7 @@ dialog[open]::backdrop {
 }
 
 .note-in-summary {
-  font-size: 0.8rem;
-  font-weight: 300;
-  color: red;
+  font-weight: 600;
 }
 
 .order-summary {
