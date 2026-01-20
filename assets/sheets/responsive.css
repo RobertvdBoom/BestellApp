@@ -71,7 +71,9 @@
     .desktop-d-none {
         display: none;
     }
-
+    ul {
+        gap: 20px;
+    }
 
 }
 
