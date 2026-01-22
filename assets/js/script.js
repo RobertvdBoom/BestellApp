@@ -15,8 +15,13 @@ function activateCategoryActiveBorder(category) {
     activeCategory = category;
 }
 
+function updateAriaCurrent() {
+  document.querySelectorAll('#resp_menu [aria-current');
+}
+
 function toggleRespMenu() {
-  document.getElementById("resp_menu").classList.toggle("resp_menu_closed");
+  let respMenuRef = document.getElementById("resp_menu");
+  respMenuRef.classList.toggle("resp_menu_closed");
 }
 
 function itemPlusOne(index) {

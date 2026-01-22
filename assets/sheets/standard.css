@@ -120,3 +120,16 @@ aside {
 .resp-btn img {
     height: 40px;
 }
+
+dl {
+    color: white;
+}
+
+dd {
+    margin-inline-start: 0;
+}
+
+.restaurant-infobox {
+    display: flex;
+    gap: 20px;
+}

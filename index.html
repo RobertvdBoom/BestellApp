@@ -22,50 +22,65 @@
             <h2>Bestell App</h2>
 
 
-            <button class="resp-btn" onclick="toggleRespMenu()">
-                <img src="/assets/img/icons/menu.svg" alt="menu stripes" class="desktop-d-none">
+            <button class="resp-btn" onclick="toggleRespMenu()" type="button" aria-controls="resp_menu"
+                aria-expanded="false" aria-label="Menü öffnen!">
+                <img src="/assets/img/icons/menu.svg" alt="" class="desktop-d-none" aria-hidden="true">
             </button>
         </header>
 
-        <div id="resp_menu" class="resp_menu_box resp_menu_closed">
+        <nav id="resp_menu" class="resp_menu_box resp_menu_closed" hidden aria-label="Kategorien">
             <ul>
-                <li><a onclick="renderDishes('starters')" class="active-category" role="navigation">Vorspeisen</a></li>
-                <li><a onclick="renderDishes('mainDish')" role="navigation">Hauptgerichte</a></li>
-                <li><a onclick="renderDishes('dessert')" role="navigation">Nachspeisen</a></li>
-                <li><a onclick="renderDishes('beverages')" role="navigation">Getränke</a></li>
-                <li><a href="#footer" role="navigation">Kontakt</a></li>
+                <li><button type="button" onclick="renderDishes('starters')" class="active-category" role="navigation"
+                        aria-current="true" aria-controls="dish-container">Vorspeisen</button></li>
+                <li><button type="button" onclick="renderDishes('mainDish')"
+                        aria-controls="dish-container">Hauptgerichte</button></li>
+                <li><button type="button" onclick="renderDishes('dessert')"
+                        aria-controls="dish-container">Nachspeisen</button></li>
+                <li><button type="button" onclick="renderDishes('beverages')"
+                        aria-controls="dish-container">Getränke</button></li>
+                <li><a href="#footer">Kontakt</a></li>
             </ul>
-        </div>
+            <!-- WCAG UPDATE ON FUNCTION: aria-current -->
+        </nav>
     </div>
+
+
 
     <div class="outer-main-container">
         <main>
-            <section class="atf-box">
+            <div class="atf-box">
                 <div class="header-box">
                     <div class="header-icon-box">
-                        <img src="/assets/img/icons/lotus-blume-2.png" alt="">
+                        <img src="/assets/img/icons/lotus-blume-2.png" alt="" aria-hidden="true">
                     </div>
                 </div>
-            </section>
-
-            <!-- <div class="resp-menu-btn-container">
-                <button class="menu_btn desktop-d-none" onclick="toggleRespMenu()"><img src="/assets/img/icons/menu.svg"
-                        alt="menu stripes"></button>
-            </div> -->
-
+            </div>
             <section class="restaurant-header">
                 <h1 lang="en">White Lotus</h1>
-                <div id="restaurant-info">
-                    <span class="rating">Bewertung: 4,7 Sterne</span>
-                    <span>Lieferung ab: 18.50€</span>
-                    <span></span>
+                <dl id="restaurant-info">
+                    <div class="restaurant-infobox">
+                        <dt>Bewertung:</dt>
+                        <dd>4,7 von 5 Sternen</dd>
+                    </div>
+                    <div class="restaurant-infobox">
+                        <dt>Lieferung ab:</dt>
+                        <dd>18,50 €</dd>
+                    </div>
+                </dl>
+            </section>
+            <!-- WCAG DONE UP TO HERE -->
+
+
+
+            <section class="outer-card-scroll-container" aria-labelledby="fav-title">
+                <h2 id="fav-title">Beliebte Gerichte:</h2>
+                <div class="card-scroll-container" tabindex="0">
+                    <ul id="favorite-dishes"></ul>
                 </div>
             </section>
-            <section class="outer-card-scroll-container">
-                <div class="card-scroll-container">
-                    <div id="favorite-dishes"></div>
-                </div>
-            </section>
+
+
+
             <nav class="mobile-d-none">
                 <ul>
                     <li><a onclick="renderDishes('starters')" class="active-category" id="starters"
@@ -75,8 +90,19 @@
                     <li><a onclick="renderDishes('beverages')" id="beverages" role="navigation">Getränke</a></li>
                 </ul>
             </nav>
+
+
+
+
             <section class="main-content-area" id="dish-container">
             </section>
+
+
+
+
+
+
+
 
             <dialog id="basket-dialog" class="mobile-basket-dialog">
                 <div class="dialog-header">
