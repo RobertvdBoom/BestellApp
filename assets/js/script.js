@@ -8,11 +8,12 @@ function init() {
 }
 
 function activateCategoryActiveBorder(category) {
-    let oldButtonContentRef = document.getElementById(activeCategory);
-    let newButtonContentRef = document.getElementById(category);
-    oldButtonContentRef.classList.remove("active-category");
-    newButtonContentRef.classList.add("active-category");
+    let oldButtonContentRef = document.querySelectorAll(`.${activeCategory}`);
+    let newButtonContentRef = document.querySelectorAll(`.${category}`);
+    oldButtonContentRef.forEach(box => {box.classList.remove("active-category");});
+    newButtonContentRef.forEach(box => {box.classList.add("active-category");});
     activeCategory = category;
+    announceActiveCategory(category);
 }
 
 function updateAriaCurrent() {
@@ -44,10 +45,14 @@ function itemMinusOne(index) {
   }
 }
 
-// WCAG Announcement
+// WCAG Screenreader Announcement
 const announcementContainerRef = document.getElementById('basket-status')
 function announceAmount(dish, action, amountNew) {
   announcementContainerRef.innerHTML = `${dish} wurde ${action}. Aktuelle Menge im Warenkorb: ${amountNew}`
+}
+
+function announceActiveCategory(currentActiveCategory) {
+  announcementContainerRef.innerHTML = `Die aktuelle Kategorie ist: ${currentActiveCategory}`;
 }
 
 function isInBasket(category, index) {
