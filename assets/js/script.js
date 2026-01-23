@@ -27,17 +27,27 @@ function toggleRespMenu() {
 function itemPlusOne(index) {
   itemBasket[index].dishAmount++;
   renderBasketItems();
+  announceAmount(itemBasket[index].dishName, "um 1 erhöht", itemBasket[index].dishAmount);
 }
 
 function itemMinusOne(index) {
   itemBasket[index].dishAmount--;
   if (itemBasket[index].dishAmount <= 0) {
+    let nameSave = itemBasket[index].dishName;
     itemBasket.splice(index, 1);
     renderBasketItems();
+    announceAmount(nameSave, "entfernt", 0);
   }
   else {
     renderBasketItems();
+    announceAmount(itemBasket[index].dishName, "um 1 reduziert", itemBasket[index].dishAmount);
   }
+}
+
+// WCAG Announcement
+const announcementContainerRef = document.getElementById('basket-status')
+function announceAmount(dish, action, amountNew) {
+  announcementContainerRef.innerHTML = `${dish} wurde ${action}. Aktuelle Menge im Warenkorb: ${amountNew}`
 }
 
 function isInBasket(category, index) {
