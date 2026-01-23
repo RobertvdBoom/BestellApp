@@ -72,7 +72,7 @@
 
             <div id="basket-status" aria-live="polite" class="d_none"></div>
 
-
+            <!-- style new cards here because of ul/li -->
             <section class="outer-card-scroll-container" aria-labelledby="fav-title">
                 <h2 id="fav-title">Beliebte Gerichte:</h2>
                 <div class="card-scroll-container" tabindex="0">
@@ -84,11 +84,16 @@
 
             <nav class="mobile-d-none">
                 <ul>
-                    <li><a onclick="renderDishes('starters')" class="active-category" id="starters"
-                            role="navigation">Vorspeisen</a></li>
-                    <li><a onclick="renderDishes('mainDish')" id="mainDish" role="navigation">Hauptgerichte</a></li>
-                    <li><a onclick="renderDishes('dessert')" id="dessert" role="navigation">Nachspeisen</a></li>
-                    <li><a onclick="renderDishes('beverages')" id="beverages" role="navigation">Getränke</a></li>
+                    <li><button type="button" onclick="renderDishes('starters')" class="active-category"
+                            role="navigation" aria-current="true" aria-controls="dish-container">Vorspeisen</button>
+                    </li>
+                    <li><button type="button" onclick="renderDishes('mainDish')"
+                            aria-controls="dish-container">Hauptgerichte</button></li>
+                    <li><button type="button" onclick="renderDishes('dessert')"
+                            aria-controls="dish-container">Nachspeisen</button></li>
+                    <li><button type="button" onclick="renderDishes('beverages')"
+                            aria-controls="dish-container">Getränke</button></li>
+                    <li><a href="#footer">Kontakt</a></li>
                 </ul>
             </nav>
 
