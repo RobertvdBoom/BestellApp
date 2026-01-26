@@ -68,6 +68,7 @@ ul {
 ul {
    height: max-content;
    box-sizing: border-box;
+   display: flex;
 }
 
 li{

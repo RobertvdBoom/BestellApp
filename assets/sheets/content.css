@@ -45,6 +45,7 @@
 
 .outer-card-scroll-container {
     display: flex;
+    flex-direction: column;
     width: min(90%, 1440px);
     margin: 40px 0px;
 }
