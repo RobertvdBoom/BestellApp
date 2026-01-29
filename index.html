@@ -30,13 +30,13 @@
 
         <nav id="resp_menu" class="resp_menu_box resp_menu_closed" hidden aria-label="Kategorien">
             <ul>
-                <li><button class="starters" type="button" onclick="renderDishes('starters')" class="active-category" role="navigation"
+                <li><button class="starters nav_button resp_menu_btn" type="button" onclick="renderDishes('starters')" class="active-category" role="navigation"
                         aria-current="true" aria-controls="dish-container">Vorspeisen</button></li>
-                <li><button class="mainDish" type="button" onclick="renderDishes('mainDish')"
+                <li><button class="mainDish nav_button resp_menu_btn" type="button" onclick="renderDishes('mainDish')"
                         aria-controls="dish-container">Hauptgerichte</button></li>
-                <li><button class="dessert" type="button" onclick="renderDishes('dessert')"
+                <li><button class="dessert nav_button resp_menu_btn" type="button" onclick="renderDishes('dessert')"
                         aria-controls="dish-container">Nachspeisen</button></li>
-                <li><button class="beverages" type="button" onclick="renderDishes('beverages')"
+                <li><button class="beverages nav_button resp_menu_btn" type="button" onclick="renderDishes('beverages')"
                         aria-controls="dish-container">Getränke</button></li>
                 <li><a href="#footer">Kontakt</a></li>
             </ul>
@@ -74,7 +74,7 @@
 
             <!-- style new cards here because of ul/li :::  also include skip from item to item / onto more details like add to cart?-->
             <section class="outer-card-scroll-container" aria-labelledby="fav-title">
-                <!-- <h2 id="fav-title">Beliebte Gerichte:</h2> -->
+                <h2 id="fav-title">Beliebte Gerichte:</h2>
                 <div class="card-scroll-container" tabindex="0">
                     <ul id="favorite-dishes"></ul>
                 </div>
@@ -84,14 +84,14 @@
 
             <nav class="mobile-d-none" aria-label="Kategorien">
                 <ul>
-                    <li><button class="starters" type="button" onclick="renderDishes('starters')" class="active-category"
+                    <li><button class="starters nav_button" type="button" onclick="renderDishes('starters')" class="active-category"
                             role="navigation" aria-current="true" aria-controls="dish-container">Vorspeisen</button>
                     </li>
-                    <li><button class="mainDish" type="button" onclick="renderDishes('mainDish')"
+                    <li><button class="mainDish nav_button" type="button" onclick="renderDishes('mainDish')"
                             aria-controls="dish-container">Hauptgerichte</button></li>
-                    <li><button class="dessert" type="button" onclick="renderDishes('dessert')"
+                    <li><button class="dessert nav_button" type="button" onclick="renderDishes('dessert')"
                             aria-controls="dish-container">Nachspeisen</button></li>
-                    <li><button class="beverages" type="button" onclick="renderDishes('beverages')"
+                    <li><button class="beverages nav_button" type="button" onclick="renderDishes('beverages')"
                             aria-controls="dish-container">Getränke</button></li>
                     <li><a href="#footer">Kontakt</a></li>
                 </ul>
@@ -202,6 +202,10 @@
             <a href="datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutz</a>
         </div>
     </footer>
+
+
+
+
     <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
         <button onclick="openDialogMobile()">
             <h2>Warenkorb Öffnen!</h2>

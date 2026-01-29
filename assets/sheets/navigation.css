@@ -17,6 +17,21 @@ nav {
     margin-bottom: 40px;
 }
 
+.nav_button {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0.75rem;
+    border-radius: 40px;
+    background-color: #cc4e00;
+    
+    background-size: 300%;
+    background-position: center left;
+    border: 2px solid transparent;
+    transition: background-position 0.5s;
+}
+
 nav a {
     text-decoration: none;
     color: #ffffff;
@@ -72,4 +87,8 @@ button:hover {
     background-size: 330%;
     background-position: center right;
     transition: 0.5s ease;
+}
+
+nav,ul {
+    align-items: center;
 }
