@@ -81,3 +81,12 @@ dialog button{
   max-width: 70%;
   min-height: 70%;
 }
+
+.mobile-close-btn {
+  width: 15%;
+  align-self: flex-end;
+}
+
+.basket-items-anchor {
+  margin: 0px 30px;
+}

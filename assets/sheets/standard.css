@@ -51,6 +51,10 @@ h1 {
     margin-block-start: 40px;
 }
 
+h2 {
+    color: white;
+}
+
 h3 {
     margin-block: 0;
     margin-bottom: 5px;
