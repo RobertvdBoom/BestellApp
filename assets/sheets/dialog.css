@@ -87,6 +87,18 @@ dialog button{
   align-self: flex-end;
 }
 
-.basket-items-anchor {
-  margin: 0px 30px;
+.mobile-basket {
+  padding: 10vw;
+  justify-content: flex-start !important;
+  gap: 40px;
+}
+
+.mobile-dialog-lower-containers {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-item-section {
+  overflow-y: scroll;
 }

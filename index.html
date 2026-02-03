@@ -30,8 +30,9 @@
 
         <nav id="resp_menu" class="resp_menu_box resp_menu_closed" hidden aria-label="Kategorien">
             <ul>
-                <li><button class="starters nav_button resp_menu_btn" type="button" onclick="renderDishes('starters')" class="active-category" role="navigation"
-                        aria-current="true" aria-controls="dish-container">Vorspeisen</button></li>
+                <li><button class="starters nav_button resp_menu_btn" type="button" onclick="renderDishes('starters')"
+                        class="active-category" role="navigation" aria-current="true"
+                        aria-controls="dish-container">Vorspeisen</button></li>
                 <li><button class="mainDish nav_button resp_menu_btn" type="button" onclick="renderDishes('mainDish')"
                         aria-controls="dish-container">Hauptgerichte</button></li>
                 <li><button class="dessert nav_button resp_menu_btn" type="button" onclick="renderDishes('dessert')"
@@ -84,8 +85,9 @@
 
             <nav class="mobile-d-none" aria-label="Kategorien">
                 <ul>
-                    <li><button class="starters nav_button" type="button" onclick="renderDishes('starters')" class="active-category"
-                            role="navigation" aria-current="true" aria-controls="dish-container">Vorspeisen</button>
+                    <li><button class="starters nav_button" type="button" onclick="renderDishes('starters')"
+                            class="active-category" role="navigation" aria-current="true"
+                            aria-controls="dish-container">Vorspeisen</button>
                     </li>
                     <li><button class="mainDish nav_button" type="button" onclick="renderDishes('mainDish')"
                             aria-controls="dish-container">Hauptgerichte</button></li>
@@ -161,7 +163,7 @@
         </aside>
     </div>
 
-    <dialog id="mobile-basket-dialog">
+    <dialog id="mobile-basket-dialog" class="mobile-basket">
         <h2>Warenkorb</h2>
         <div class="delivery-or-pickup-container">
             <button name="" id="delivery-option-button" class="btn-delivery delivery-option-button"
@@ -169,22 +171,26 @@
             <button id="pickup-option-button" class="btn-pickup active-category pickup-option-button"
                 onclick="removeDeliveryCost()">Abholung</button>
         </div>
-        <section id="basket-container">
+        <section id="basket-container" class="mobile-item-section">
             <div id="mobile-basket-items-container" class="basket-items-anchor">
                 <p>Wir freuen uns auf deine Bestellung!</p>
             </div>
         </section>
-        <div class="cost-in-basket-container">
-            <p>Lieferkosten:</p>
-            <p class="basket-delivery-cost">0.00 €</p>
-        </div>
-        <div class="cost-in-basket-container">
-            <p>Summe:</p>
-            <p class="basket-total-container">0.00 €</p>
-        </div>
-        <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
-        <button onclick="closeDialogMobile()" class="mobile-close-btn">Close</button>
+        <div class="mobile-dialog-lower-containers">
+            <div class="cost-in-basket-container">
+                <p>Lieferkosten:</p>
+                <p class="basket-delivery-cost">0.00 €</p>
+            </div>
+            <div class="cost-in-basket-container">
+                <p>Summe:</p>
+                <p class="basket-total-container">0.00 €</p>
+            </div>
+            <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
+            <button onclick="closeDialogMobile()" class="mobile-close-btn">Close</button>
         <button class="order-list mobile-close-btn" onclick="openOrderListDialog()">Order List Dialog</button>
+        </div>
+
+        
     </dialog>
 
 
