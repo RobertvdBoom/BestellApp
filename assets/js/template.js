@@ -39,6 +39,23 @@ function renderDishes(category) {
         </div>
     `
     }
+    createMobileCategoryHeader(category);
+}
+
+function createMobileCategoryHeader(category) {
+    let mobileHeaderRef = document.getElementById('mobile-category-header');
+    mobileHeaderRef.innerHTML = "";
+    if (category = "starters") {
+        mobileHeaderRef.innerHTML = "Vorspeisen";
+    } else if (category = "mainDish"){
+        mobileHeaderRef.innerHTML = "Hauptgerichte";
+    } else if (category = "dessert"){
+        mobileHeaderRef.innerHTML = "Nachspeisen";
+    } else if (category = "beverages"){
+        mobileHeaderRef.innerHTML = "Getränke";
+    } else {
+        console.log('did not find header');
+    };  
 }
 
 let favDishes = [

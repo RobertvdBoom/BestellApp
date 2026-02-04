@@ -50,3 +50,7 @@
     width: min(90%, 1440px);
     margin: 40px 0px;
 }
+
+#mobile-category-header {
+    margin-bottom: 40px;
+}
