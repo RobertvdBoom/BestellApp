@@ -83,7 +83,7 @@ dialog button{
 }
 
 .mobile-close-btn {
-  width: 15%;
+  width: min(28%, 70px);
   align-self: flex-end;
 }
 

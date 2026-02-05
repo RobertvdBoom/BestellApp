@@ -119,7 +119,7 @@ function createBasketItems() {
                     <div class="basket-item">
                         <div class="ds-flex-basket-l">
                             <h3>${element.dishName}</h3>
-                            <button onclick="addNote(${index})"> Anmerkung! </button>
+                            <button onclick="addNote(${index})">Notiz!</button>
                         </div>
                         <div class="ds-flex-basket-r">
                             <span>${elementTotal} €</span>
