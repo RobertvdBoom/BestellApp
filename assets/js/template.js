@@ -172,11 +172,11 @@ function renderNoteCommitButtons(noteIndex) {
         noteButtonContainerRef.innerHTML += `
     <button onclick="commitNote(${noteIndex})">Anmerkung speichern!</button>
     <button onclick="deleteNote(${noteIndex})">Anmerkung Löschen</button>
-    <button type="button" onclick="closeNoteDialog()">X</button>`
+    <button type="button" onclick="closeNoteDialog()">Close</button>`
     } else {
         noteButtonContainerRef.innerHTML += `
     <button onclick="commitNote(${noteIndex})">Anmerkung speichern!</button>
-    <button type="button" onclick="closeNoteDialog()">X</button>`
+    <button type="button" onclick="closeNoteDialog()">Close</button>`
     }
 }
 

@@ -102,3 +102,8 @@ dialog button{
 .mobile-item-section {
   overflow-y: scroll;
 }
+
+#note-commit-container {
+  display: flex;
+  justify-content: space-between;
+}
