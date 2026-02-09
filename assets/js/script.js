@@ -244,15 +244,20 @@ function closeOrderListDialog() {
 
 function addAllItems() {
   clearItemBasket();
-  for (let index = 0; index < dishData.length; index++) {
-    let element = dishData[index];
-    let x = index;
-    for (let index1 = 0; index1 < element.length; index1++) {
-      pushItemToBasket(dishData[x], index1);
-    }
+  addAllItemsFromCategory('starters');
+  addAllItemsFromCategory('mainDish');
+  addAllItemsFromCategory('beverages');
+  addAllItemsFromCategory('dessert');
+  renderBasketItems();
+}
+
+function addAllItemsFromCategory(category) {
+  for (let index = 0; index < dishData[category].length; index++) {
+    pushItemToBasket(category, index);
   }
 }
 
 function clearItemBasket() {
   itemBasket = [];
+  renderBasketItems();
 }
