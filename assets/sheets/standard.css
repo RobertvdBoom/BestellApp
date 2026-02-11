@@ -85,6 +85,17 @@ li a{
     max-width: 20%;
     text-decoration: none;
     color: white;
+    background: linear-gradient(
+        15deg,
+        #bd4107,
+        #d3460f,
+        #db6b14,
+        #ff7a15,
+        #dd3131,
+        #f88007,
+        #ff0000
+    );
+    background-size: 300%;
 }
 
 .top-level-bar{

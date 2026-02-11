@@ -20,8 +20,6 @@
     <div class="top-content">
         <header class="top-level-bar">
             <h2>Bestell App</h2>
-
-
             <button class="resp-btn" onclick="toggleRespMenu()" type="button" aria-controls="resp_menu"
                 aria-expanded="false" aria-label="Menü öffnen!">
                 <img src="/assets/img/icons/menu.svg" alt="" class="desktop-d-none" aria-hidden="true">
@@ -70,7 +68,7 @@
                 </dl>
             </section>
             <!-- WCAG DONE UP TO HERE -->
-
+            <!-- WCAG Announcement Container below-->
             <div id="basket-status" aria-live="polite" class="d_none"></div>
 
             <!-- style new cards here because of ul/li :::  also include skip from item to item / onto more details like add to cart?-->
@@ -80,8 +78,6 @@
                     <ul id="favorite-dishes"></ul>
                 </div>
             </section>
-
-
 
             <nav class="mobile-d-none" aria-label="Kategorien">
                 <ul>
@@ -99,18 +95,9 @@
                 </ul>
             </nav>
 
-
-
             <h2 class="desktop-d-none" id="mobile-category-header"></h2>
             <section class="main-content-area" id="dish-container">
             </section>
-
-
-
-
-
-
-
 
             <dialog id="basket-dialog" class="mobile-basket-dialog">
                 <div class="dialog-header">
@@ -131,11 +118,7 @@
                     <button type="button" onclick="closeDialog()" class="close-basket-dialog-btn">X</button>
                 </div>
             </dialog>
-
-
         </main>
-
-
 
         <aside id="basket" class="mobile-d-none basket" role="complementary" aria-label="Warenkorb">
             <h2 id="basket-header">Warenkorb</h2>
@@ -193,8 +176,6 @@
         
     </dialog>
 
-
-
     <footer id="footer">
         <address>
             <span>Diese Website wurde erstellt von: <br>Robert van den Boom</span> <br>
@@ -208,9 +189,6 @@
             <a href="datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutz</a>
         </div>
     </footer>
-
-
-
 
     <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
         <button onclick="openDialogMobile()">
@@ -227,12 +205,9 @@
             <h2>Hier kannst du gerne eine Nachricht an den Koch senden!</h2>
             <h3>Anmerkung:</h3>
             <p id="current-note-container"></p>
-
-            <textarea id="note-text-area" placeholder="Hier kannst du mehr schreiben..."></textarea>
-
+            <textarea id="note-text-area" placeholder="Hier kannst du Wünsche zu deinem Gericht äußern!"></textarea>
         </div>
         <div id="note-commit-container">
-
         </div>
     </dialog>
 
@@ -244,7 +219,6 @@
         <h2 id="restaurant-kitchen-header">Current Orders:</h2>
         <section>
             <ol id="restaurant-kitchen-order-container">
-
             </ol>
         </section>
         <button onclick="closeOrderListDialog()">close</button>
