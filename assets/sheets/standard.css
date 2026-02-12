@@ -10,6 +10,9 @@
 @import url(/assets/sheets/restaurantInfo.css);
 @import url(/assets/sheets/responsive.css);
 
+html{
+    scroll-behavior: smooth;
+}
 
 main {
     display: flex;

@@ -14,6 +14,7 @@
     flex-direction: column;
     gap: 20px;
     max-height: calc(70vh - 72px - 149px); /* buttons 4x = 20vh; decreased by 10 for visibility on scroll; 72px is top bar / 5x gap 20px = 100 + 49px from h2 */
+    min-height: 35vh;
 }
 
 .basket-item {
