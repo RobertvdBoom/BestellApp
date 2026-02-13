@@ -71,19 +71,20 @@ function renderFavDishes() {
     let favDishContentRef = document.getElementById('favorite-dishes');
     for (let index = 0; index < favDishes.length; index++) {
         let element = favDishes[index];
+        let favDishID = `fav-item-${favDishes[index].category}-${favDishes[index].index}`;
         favDishContentRef.innerHTML += ` 
         <li class="outer-card-container dish-card-favorite-box">
-            <div class="dish-card">
+            <article class="dish-card" aria-labelledby="${favDishID}">
                 <img src="${dishData[element.category][element.index].dishImageURL}" alt="${dishData[element.category][element.index].dishImageAlt}">
                 <div class="dish-text">
-                    <h3>${dishData[element.category][element.index].dishName}</h3>
+                    <h3 id="${favDishID}">${dishData[element.category][element.index].dishName}</h3>
                     <p>${dishData[element.category][element.index].dishDescription}</p>
                 </div>
                 <div class="dish-card-price-and-button-fav">
                     <p>${dishData[element.category][element.index].dishPrice.toFixed(2)} €</p>
                     <button aria-label="Menge erhöhen: ${dishData[element.category][element.index].dishName}" onclick="isInBasket('${favDishes[index].category}', ${element.index})">+</button>
                 </div>
-            </div>
+            </article>
         </li>
     `
     }

@@ -54,3 +54,9 @@
 #mobile-category-header {
     margin-bottom: 40px;
 }
+
+.skip-link {
+    position: absolute;
+    left: -12345px;
+    top: 0;
+}

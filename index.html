@@ -67,18 +67,19 @@
                     </div>
                 </dl>
             </section>
-            <!-- WCAG DONE UP TO HERE -->
+            
             <!-- WCAG Announcement Container below-->
             <div id="basket-status" aria-live="polite" class="d_none"></div>
-
+            
             <!-- style new cards here because of ul/li :::  also include skip from item to item / onto more details like add to cart?-->
+            <a class="skip-link" href="#dish-container">Beliebte Gerichte überspringen!</a>
             <section class="outer-card-scroll-container" aria-labelledby="fav-title">
                 <h2 id="fav-title">Beliebte Gerichte:</h2>
-                <div class="card-scroll-container" tabindex="0">
-                    <ul id="favorite-dishes"></ul>
+                <div class="card-scroll-container"  >
+                    <ul id="favorite-dishes" aria-labelledby="fav-title" tabindex="0"></ul>
                 </div>
             </section>
-
+            <!-- WCAG DONE UP TO HERE - REVISE WITH CHECKER (SCROLLBAR ELEMENT) -->
             <nav class="mobile-d-none" aria-label="Kategorien">
                 <ul>
                     <li><button class="starters nav_button" type="button" onclick="renderDishes('starters')"
