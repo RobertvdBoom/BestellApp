@@ -160,3 +160,12 @@ textarea {
     resize: none;
     margin-bottom: 20px;
 }
+
+.sr-only{
+    position: absolute;
+    top: 0;
+    left: -1px;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+}

@@ -20,9 +20,10 @@
     <div class="top-content">
         <header class="top-level-bar">
             <h2>Bestell App</h2>
-            <button class="resp-btn" onclick="toggleRespMenu()" type="button" aria-controls="resp_menu"
+            <button class="resp-btn desktop-d-none" onclick="toggleRespMenu()" type="button" aria-controls="resp_menu"
                 aria-expanded="false" aria-label="Menü öffnen!">
-                <img src="/assets/img/icons/menu.svg" alt="" class="desktop-d-none" aria-hidden="true">
+                <img src="/assets/img/icons/menu.svg" alt="" aria-hidden="true">
+                <span class="sr-only" >Burger Menu öffnen!</span>
             </button>
         </header>
 
@@ -72,7 +73,7 @@
             <div id="basket-status" aria-live="polite" class="d_none"></div>
             
             <!-- style new cards here because of ul/li :::  also include skip from item to item / onto more details like add to cart?-->
-            <a class="skip-link" href="#dish-container">Beliebte Gerichte überspringen!</a>
+            <a class="skip-link" href="#dish-container">Beliebte Gerichte überspringen und weiter zum Menü!</a>
             <section class="outer-card-scroll-container" aria-labelledby="fav-title">
                 <h2 id="fav-title">Beliebte Gerichte:</h2>
                 <div class="card-scroll-container"  >
