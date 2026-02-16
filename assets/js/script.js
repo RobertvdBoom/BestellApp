@@ -35,10 +35,22 @@ function updateAriaCurrent() {
 }
 
 //WCAG SCREENREADER / 
+let respMenuState = false;
 
 function toggleRespMenu() {
+  let respMenuBtnRef = document.getElementById("resp-menu-btn");
   let respMenuRef = document.getElementById("resp_menu");
   respMenuRef.classList.toggle("resp_menu_closed");
+  respMenuState = !respMenuState;
+  if (respMenuState === true) {
+    respMenuRef.removeAttribute("hidden");
+    respMenuBtnRef.setAttribute("aria-expanded", "true");
+    respMenuBtnRef.setAttribute("aria-label", "Menü schließen!");
+  } else {
+    respMenuRef.setAttribute("hidden");
+    respMenuBtnRef.setAttribute("aria-expanded", "false");
+    respMenuBtnRef.setAttribute("aria-label", "Menü öffnen!");
+  }
 }
 
 function itemPlusOne(index) {
