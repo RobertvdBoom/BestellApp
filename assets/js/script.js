@@ -43,11 +43,11 @@ function toggleRespMenu() {
   respMenuRef.classList.toggle("resp_menu_closed");
   respMenuState = !respMenuState;
   if (respMenuState === true) {
-    respMenuRef.removeAttribute("hidden");
+    respMenuRef.removeAttribute("aria-hidden");
     respMenuBtnRef.setAttribute("aria-expanded", "true");
     respMenuBtnRef.setAttribute("aria-label", "Menü schließen!");
   } else {
-    respMenuRef.setAttribute("hidden");
+    respMenuRef.setAttribute("aria-hidden", "true");
     respMenuBtnRef.setAttribute("aria-expanded", "false");
     respMenuBtnRef.setAttribute("aria-label", "Menü öffnen!");
   }

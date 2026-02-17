@@ -27,7 +27,7 @@
             </button>
         </header>
 
-        <nav id="resp_menu" class="resp_menu_box resp_menu_closed" hidden aria-label="Kategorien">
+        <nav id="resp_menu" class="resp_menu_box resp_menu_closed" aria-hidden="true" aria-label="Kategorien">
             <ul>
                 <li><button class="starters nav_button resp_menu_btn" type="button" onclick="renderDishes('starters')"
                         class="active-category" role="navigation" aria-current="true"
@@ -178,6 +178,12 @@
         
     </dialog>
 
+    <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
+        <button onclick="openDialogMobile()">
+            <h2>Warenkorb Öffnen!</h2>
+        </button>
+    </div>
+
     <footer id="footer">
         <address>
             <span>Diese Website wurde erstellt von: <br>Robert van den Boom</span> <br>
@@ -192,11 +198,7 @@
         </div>
     </footer>
 
-    <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
-        <button onclick="openDialogMobile()">
-            <h2>Warenkorb Öffnen!</h2>
-        </button>
-    </div>
+    
 
     <dialog id="basket-note-dialog">
         <div class="dialog-header">

@@ -92,7 +92,7 @@ aside h2{
 
 .mobile-basket-opener {
     width: 100%;
-    display: flex;
+    /* display: flex; */
     position: sticky;
     bottom: 0;
 }
