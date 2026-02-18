@@ -5,6 +5,7 @@ function init() {
   renderBasketItems();
   fetchLocalStorage();
   // load local storage & 
+  initializeHidden()
 }
 
 function activateCategoryActiveBorder(category) {
@@ -272,4 +273,37 @@ function addAllItemsFromCategory(category) {
 function clearItemBasket() {
   itemBasket = [];
   renderBasketItems();
+}
+
+let hiddenState = "";
+
+function assignHidden() {
+  // let vh = window.innerHeight;
+  let respMenuBoxRef = document.getElementById('resp_menu');
+  let vw = window.innerWidth;
+  if (vw < 1266 && hiddenState == true) {
+    respMenuBoxRef.removeAttribute("hidden");
+    hiddenState = false;
+    console.log('removed!')
+  } else if (vw > 1266 && hiddenState == false) {
+    respMenuBoxRef.setAttribute("hidden", "");
+    hiddenState = true;
+    console.log('added!')
+  } 
+}
+
+window.addEventListener("resize", assignHidden);
+
+function initializeHidden() {
+  let respMenuBoxRef = document.getElementById('resp_menu');
+  let width = window.innerWidth;
+  if (width < 1266) {
+    respMenuBoxRef.removeAttribute("hidden");
+    hiddenState = false;
+    console.log('initially removed!')
+  } else if (width > 1266) {
+    respMenuBoxRef.setAttribute("hidden", "");
+    hiddenState = true;
+    console.log('initially added!')
+  } 
 }
