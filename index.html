@@ -19,7 +19,7 @@
 <body onload="init()">
     <div class="top-content">
         <header class="top-level-bar">
-            <h2>Bestell App</h2>
+            <h2 tabindex="0">Bestell App - White Lotus</h2>
             <button class="resp-btn desktop-d-none" onclick="toggleRespMenu()" type="button" aria-controls="resp_menu"
                 aria-expanded="false" aria-label="Menü öffnen!" id="resp-menu-btn">
                 <img src="/assets/img/icons/menu.svg" alt="" aria-hidden="true">
@@ -72,8 +72,9 @@
             <!-- WCAG Announcement Container below-->
             <div id="basket-status" aria-live="polite" class="d_none"></div>
             
-            <!-- style new cards here because of ul/li :::  also include skip from item to item / onto more details like add to cart?-->
-            <a class="skip-link" href="#dish-container">Beliebte Gerichte überspringen und weiter zum Menü!</a>
+            <a id="skip-to-main" class="skip-link desktop-d-none" href="#dish-container">Beliebte Gerichte überspringen und weiter zum Menü!</a>
+            <a id="skip-to-category" class="skip-link mobile-d-none" href="#desktop-navigation-container">Beliebte Gerichte überspringen und weiter zum Menü!</a>
+           
             <section class="outer-card-scroll-container" aria-labelledby="fav-title">
                 <h2 id="fav-title">Beliebte Gerichte:</h2>
                 <div class="card-scroll-container"  >
@@ -82,7 +83,7 @@
             </section>
 
             <!-- WCAG DONE UP TO HERE - REVISE WITH CHECKER (SCROLLBAR ELEMENT) -->
-            <nav class="mobile-d-none" aria-label="Kategorien">
+            <nav class="mobile-d-none" aria-label="Kategorien" id="desktop-navigation-container">
                 <ul>
                     <li><button class="starters nav_button" type="button" onclick="renderDishes('starters')"
                             class="active-category" aria-current="true"
@@ -179,11 +180,7 @@
         
     </dialog>
 
-    <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
-        <button onclick="openDialogMobile()">
-            <h2>Warenkorb Öffnen!</h2>
-        </button>
-    </div>
+
 
     <footer id="footer">
         <address>
@@ -199,7 +196,13 @@
         </div>
     </footer>
 
-    
+        <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
+        <button onclick="openDialogMobile()">
+            <h2>Warenkorb Öffnen!</h2>
+        </button>
+    </div>
+
+    <!-- OPTIONAL? -->
 
     <dialog id="basket-note-dialog">
         <div class="dialog-header">

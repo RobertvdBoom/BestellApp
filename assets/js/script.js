@@ -5,7 +5,8 @@ function init() {
   renderBasketItems();
   fetchLocalStorage();
   // load local storage & 
-  initializeHidden()
+  initializeHidden();
+  adjustTabSkip();
 }
 
 function activateCategoryActiveBorder(category) {
@@ -276,11 +277,11 @@ function clearItemBasket() {
 }
 
 let hiddenState = "";
+let vw = window.innerWidth;
 
 function assignHidden() {
   // let vh = window.innerHeight;
   let respMenuBoxRef = document.getElementById('resp_menu');
-  let vw = window.innerWidth;
   if (vw < 1266 && hiddenState == true) {
     respMenuBoxRef.removeAttribute("hidden");
     hiddenState = false;
@@ -296,14 +297,36 @@ window.addEventListener("resize", assignHidden);
 
 function initializeHidden() {
   let respMenuBoxRef = document.getElementById('resp_menu');
-  let width = window.innerWidth;
-  if (width < 1266) {
+  if (vw < 1266) {
     respMenuBoxRef.removeAttribute("hidden");
     hiddenState = false;
     console.log('initially removed!')
-  } else if (width > 1266) {
+  } else if (vw > 1266) {
     respMenuBoxRef.setAttribute("hidden", "");
     hiddenState = true;
     console.log('initially added!')
   } 
 }
+
+function adjustTabSkip() {
+  let linkToMainRef = document.getElementById('skip-to-main');
+  let linkToCategoryRef = document.getElementById('skip-to-category');
+  if (vw < 1266) {
+    linkToMainRef.removeAttribute("hidden");
+    linkToCategoryRef.setAttribute("hidden", "");
+    console.log('skip to category ref - hidden!');
+  } else if (vw > 1266) {
+    linkToCategoryRef.removeAttribute("hidden");
+    linkToMainRef.setAttribute("hidden", "");
+    console.log('skip to main ref - hidden!');
+  } 
+}
+
+window.addEventListener("resize", adjustTabSkip);
+window.addEventListener("resize", updateVW);
+
+function updateVW() {
+  vw = window.innerWidth;
+}
+// multiple skips via query selector all? -> move to basket / section etc.  
+// mobile vorspeisen etc. h3 -> tabindex tabable
