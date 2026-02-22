@@ -311,13 +311,16 @@ function initializeHidden() {
 function adjustTabSkip() {
   let linkToMainRef = document.getElementById('skip-to-main');
   let linkToCategoryRef = document.getElementById('skip-to-category');
+  let linkToCategoryHeaderMobileRef = document.getElementById('mobile-category-header');
   if (vw < 1266) {
     linkToMainRef.removeAttribute("hidden");
     linkToCategoryRef.setAttribute("hidden", "");
+    linkToCategoryHeaderMobileRef.setAttribute("hidden", "");
     console.log('skip to category ref - hidden!');
   } else if (vw > 1266) {
     linkToCategoryRef.removeAttribute("hidden");
     linkToMainRef.setAttribute("hidden", "");
+    linkToCategoryHeaderMobileRef.removeAttribute("hidden");
     console.log('skip to main ref - hidden!');
   } 
 }
