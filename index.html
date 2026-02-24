@@ -23,7 +23,7 @@
             <button class="resp-btn desktop-d-none" onclick="toggleRespMenu()" type="button" aria-controls="resp_menu"
                 aria-expanded="false" aria-label="Menü öffnen!" id="resp-menu-btn">
                 <img src="/assets/img/icons/menu.svg" alt="" aria-hidden="true">
-                <span class="sr-only" >Burger Menu öffnen!</span>
+                <span class="sr-only">Burger Menu öffnen!</span>
             </button>
         </header>
 
@@ -68,21 +68,23 @@
                     </div>
                 </dl>
             </section>
-            
+
             <!-- WCAG Announcement Container below-->
             <div id="basket-status" aria-live="polite" class="d_none"></div>
-            
-            <a id="skip-to-main" class="skip-link desktop-d-none" href="#dish-container">Beliebte Gerichte überspringen und weiter zum Menü!</a>
-            <a id="skip-to-category" class="skip-link mobile-d-none" href="#desktop-navigation-container">Beliebte Gerichte überspringen und weiter zum Menü!</a>
-           
+
+            <a id="skip-to-main" class="skip-link desktop-d-none" href="#dish-container">Beliebte Gerichte überspringen
+                und weiter zum Menü!</a>
+            <a id="skip-to-category" class="skip-link mobile-d-none" href="#desktop-navigation-container">Beliebte
+                Gerichte überspringen und weiter zum Menü!</a>
+
             <section class="outer-card-scroll-container" aria-labelledby="fav-title">
                 <h2 id="fav-title">Beliebte Gerichte:</h2>
-                <div class="card-scroll-container"  >
+                <div class="card-scroll-container">
                     <ul id="favorite-dishes" aria-labelledby="fav-title"></ul>
                 </div>
             </section>
             <!-- WCAG DONE -> REVISE WITH CHECKER (SCROLLBAR ELEMENT) -->
-             
+
             <nav class="mobile-d-none" aria-label="Kategorien" id="desktop-navigation-container">
                 <ul>
                     <li><button class="starters nav_button" type="button" onclick="renderDishes('starters')"
@@ -102,7 +104,7 @@
 
             <h2 class="desktop-d-none" id="mobile-category-header" tabindex="0"></h2>
             <!-- next a element keep or remove? -->
-            <a href="basket" id="skip-to-basket" class="skip-link" >Zum Warenkorb!</a>
+            <a href="basket" id="skip-to-basket" class="skip-link">Zum Warenkorb!</a>
 
             <section class="main-content-area" id="dish-container">
             </section>
@@ -126,7 +128,8 @@
                 <div class="dialog-payment-buttons-container">
                     <button onclick="finishOrder()" type="button">Bar (vor Ort)</button>
                     <button onclick="finishOrder()" type="button">Online mit Karte</button>
-                    <button onclick="closeDialog()" type="button" class="close-basket-dialog-btn" aria-label="Warenkorb Schließen!">X</button>
+                    <button onclick="closeDialog()" type="button" class="close-basket-dialog-btn"
+                        aria-label="Warenkorb Schließen!">X</button>
                 </div>
             </dialog>
         </main>
@@ -180,11 +183,17 @@
                 <p class="basket-total-container">0.00 €</p>
             </div>
             <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
-            <button onclick="closeDialogMobile()" class="mobile-close-btn">Close</button>
-        <button class="order-list mobile-close-btn" onclick="openOrderListDialog()">Order List Dialog</button>
+            <button onclick="closeDialogMobile()" class="mobile-close-btn">
+                <span aria-hidden="true">X</span>
+                <span class="d_none">Warenkorb Dialog schließen!</span>
+            </button>
+            <div class="kitchen-site">
+                <span>This is for later for a backend / Kitchen-Side Display:</span>
+                <button class="order-list mobile-close-btn" onclick="openOrderListDialog()">Order List Dialog</button>
+            </div>
         </div>
 
-        
+
     </dialog>
 
 
@@ -203,7 +212,7 @@
         </div>
     </footer>
 
-        <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
+    <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
         <button onclick="openDialogMobile()">
             <h2>Warenkorb Öffnen!</h2>
         </button>
