@@ -81,8 +81,8 @@
                     <ul id="favorite-dishes" aria-labelledby="fav-title"></ul>
                 </div>
             </section>
-
-            <!-- WCAG DONE UP TO HERE - REVISE WITH CHECKER (SCROLLBAR ELEMENT) -->
+            <!-- WCAG DONE -> REVISE WITH CHECKER (SCROLLBAR ELEMENT) -->
+             
             <nav class="mobile-d-none" aria-label="Kategorien" id="desktop-navigation-container">
                 <ul>
                     <li><button class="starters nav_button" type="button" onclick="renderDishes('starters')"
@@ -98,15 +98,20 @@
                     <li><a href="#footer">Kontakt</a></li>
                 </ul>
             </nav>
+            <!-- WCAG DONE UP TO HERE - REVISE WITH CHECKER (SCROLLBAR ELEMENT) -->
 
             <h2 class="desktop-d-none" id="mobile-category-header" tabindex="0"></h2>
+            <!-- next a element keep or remove? -->
             <a href="basket" id="skip-to-basket" class="skip-link" >Zum Warenkorb!</a>
+
             <section class="main-content-area" id="dish-container">
             </section>
 
+
+
             <dialog id="basket-dialog" class="mobile-basket-dialog">
                 <div class="dialog-header">
-                    <img src="/assets/img/icons/lotus-blume-2.png" alt="">
+                    <img src="/assets/img/icons/lotus-blume-2.png" alt="White Lotus">
                     <h2 lang="en">White Lotus</h2>
                 </div>
                 <div class="dialog-text-box">
@@ -116,11 +121,12 @@
                         <p></p>
                     </div>
                 </div>
-                <p>Möchtest du bar (vor Ort) oder mit karte zahlen?</p>
+                <!-- Lieferung / Abholung ändern -> Preis update etc. -->
+                <p>Möchtest du bar (vor Ort) oder mit Karte zahlen?</p>
                 <div class="dialog-payment-buttons-container">
-                    <button onclick="finishOrder()">Bar (vor Ort)</button>
-                    <button onclick="finishOrder()">Online mit Karte</button>
-                    <button type="button" onclick="closeDialog()" class="close-basket-dialog-btn">X</button>
+                    <button onclick="finishOrder()" type="button">Bar (vor Ort)</button>
+                    <button onclick="finishOrder()" type="button">Online mit Karte</button>
+                    <button onclick="closeDialog()" type="button" class="close-basket-dialog-btn" aria-label="Warenkorb Schließen!">X</button>
                 </div>
             </dialog>
         </main>
@@ -129,9 +135,9 @@
             <h2 id="basket-header">Warenkorb</h2>
             <div class="delivery-or-pickup-container">
                 <button name="" id="delivery-option-button" class="btn-delivery delivery-option-button"
-                    onclick="addDeliveryCost()">Lieferung</button>
+                    onclick="addDeliveryCost()" type="button">Lieferung</button>
                 <button id="pickup-option-button" class="btn-pickup active-category pickup-option-button"
-                    onclick="removeDeliveryCost()">Abholung</button>
+                    onclick="removeDeliveryCost()" type="button">Abholung</button>
             </div>
             <section id="basket-container">
                 <div id="basket-items-container" class="basket-items-anchor">
