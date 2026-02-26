@@ -1,5 +1,5 @@
 .active-category {
-    border: 2px solid rgb(26, 2, 2);
+    border: 2px solid rgb(26, 2, 2) !important;
     transition: border 0s;
     transition: background-position 0.5s;
 }

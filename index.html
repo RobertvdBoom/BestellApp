@@ -19,7 +19,7 @@
 <body onload="init()">
     <div class="top-content">
         <header class="top-level-bar">
-            <h2 tabindex="0">Bestell App - White Lotus</h2>
+            <h2>Bestell App - White Lotus</h2>
             <button class="resp-btn desktop-d-none" onclick="toggleRespMenu()" type="button" aria-controls="resp_menu"
                 aria-expanded="false" aria-label="Menü öffnen!" id="resp-menu-btn">
                 <img src="/assets/img/icons/menu.svg" alt="" aria-hidden="true">
@@ -30,8 +30,8 @@
         <nav id="resp_menu" class="resp_menu_box resp_menu_closed" hidden="true" aria-label="Kategorien">
             <ul>
                 <li><button class="starters nav_button resp_menu_btn" type="button" onclick="renderDishes('starters')"
-                        class="active-category" role="navigation" aria-current="true"
-                        aria-controls="dish-container">Vorspeisen</button></li>
+                        class="active-category" aria-current="true" aria-controls="dish-container">Vorspeisen</button>
+                </li>
                 <li><button class="mainDish nav_button resp_menu_btn" type="button" onclick="renderDishes('mainDish')"
                         aria-controls="dish-container">Hauptgerichte</button></li>
                 <li><button class="dessert nav_button resp_menu_btn" type="button" onclick="renderDishes('dessert')"
@@ -102,7 +102,7 @@
             </nav>
             <!-- WCAG DONE UP TO HERE - REVISE WITH CHECKER (SCROLLBAR ELEMENT) -->
 
-            <h2 class="desktop-d-none" id="mobile-category-header" tabindex="0"></h2>
+            <h2 class="desktop-d-none" id="mobile-category-header"></h2>
             <!-- next a element keep or remove? -->
             <a href="basket" id="skip-to-basket" class="skip-link">Zum Warenkorb!</a>
 
@@ -132,6 +132,11 @@
                         aria-label="Warenkorb Schließen!">X</button>
                 </div>
             </dialog>
+            <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
+                <button onclick="openDialogMobile()">
+                    <h2>Warenkorb Öffnen!</h2>
+                </button>
+            </div>
         </main>
 
         <aside id="basket" class="mobile-d-none basket" role="complementary" aria-label="Warenkorb">
@@ -158,6 +163,7 @@
             <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
             <button class="order-list" onclick="openOrderListDialog()">Order List Dialog</button>
         </aside>
+
     </div>
 
     <dialog id="mobile-basket-dialog" class="mobile-basket">
@@ -199,8 +205,8 @@
 
 
     <footer id="footer">
-        <address>
-            <span>Diese Website wurde erstellt von: <br>Robert van den Boom</span> <br>
+        <address class="footer-links">
+            <span>Diese Website wurde erstellt von: <br>Robert van den Boom</span>
             <a href="mailto:vdboom.robert@gmail.com">vdboom.robert@gmail.com</a>
         </address>
         <div class="footer-links">
@@ -212,11 +218,7 @@
         </div>
     </footer>
 
-    <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
-        <button onclick="openDialogMobile()">
-            <h2>Warenkorb Öffnen!</h2>
-        </button>
-    </div>
+
 
     <!-- OPTIONAL? -->
 
