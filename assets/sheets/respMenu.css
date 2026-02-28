@@ -1,5 +1,5 @@
 .resp_menu_box {
-    background-color: rgb(22, 22, 22);
+    background: linear-gradient(15deg, #242424, #686868, #505050, #525252, #242424);
     display: flex;
     flex-direction: column;
     min-height: 250px;
@@ -10,7 +10,7 @@
     right: 0;
 
     transition: all 250ms ease-in-out;
-    border: 2px solid #cc4e00;
+    border: 2px solid #000000;
 }
 
 .resp_menu_box ul {
@@ -20,12 +20,11 @@
 }
 
 .resp_menu_box li {
-    padding: 10px 20px;
+    margin: 10px 20px;
 }
 
 .resp_menu_box li:hover {
     cursor: pointer;
-    background-color: grey;
 }
 
 .top-content {

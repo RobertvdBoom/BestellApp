@@ -9,6 +9,8 @@
 @import url(/assets/sheets/dialog.css);
 @import url(/assets/sheets/restaurantInfo.css);
 @import url(/assets/sheets/responsive.css);
+@import url(/assets/sheets/kitchen.css);
+
 
 html{
     scroll-behavior: smooth;

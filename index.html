@@ -19,19 +19,19 @@
 <body onload="init()">
     <div class="top-content">
         <header class="top-level-bar">
-            <h2 tabindex="0">Bestell App - White Lotus</h2>
+            <h2>Bestell App - White Lotus</h2>
             <button class="resp-btn desktop-d-none" onclick="toggleRespMenu()" type="button" aria-controls="resp_menu"
                 aria-expanded="false" aria-label="Menü öffnen!" id="resp-menu-btn">
                 <img src="/assets/img/icons/menu.svg" alt="" aria-hidden="true">
-                <span class="sr-only" >Burger Menu öffnen!</span>
+                <span class="sr-only">Burger Menu öffnen!</span>
             </button>
         </header>
 
         <nav id="resp_menu" class="resp_menu_box resp_menu_closed" hidden="true" aria-label="Kategorien">
             <ul>
                 <li><button class="starters nav_button resp_menu_btn" type="button" onclick="renderDishes('starters')"
-                        class="active-category" role="navigation" aria-current="true"
-                        aria-controls="dish-container">Vorspeisen</button></li>
+                        class="active-category" aria-current="true" aria-controls="dish-container">Vorspeisen</button>
+                </li>
                 <li><button class="mainDish nav_button resp_menu_btn" type="button" onclick="renderDishes('mainDish')"
                         aria-controls="dish-container">Hauptgerichte</button></li>
                 <li><button class="dessert nav_button resp_menu_btn" type="button" onclick="renderDishes('dessert')"
@@ -68,21 +68,23 @@
                     </div>
                 </dl>
             </section>
-            
+
             <!-- WCAG Announcement Container below-->
             <div id="basket-status" aria-live="polite" class="d_none"></div>
-            
-            <a id="skip-to-main" class="skip-link desktop-d-none" href="#dish-container">Beliebte Gerichte überspringen und weiter zum Menü!</a>
-            <a id="skip-to-category" class="skip-link mobile-d-none" href="#desktop-navigation-container">Beliebte Gerichte überspringen und weiter zum Menü!</a>
-           
+
+            <a id="skip-to-main" class="skip-link desktop-d-none" href="#dish-container">Beliebte Gerichte überspringen
+                und weiter zum Menü!</a>
+            <a id="skip-to-category" class="skip-link mobile-d-none" href="#desktop-navigation-container">Beliebte
+                Gerichte überspringen und weiter zum Menü!</a>
+
             <section class="outer-card-scroll-container" aria-labelledby="fav-title">
                 <h2 id="fav-title">Beliebte Gerichte:</h2>
-                <div class="card-scroll-container"  >
+                <div class="card-scroll-container">
                     <ul id="favorite-dishes" aria-labelledby="fav-title"></ul>
                 </div>
             </section>
+            <!-- WCAG DONE -> REVISE WITH CHECKER (SCROLLBAR ELEMENT) -->
 
-            <!-- WCAG DONE UP TO HERE - REVISE WITH CHECKER (SCROLLBAR ELEMENT) -->
             <nav class="mobile-d-none" aria-label="Kategorien" id="desktop-navigation-container">
                 <ul>
                     <li><button class="starters nav_button" type="button" onclick="renderDishes('starters')"
@@ -98,15 +100,20 @@
                     <li><a href="#footer">Kontakt</a></li>
                 </ul>
             </nav>
+            <!-- WCAG DONE UP TO HERE - REVISE WITH CHECKER (SCROLLBAR ELEMENT) -->
 
-            <h2 class="desktop-d-none" id="mobile-category-header" tabindex="0"></h2>
-            <a href="basket" id="skip-to-basket" class="skip-link" >Zum Warenkorb!</a>
+            <h2 class="desktop-d-none" id="mobile-category-header"></h2>
+            <!-- next a element keep or remove? -->
+            <a href="basket" id="skip-to-basket" class="skip-link">Zum Warenkorb!</a>
+
             <section class="main-content-area" id="dish-container">
             </section>
 
+
+
             <dialog id="basket-dialog" class="mobile-basket-dialog">
                 <div class="dialog-header">
-                    <img src="/assets/img/icons/lotus-blume-2.png" alt="">
+                    <img src="/assets/img/icons/lotus-blume-2.png" alt="White Lotus">
                     <h2 lang="en">White Lotus</h2>
                 </div>
                 <div class="dialog-text-box">
@@ -116,22 +123,29 @@
                         <p></p>
                     </div>
                 </div>
-                <p>Möchtest du bar (vor Ort) oder mit karte zahlen?</p>
+                <!-- Lieferung / Abholung ändern -> Preis update etc. -->
+                <p>Möchtest du bar (vor Ort) oder mit Karte zahlen?</p>
                 <div class="dialog-payment-buttons-container">
-                    <button onclick="finishOrder()">Bar (vor Ort)</button>
-                    <button onclick="finishOrder()">Online mit Karte</button>
-                    <button type="button" onclick="closeDialog()" class="close-basket-dialog-btn">X</button>
+                    <button onclick="finishOrder()" type="button">Bar (vor Ort)</button>
+                    <button onclick="finishOrder()" type="button">Online mit Karte</button>
+                    <button onclick="closeDialog()" type="button" class="close-basket-dialog-btn"
+                        aria-label="Warenkorb Schließen!">X</button>
                 </div>
             </dialog>
+            <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
+                <button onclick="openDialogMobile()">
+                    <h2>Warenkorb Öffnen!</h2>
+                </button>
+            </div>
         </main>
 
         <aside id="basket" class="mobile-d-none basket" role="complementary" aria-label="Warenkorb">
             <h2 id="basket-header">Warenkorb</h2>
             <div class="delivery-or-pickup-container">
                 <button name="" id="delivery-option-button" class="btn-delivery delivery-option-button"
-                    onclick="addDeliveryCost()">Lieferung</button>
+                    onclick="addDeliveryCost()" type="button">Lieferung</button>
                 <button id="pickup-option-button" class="btn-pickup active-category pickup-option-button"
-                    onclick="removeDeliveryCost()">Abholung</button>
+                    onclick="removeDeliveryCost()" type="button">Abholung</button>
             </div>
             <section id="basket-container">
                 <div id="basket-items-container" class="basket-items-anchor">
@@ -149,6 +163,7 @@
             <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
             <button class="order-list" onclick="openOrderListDialog()">Order List Dialog</button>
         </aside>
+
     </div>
 
     <dialog id="mobile-basket-dialog" class="mobile-basket">
@@ -174,18 +189,24 @@
                 <p class="basket-total-container">0.00 €</p>
             </div>
             <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
-            <button onclick="closeDialogMobile()" class="mobile-close-btn">Close</button>
-        <button class="order-list mobile-close-btn" onclick="openOrderListDialog()">Order List Dialog</button>
+            <button onclick="closeDialogMobile()" class="mobile-close-btn">
+                <span aria-hidden="true">X</span>
+                <span class="d_none">Warenkorb Dialog schließen!</span>
+            </button>
+            <div class="kitchen-site">
+                <span>This is for later for a backend / Kitchen-Side Display:</span>
+                <button class="order-list mobile-close-btn" onclick="openOrderListDialog()">Order List Dialog</button>
+            </div>
         </div>
 
-        
+
     </dialog>
 
 
 
     <footer id="footer">
-        <address>
-            <span>Diese Website wurde erstellt von: <br>Robert van den Boom</span> <br>
+        <address class="footer-links">
+            <span>Diese Website wurde erstellt von: <br>Robert van den Boom</span>
             <a href="mailto:vdboom.robert@gmail.com">vdboom.robert@gmail.com</a>
         </address>
         <div class="footer-links">
@@ -197,11 +218,7 @@
         </div>
     </footer>
 
-        <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
-        <button onclick="openDialogMobile()">
-            <h2>Warenkorb Öffnen!</h2>
-        </button>
-    </div>
+
 
     <!-- OPTIONAL? -->
 

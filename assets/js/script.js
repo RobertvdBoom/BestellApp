@@ -10,12 +10,12 @@ function init() {
 }
 
 function activateCategoryActiveBorder(category) {
-    let oldButtonContentRef = document.querySelectorAll(`.${activeCategory}`);
-    let newButtonContentRef = document.querySelectorAll(`.${category}`);
-    oldButtonContentRef.forEach(box => {box.classList.remove("active-category");});
-    newButtonContentRef.forEach(box => {box.classList.add("active-category");});
-    activeCategory = category;
-    announceActiveCategory(category);
+  let oldButtonContentRef = document.querySelectorAll(`.${activeCategory}`);
+  let newButtonContentRef = document.querySelectorAll(`.${category}`);
+  oldButtonContentRef.forEach(box => { box.classList.remove("active-category"); });
+  newButtonContentRef.forEach(box => { box.classList.add("active-category"); });
+  activeCategory = category;
+  announceActiveCategory(category);
 }
 
 // WCAG Screenreader Announcement
@@ -75,8 +75,6 @@ function itemMinusOne(index) {
   }
 }
 
-
-
 function isInBasket(category, index) {
   let itemIsInBasket = false;
   let itemIndex = "";
@@ -127,16 +125,16 @@ function pushItemToBasket(category, index) {
 let delivery = false;
 
 function setDeliveryBoxActive() {
-  let deliveryBoxRef =  document.querySelectorAll('.delivery-option-button');
-  let pickupBoxRef =  document.querySelectorAll('.pickup-option-button');
+  let deliveryBoxRef = document.querySelectorAll('.delivery-option-button');
+  let pickupBoxRef = document.querySelectorAll('.pickup-option-button');
 
   if (delivery == true) {
-    deliveryBoxRef.forEach(box => { box.classList.add("active-category");});
-    pickupBoxRef.forEach(box => { box.classList.remove("active-category");});
+    deliveryBoxRef.forEach(box => { box.classList.add("active-category"); });
+    pickupBoxRef.forEach(box => { box.classList.remove("active-category"); });
   }
   else if (delivery == false) {
-    pickupBoxRef.forEach(box => { box.classList.add("active-category");});
-    deliveryBoxRef.forEach(box => { box.classList.remove("active-category");});
+    pickupBoxRef.forEach(box => { box.classList.add("active-category"); });
+    deliveryBoxRef.forEach(box => { box.classList.remove("active-category"); });
   }
 }
 
@@ -172,7 +170,7 @@ function openDialogMobile() {
   mobileDialogRef.showModal();
 }
 
-function closeDialogMobile () {
+function closeDialogMobile() {
   mobileDialogRef.close();
 }
 
@@ -204,7 +202,7 @@ function finishOrder() {
 
 function resetBasketItemsContainer() {
   let basketRef = document.querySelectorAll('.basket-items-anchor');
-  basketRef.forEach(box => {box.innerHTML ="Vielen Dank für deine Bestellung! Dein Essen sollte in 60 Minuten bei dir sein!";});
+  basketRef.forEach(box => { box.innerHTML = "Vielen Dank für deine Bestellung! Dein Essen sollte in 60 Minuten bei dir sein!"; });
 }
 
 // FULL NOTE SECTION
@@ -285,12 +283,10 @@ function assignHidden() {
   if (vw < 1266 && hiddenState == true) {
     respMenuBoxRef.removeAttribute("hidden");
     hiddenState = false;
-    console.log('removed!')
   } else if (vw > 1266 && hiddenState == false) {
     respMenuBoxRef.setAttribute("hidden", "");
     hiddenState = true;
-    console.log('added!')
-  } 
+  }
 }
 
 window.addEventListener("resize", assignHidden);
@@ -300,12 +296,10 @@ function initializeHidden() {
   if (vw < 1266) {
     respMenuBoxRef.removeAttribute("hidden");
     hiddenState = false;
-    console.log('initially removed!')
   } else if (vw > 1266) {
     respMenuBoxRef.setAttribute("hidden", "");
     hiddenState = true;
-    console.log('initially added!')
-  } 
+  }
 }
 
 function adjustTabSkip() {
@@ -315,14 +309,12 @@ function adjustTabSkip() {
   if (vw < 1266) {
     linkToMainRef.removeAttribute("hidden");
     linkToCategoryRef.setAttribute("hidden", "");
-    linkToCategoryHeaderMobileRef.setAttribute("hidden", "");
-    console.log('skip to category ref - hidden!');
+    linkToCategoryHeaderMobileRef.removeAttribute("hidden");
   } else if (vw > 1266) {
     linkToCategoryRef.removeAttribute("hidden");
     linkToMainRef.setAttribute("hidden", "");
-    linkToCategoryHeaderMobileRef.removeAttribute("hidden");
-    console.log('skip to main ref - hidden!');
-  } 
+    linkToCategoryHeaderMobileRef.setAttribute("hidden", "");
+  }
 }
 
 window.addEventListener("resize", adjustTabSkip);
@@ -331,5 +323,5 @@ window.addEventListener("resize", updateVW);
 function updateVW() {
   vw = window.innerWidth;
 }
-// multiple skips via query selector all? -> move to basket / section etc.  
+// multiple skips via query selector all? -> move to basket / section etc.
 // mobile vorspeisen etc. h3 -> tabindex tabable
