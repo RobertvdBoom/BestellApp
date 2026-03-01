@@ -325,3 +325,9 @@ function updateVW() {
 }
 // multiple skips via query selector all? -> move to basket / section etc.
 // mobile vorspeisen etc. h3 -> tabindex tabable
+
+let previousItemID = "";
+
+function focusPrevious(previousItemID) {
+  document.getElementById(previousItemID).focus();
+}
