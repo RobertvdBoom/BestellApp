@@ -3,7 +3,6 @@ function init() {
   renderFavDishes();
   fetchLocalStorage();
   renderBasketItems();
-  fetchLocalStorage();
   // load local storage & 
   initializeHidden();
   adjustTabSkip();
@@ -227,12 +226,20 @@ function addNote(noteIndex) {
 function commitNote(index) {
   let noteToSave = noteContainerRef.value;
   itemBasket[index].note = noteToSave;
+  storeItemBasketInLocalStorage();
   closeNoteDialog();
 }
 
 function deleteNote(index) {
   itemBasket[index].note = "";
+  storeItemBasketInLocalStorage();
   closeNoteDialog();
+}
+
+function deleteNoteFromSummary(index) {
+  itemBasket[index].note = "";
+  storeItemBasketInLocalStorage();
+  renderOrderSummary();
 }
 
 // restaurant side dialog + budget backend '-'
@@ -331,3 +338,6 @@ let previousItemID = "";
 function focusPrevious(previousItemID) {
   document.getElementById(previousItemID).focus();
 }
+
+//
+

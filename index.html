@@ -100,12 +100,15 @@
                     <li><a href="#footer">Kontakt</a></li>
                 </ul>
             </nav>
-            <!-- WCAG DONE UP TO HERE - REVISE WITH CHECKER (SCROLLBAR ELEMENT) -->
+            
 
             <h2 class="desktop-d-none" id="mobile-category-header"></h2>
             <!-- next a element keep or remove? -->
-            <a href="basket" id="skip-to-basket" class="skip-link">Zum Warenkorb!</a>
+            <!-- <a href="basket" id="skip-to-basket" class="skip-link">Zum Warenkorb!</a> -->
 
+
+
+            <!-- WCAG DONE UP TO HERE - REVISE WITH CHECKER -->
             <section class="main-content-area" id="dish-container">
             </section>
 
@@ -119,9 +122,12 @@
                 <div class="dialog-text-box">
                     <h2>Danke für deine Bestellung!</h2>
                     <h3>Hier ist die Zusammenfassung deiner Bestellung:</h3>
+
+
                     <div id="order-summary-container" class="order-summary">
-                        <p></p>
                     </div>
+
+
                 </div>
                 <!-- Lieferung / Abholung ändern -> Preis update etc. -->
                 <p>Möchtest du bar (vor Ort) oder mit Karte zahlen?</p>
@@ -133,7 +139,7 @@
                 </div>
             </dialog>
 
-            
+            <!-- controls dialog > id: mobile-basket-dialog  -->
             <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
                 <button onclick="openDialogMobile()">
                     <h2>Warenkorb Öffnen!</h2>
@@ -195,6 +201,9 @@
                 <span aria-hidden="true">X</span>
                 <span class="d_none">Warenkorb Dialog schließen!</span>
             </button>
+
+
+
             <div class="kitchen-site">
                 <span>This is for later for a backend / Kitchen-Side Display:</span>
                 <button class="order-list mobile-close-btn" onclick="openOrderListDialog()">Order List Dialog</button>
