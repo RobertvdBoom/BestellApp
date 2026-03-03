@@ -339,5 +339,4 @@ function focusPrevious(previousItemID) {
   document.getElementById(previousItemID).focus();
 }
 
-//
-
+// announce price changes 

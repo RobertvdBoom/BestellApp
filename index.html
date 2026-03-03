@@ -106,8 +106,6 @@
             <!-- next a element keep or remove? -->
             <!-- <a href="basket" id="skip-to-basket" class="skip-link">Zum Warenkorb!</a> -->
 
-
-
             <!-- WCAG DONE UP TO HERE - REVISE WITH CHECKER -->
             <section class="main-content-area" id="dish-container">
             </section>
@@ -141,7 +139,7 @@
 
             <!-- controls dialog > id: mobile-basket-dialog  -->
             <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
-                <button onclick="openDialogMobile()">
+                <button onclick="openDialogMobile()" aria-haspopup="dialog" aria-controls="mobile-basket-dialog" aria-expanded="false">
                     <h2>Warenkorb Öffnen!</h2>
                 </button>
             </div>
