@@ -105,12 +105,8 @@
             <h2 class="desktop-d-none" id="mobile-category-header"></h2>
             <!-- next a element keep or remove? -->
             <!-- <a href="basket" id="skip-to-basket" class="skip-link">Zum Warenkorb!</a> -->
-
-            <!-- WCAG DONE UP TO HERE - REVISE WITH CHECKER -->
             <section class="main-content-area" id="dish-container">
             </section>
-
-
 
             <dialog id="basket-dialog" class="mobile-basket-dialog">
                 <div class="dialog-header">
@@ -144,11 +140,12 @@
                 </button>
             </div>
         </main>
-
+        
         <aside id="basket" class="mobile-d-none basket" role="complementary" aria-label="Warenkorb">
             <h2 id="basket-header">Warenkorb</h2>
             <div class="delivery-or-pickup-container">
-                <button name="" id="delivery-option-button" class="btn-delivery delivery-option-button"
+                <!-- rework this here -->
+                <button id="delivery-option-button" class="btn-delivery delivery-option-button"
                     onclick="addDeliveryCost()" type="button">Lieferung</button>
                 <button id="pickup-option-button" class="btn-pickup active-category pickup-option-button"
                     onclick="removeDeliveryCost()" type="button">Abholung</button>
@@ -158,6 +155,7 @@
                     <p>Wir freuen uns auf deine Bestellung!</p>
                 </div>
             </section>
+            <!-- announce changes from here -> polite -->
             <div class="cost-in-basket-container">
                 <p>Lieferkosten:</p>
                 <p class="basket-delivery-cost">0.00 €</p>
@@ -166,12 +164,11 @@
                 <p>Summe:</p>
                 <p class="basket-total-container">0.00 €</p>
             </div>
-            <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
+            <button onclick="openDialog()" class="dialog-btn" aria-haspopup="dialog" aria-controls="basket-dialog" >Bestellung abschicken!</button>
             <button class="order-list" onclick="openOrderListDialog()">Order List Dialog</button>
         </aside>
-
     </div>
-
+    <!-- WCAG DONE UP TO HERE - REVISE WITH CHECKER -->
     <dialog id="mobile-basket-dialog" class="mobile-basket">
         <h2>Warenkorb</h2>
         <div class="delivery-or-pickup-container">

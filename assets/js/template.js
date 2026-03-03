@@ -120,7 +120,7 @@ function createBasketItems() {
                     <div class="basket-item">
                         <div class="ds-flex-basket-l">
                             <h3>${element.dishName}</h3>
-                            <button onclick="addNote(${index})" aria-label="Ich möchte eine Anmerkung zu ${element.dishName} hinzufügen, oder ändern!">Notiz!</button>
+                            <button onclick="addNote(${index})" aria-label="Ich möchte eine Anmerkung zu ${element.dishName} hinzufügen, oder ändern!" aria-haspopup="dialog" aria-controls="basket-note-dialog">Notiz!</button>
                         </div>
                         <div class="ds-flex-basket-r">
                             <span>${elementTotal} €</span>
