@@ -193,15 +193,24 @@ function renderOrderSummary() {
     orderSummaryContainerRef.innerHTML = "";
     for (let index = 0; index < itemBasket.length; index++) {
         let element = itemBasket[index];
-        orderSummaryContainerRef.innerHTML += `
+        let contentForDiv = "";
+        contentForDiv = `
             <p>${element.dishAmount} x ${element.dishName}</p>
         `
         if (element.note != "") {
-            orderSummaryContainerRef.innerHTML += `
+            contentForDiv += `
             <span class="note-in-summary">Anmerkung: ${element.note}</span>
             <button onclick="deleteNoteFromSummary(${index})" aria-label="Notiz zu ${element.dishName} Löschen!">Notiz Löschen!</button>`
-        }
+        };
+        
+        let outerDiv = `<div class="outer-summary-item">${contentForDiv}</div> `
+        orderSummaryContainerRef.innerHTML += outerDiv;
+
+        // store in variable, add to div container, parse to ref
+
     }
+
+
 }
 
 // LOCAL STORAGE

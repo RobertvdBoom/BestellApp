@@ -54,10 +54,25 @@ dialog[open]::backdrop {
 
 .order-summary {
   height: 400px;
-  max-height: 400px;
+  max-height: min(30vh, 400px);
   overflow-y: auto;
   font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.404);
+  padding: min(5%, 15px);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
+
+.order-summary p{
+  margin-block: 0;
+}
+
+/* .outer-summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+} */
 
 dialog {
   background-color: rgb(102, 102, 102);
