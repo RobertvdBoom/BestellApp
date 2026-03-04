@@ -2,6 +2,10 @@ function init() {
   renderDishes(activeCategory);
   renderFavDishes();
   fetchLocalStorage();
+  fetchDeliveryFromLocalStorage();
+  adjustDeliveryCost();
+  setDeliveryBoxActive();
+  renderDeliveryCost();
   renderBasketItems();
   // load local storage & 
   initializeHidden();
@@ -20,7 +24,11 @@ function activateCategoryActiveBorder(category) {
 // WCAG Screenreader Announcement
 const announcementContainerRef = document.getElementById('basket-status')
 function announceAmount(dish, action, amountNew) {
-  announcementContainerRef.innerHTML = `${dish} wurde ${action}. Aktuelle Menge im Warenkorb: ${amountNew}`
+  announcementContainerRef.innerHTML = `${dish} wurde ${action}. Aktuelle Menge im Warenkorb: ${amountNew}`;
+}
+
+function announcePrice(price) {
+  announcementContainerRef.innerHTML = `Die Summe der Produkte in deinem Warenkorb beträgt: ${price}. Lieferkosten betragen: ${deliveryCost} €`;
 }
 
 function announceActiveCategory(currentActiveCategory) {
@@ -148,18 +156,20 @@ function adjustDeliveryCost() {
 
 function addDeliveryCost() {
   delivery = true;
+  storeDeliveryInLocalStorage();
   adjustDeliveryCost();
-  renderDeliveryCost();
   calculateTotalBasket();
   setDeliveryBoxActive();
+  renderDeliveryCost();
 }
 
 function removeDeliveryCost() {
   delivery = false;
+  storeDeliveryInLocalStorage();
   adjustDeliveryCost();
-  renderDeliveryCost();
   calculateTotalBasket();
   setDeliveryBoxActive();
+  renderDeliveryCost();
 }
 
 let dialogRef = document.getElementById('basket-dialog');

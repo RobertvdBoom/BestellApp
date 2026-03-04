@@ -40,6 +40,7 @@ function renderDishes(category) {
     `
     }
     createMobileCategoryHeader(category);
+    announcePrice();
 }
 
 function createMobileCategoryHeader(category) {
@@ -166,7 +167,9 @@ function addUpBasketItems() {
         total += element.dishAmount * element.dishPrice;
     }
     total += deliveryCost;
-    return total.toFixed(2) + " €";
+    total = total.toFixed(2) + " €";
+    announcePrice(total);
+    return total
 }
 
 // From here on, its all fine '-' - single use case / container
@@ -201,16 +204,23 @@ function renderOrderSummary() {
     }
 }
 
+// LOCAL STORAGE
 
-// in progress: local storage
 function storeItemBasketInLocalStorage() {
     localStorage.setItem('itemBasket', JSON.stringify(itemBasket));
 }
-// rework to general function? 
+
 function fetchLocalStorage() {
     itemBasket = JSON.parse(localStorage.getItem("itemBasket"));
 }
 
+function storeDeliveryInLocalStorage() {
+    localStorage.setItem('delivery', JSON.stringify(delivery));
+}
+
+function fetchDeliveryFromLocalStorage() {
+    delivery = JSON.parse(localStorage.getItem("delivery"));
+}
 
 
 

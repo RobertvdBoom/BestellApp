@@ -40,7 +40,6 @@
                         aria-controls="dish-container">Getränke</button></li>
                 <li><a class="resp_menu_link" href="#footer">Kontakt</a></li>
             </ul>
-            <!-- WCAG UPDATE ON FUNCTION: aria-current -->
         </nav>
     </div>
 
@@ -83,8 +82,6 @@
                     <ul id="favorite-dishes" aria-labelledby="fav-title"></ul>
                 </div>
             </section>
-            <!-- WCAG DONE -> REVISE WITH CHECKER (SCROLLBAR ELEMENT) -->
-
             <nav class="mobile-d-none" aria-label="Kategorien" id="desktop-navigation-container">
                 <ul>
                     <li><button class="starters nav_button" type="button" onclick="renderDishes('starters')"
@@ -100,14 +97,9 @@
                     <li><a href="#footer">Kontakt</a></li>
                 </ul>
             </nav>
-            
-
             <h2 class="desktop-d-none" id="mobile-category-header"></h2>
-            <!-- next a element keep or remove? -->
-            <!-- <a href="basket" id="skip-to-basket" class="skip-link">Zum Warenkorb!</a> -->
             <section class="main-content-area" id="dish-container">
             </section>
-
             <dialog id="basket-dialog" class="mobile-basket-dialog">
                 <div class="dialog-header">
                     <img src="/assets/img/icons/lotus-blume-2.png" alt="White Lotus">
@@ -132,8 +124,6 @@
                         aria-label="Warenkorb Schließen!">X</button>
                 </div>
             </dialog>
-
-            <!-- controls dialog > id: mobile-basket-dialog  -->
             <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
                 <button onclick="openDialogMobile()" aria-haspopup="dialog" aria-controls="mobile-basket-dialog" aria-expanded="false">
                     <h2>Warenkorb Öffnen!</h2>
