@@ -62,17 +62,20 @@ dialog[open]::backdrop {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  scrollbar-color: white !important;
 }
 
 .order-summary p{
   margin-block: 0;
 }
 
-/* .outer-summary-item {
+.outer-summary-item {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-} */
+  gap: 5px;
+  background-color: rgba(100, 100, 100, 0.5);
+  padding: 8px;
+}
 
 dialog {
   background-color: rgb(102, 102, 102);

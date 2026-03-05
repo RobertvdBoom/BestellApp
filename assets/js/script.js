@@ -172,25 +172,52 @@ function removeDeliveryCost() {
   renderDeliveryCost();
 }
 
+
+
+// DIALOG SECTION START
+
+let pageContentRef = document.getElementById('page-content');
 let dialogRef = document.getElementById('basket-dialog');
 let mobileDialogRef = document.getElementById('mobile-basket-dialog');
 
+let dialogOpened = false;
+
 function openDialogMobile() {
   mobileDialogRef.showModal();
+  dialogOpened = true;
+  blockBackgroundContent();
 }
 
 function closeDialogMobile() {
   mobileDialogRef.close();
+  dialogOpened = false;
+  blockBackgroundContent();
 }
 
 function openDialog() {
+  mobileDialogRef.close();
   renderOrderSummary();
   dialogRef.showModal();
+  dialogOpened = true;
+  blockBackgroundContent();
 }
 
 function closeDialog() {
   dialogRef.close();
+  dialogOpened = false;
+  blockBackgroundContent();
 }
+
+function blockBackgroundContent() {
+  if (dialogOpened == true) {
+    pageContentRef.setAttribute("hidden", "");
+  } else {
+    pageContentRef.removeAttribute("hidden");
+  }
+}
+
+// DIALOG SECTION END
+// CHECK TOMORROW: accessibility
 
 let orderList = [];
 

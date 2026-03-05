@@ -10,6 +10,22 @@ main   {
 
 body {
     margin: 0;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e79969;
+    background: linear-gradient(
+      15deg,
+      #444244,
+      #6b6568,
+      #746b6b,
+      #504f4f,
+      #313030
+    ); */
+}
+
+#page-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,7 +39,6 @@ body {
       #504f4f,
       #313030
     );
-
 }
 
 .wrapper {
