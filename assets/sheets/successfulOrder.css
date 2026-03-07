@@ -25,22 +25,6 @@ body {
     ); */
 }
 
-#page-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #e79969;
-    background: linear-gradient(
-      15deg,
-      #444244,
-      #6b6568,
-      #746b6b,
-      #504f4f,
-      #313030
-    );
-}
-
 .wrapper {
     background-color: rgb(156, 60, 60);
     width: 80%;

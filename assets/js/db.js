@@ -116,7 +116,7 @@ let dishData =
             "dishInfoForWACG": "Placeholder, in Case needed"
         },
         {
-            "dishName": "Banh Cam - Sesambällchen aus Vietnam",
+            "dishName": "Banh Cam",
             "dishID": "d030005",
             "dishPrice": 5.40,
             "dishDescription": "Knusprig frittierte Sesambällchen mit einer süßen Füllung aus Mungbohnen - ein beliebter vietnamesischer Snack.",
@@ -164,7 +164,7 @@ let dishData =
             "dishInfoForWACG": "Placeholder, in Case needed"
         },
         {
-            "dishName": "Pflaumenwein (Umeshu)",
+            "dishName": "Umeshu",
             "dishID": "b040003",
             "dishPrice": 6.50,
             "dishDescription": "Süßlicher japanischer Likör aus eingelegten Pflaumen, kalt serviert.",
@@ -182,7 +182,7 @@ let dishData =
             "dishInfoForWACG": "Placeholder, in Case needed"
         },
         {
-            "dishName": "Sake (純米酒)",
+            "dishName": "Sake",
             "dishID": "b040007",
             "dishPrice": 7.50,
             "dishDescription": "Traditioneller japanischer Reiswein, servierbar kalt oder leicht erwärmt.",
