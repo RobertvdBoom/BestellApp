@@ -19,11 +19,13 @@
     display: flex;
     gap: 20px;
     justify-content: space-between;
+    height: 100%;
 }
 
 .dish-card-favorite-box{
     display: flex;
     min-width: 600px;
+    height: 100%;
 }
 
 
