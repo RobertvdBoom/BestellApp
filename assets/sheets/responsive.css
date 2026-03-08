@@ -13,7 +13,7 @@
     }
 
     p {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
     }
 
     h1 {
@@ -39,22 +39,17 @@
     }
 
     .dish-card-price-and-button button {
-        width: 50%;
+        width: 40vw;
         padding: 5px;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 20px;
+        font-size: 1.25rem;
         margin-top: 20px;
     }
 
-    .dish-card-price-and-button-fav {
-        width: 100%;
-        align-items: center;
-    }
-
-    .dish-card-price-and-button-fav button {
-        width: 50%;
+    .padding-l-20 {
+        padding-left: 20px;
     }
 
     .dish-text {
@@ -65,7 +60,7 @@
     .outer-card-container {
         display: flex;
         flex: 1;
-        min-width: 65vw;
+        min-width: 75vw;
     }
 
     .mobile-d-none {
@@ -136,5 +131,10 @@
         width: 100%;
         height: 100%;
         max-width: 100%;
+    }
+
+    footer {
+        margin-bottom: 7vh;
+        margin-bottom: 7dvh;
     }
 }

@@ -81,8 +81,8 @@ function renderFavDishes() {
                     <h3 id="${favDishID}">${dishData[element.category][element.index].dishName}</h3>
                     <p>${dishData[element.category][element.index].dishDescription}</p>
                 </div>
-                <div class="dish-card-price-and-button-fav">
-                    <p>${dishData[element.category][element.index].dishPrice.toFixed(2)} €</p>
+                <div class="dish-card-price-and-button">
+                    <p class="padding-l-20">${dishData[element.category][element.index].dishPrice.toFixed(2)} €</p>
                     <button aria-label="Menge erhöhen: ${dishData[element.category][element.index].dishName}" onclick="isInBasket('${favDishes[index].category}', ${element.index})">+</button>
                 </div>
             </article>
