@@ -125,7 +125,7 @@
                         <p>Wir freuen uns auf deine Bestellung!</p>
                     </div>
                 </section>
-                <!-- announce changes from here -> polite -->
+                <!-- announce changes from here -> polite -> do in javascript -->
                 <div class="cost-in-basket-container">
                     <p>Lieferkosten:</p>
                     <p class="basket-delivery-cost">0.00 €</p>
@@ -158,76 +158,76 @@
 
 
     <dialog id="basket-dialog" class="mobile-basket-dialog">
-            <div class="dialog-header">
-                <img src="/assets/img/icons/lotus-blume-2.png" alt="White Lotus">
-                <h2 lang="en">White Lotus</h2>
-            </div>
-            <div class="dialog-text-box">
-                <h2>Danke für deine Bestellung!</h2>
-                <h3>Hier ist die Zusammenfassung deiner Bestellung:</h3>
+        <div class="dialog-header">
+            <img src="/assets/img/icons/lotus-blume-2.png" alt="White Lotus">
+            <h2 lang="en">White Lotus</h2>
+        </div>
+        <div class="dialog-text-box">
+            <h2>Danke für deine Bestellung!</h2>
+            <h3>Hier ist die Zusammenfassung deiner Bestellung:</h3>
 
 
-                <div id="order-summary-container" class="order-summary">
-                </div>
-
-
-            </div>
-            <!-- Lieferung / Abholung ändern -> Preis update etc. -->
-            <p>Möchtest du bar (vor Ort) oder mit Karte zahlen?</p>
-            <div class="dialog-payment-buttons-container">
-                <button onclick="finishOrder()" type="button">Bar (vor Ort)</button>
-                <button onclick="finishOrder()" type="button">Online mit Karte</button>
-                <button onclick="closeDialog()" type="button" class="close-basket-dialog-btn"
-                    aria-label="Warenkorb Schließen!">X</button>
-            </div>
-        </dialog>
-        <!-- WCAG DONE UP TO HERE - REVISE WITH CHECKER, Check footer too -->
-        <dialog id="mobile-basket-dialog" class="mobile-basket">
-            <h2>Warenkorb</h2>
-            <div class="delivery-or-pickup-container">
-                <button name="" id="delivery-option-button" class="btn-delivery delivery-option-button"
-                    onclick="addDeliveryCost()">Lieferung</button>
-                <button id="pickup-option-button" class="btn-pickup active-category pickup-option-button"
-                    onclick="removeDeliveryCost()">Abholung</button>
-            </div>
-            <section id="basket-container" class="mobile-item-section">
-                <div id="mobile-basket-items-container" class="basket-items-anchor">
-                    <p>Wir freuen uns auf deine Bestellung!</p>
-                </div>
-            </section>
-            <div class="mobile-dialog-lower-containers">
-                <div class="cost-in-basket-container">
-                    <p>Lieferkosten:</p>
-                    <p class="basket-delivery-cost">0.00 €</p>
-                </div>
-                <div class="cost-in-basket-container">
-                    <p>Summe:</p>
-                    <p class="basket-total-container">0.00 €</p>
-                </div>
-                <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
-                <button onclick="closeDialogMobile()" class="mobile-close-btn">
-                    <span aria-hidden="true">X</span>
-                    <span class="d_none">Warenkorb Dialog schließen!</span>
-                </button>
-
-
-
-                <div class="kitchen-site">
-                    <span>This is for later for a backend / Kitchen-Side Display:</span>
-                    <button class="order-list mobile-close-btn" onclick="openOrderListDialog()">Order List
-                        Dialog</button>
-                </div>
+            <div id="order-summary-container" class="order-summary">
             </div>
 
 
-        </dialog>
+        </div>
+        <!-- Lieferung / Abholung ändern -> Preis update etc. -->
+        <p>Möchtest du bar (vor Ort) oder mit Karte zahlen?</p>
+        <div class="dialog-payment-buttons-container">
+            <button onclick="finishOrder()" type="button">Bar (vor Ort)</button>
+            <button onclick="finishOrder()" type="button">Online mit Karte</button>
+            <button onclick="closeDialog()" type="button" class="close-basket-dialog-btn"
+                aria-label="Warenkorb Schließen!">X</button>
+        </div>
+    </dialog>
+    <!-- WCAG DONE UP TO HERE - REVISE WITH CHECKER, Check footer too -->
+    <dialog id="mobile-basket-dialog" class="mobile-basket">
+        <h2>Warenkorb</h2>
+        <div class="delivery-or-pickup-container">
+            <button name="" id="delivery-option-button" class="btn-delivery delivery-option-button"
+                onclick="addDeliveryCost()">Lieferung</button>
+            <button id="pickup-option-button" class="btn-pickup active-category pickup-option-button"
+                onclick="removeDeliveryCost()">Abholung</button>
+        </div>
+        <section id="basket-container" class="mobile-item-section">
+            <div id="mobile-basket-items-container" class="basket-items-anchor">
+                <p>Wir freuen uns auf deine Bestellung!</p>
+            </div>
+        </section>
+        <div class="mobile-dialog-lower-containers">
+            <div class="cost-in-basket-container">
+                <p>Lieferkosten:</p>
+                <p class="basket-delivery-cost">0.00 €</p>
+            </div>
+            <div class="cost-in-basket-container">
+                <p>Summe:</p>
+                <p class="basket-total-container">0.00 €</p>
+            </div>
+            <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
+            <button onclick="closeDialogMobile()" class="mobile-close-btn">
+                <span aria-hidden="true">X</span>
+                <span class="d_none">Warenkorb Dialog schließen!</span>
+            </button>
+
+
+
+            <div class="kitchen-site">
+                <span>This is for later for a backend / Kitchen-Side Display:</span>
+                <button class="order-list mobile-close-btn" onclick="openOrderListDialog()">Order List
+                    Dialog</button>
+            </div>
+        </div>
+
+
+    </dialog>
 
     <!-- OPTIONAL? -->
 
     <dialog id="basket-note-dialog">
         <div class="dialog-header">
-            <img src="/assets/img/icons/lotus-blume-2.png" alt="">
-            <h2 lang="en">White Lotus</h2>
+                <img src="/assets/img/icons/lotus-blume-2.png" alt="">
+                <h2 lang="en">White Lotus</h2>
         </div>
         <div class="dialog-text-box">
             <h2>Hier kannst du gerne eine Nachricht an den Koch senden!</h2>

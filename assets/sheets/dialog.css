@@ -50,6 +50,7 @@ dialog[open]::backdrop {
 
 .note-in-summary {
   font-weight: 600;
+  color: rgb(97, 9, 9);
 }
 
 .order-summary {

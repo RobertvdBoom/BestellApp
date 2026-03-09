@@ -35,8 +35,20 @@ function announceActiveCategory(currentActiveCategory) {
   announcementContainerRef.innerHTML = `Die aktuelle Kategorie ist: ${currentActiveCategory}`;
 }
 
-function announceDeliveryState() {
+function announceCurrentActiveCategory() {
   announcementContainerRef.innerHTML = `Die aktuelle Kategorie ist: ${currentActiveCategory}`;
+}
+
+function announceDeliveryState() {
+  let deliveryStateForAnnouncement = "";
+  if (delivery === true) {
+    deliveryStateForAnnouncement = "Lieferung zu dir!";
+  } else if (delivery === false) {
+    deliveryStateForAnnouncement = "Abholung bei uns vor Ort!";
+  } else {
+    console.log("did not find option for delivery");
+  }
+  announcementContainerRef.innerHTML = `Du hast folgende Einstellung für deine Bestellung ausgewählt: ${deliveryStateForAnnouncement}.`
 }
 
 function updateAriaCurrent() {
