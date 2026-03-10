@@ -24,31 +24,31 @@ function activateCategoryActiveBorder(category) {
 // WCAG Screenreader Announcement
 const announcementContainerRef = document.getElementById('basket-status')
 function announceAmount(dish, action, amountNew) {
-  announcementContainerRef.innerHTML = `${dish} wurde ${action}. Aktuelle Menge im Warenkorb: ${amountNew}`;
+  announcementContainerRef.innerHTML += `${dish} wurde ${action}. Aktuelle Menge im Warenkorb: ${amountNew}`;
 }
 
 function announcePrice(price) {
-  announcementContainerRef.innerHTML = `Die Summe der Produkte in deinem Warenkorb beträgt: ${price}. Lieferkosten betragen: ${deliveryCost} €`;
+  announcementContainerRef.innerHTML += `Die Summe der Produkte in deinem Warenkorb beträgt: ${price}. Lieferkosten betragen: ${deliveryCost} €. `;
 }
 
 function announceActiveCategory(currentActiveCategory) {
-  announcementContainerRef.innerHTML = `Die aktuelle Kategorie ist: ${currentActiveCategory}`;
+  announcementContainerRef.innerHTML += `Die aktuelle Kategorie ist: ${currentActiveCategory}. `;
 }
 
 function announceCurrentActiveCategory() {
-  announcementContainerRef.innerHTML = `Die aktuelle Kategorie ist: ${currentActiveCategory}`;
+  announcementContainerRef.innerHTML += `Die aktuelle Kategorie ist: ${currentActiveCategory}. `;
 }
 
 function announceDeliveryState() {
   let deliveryStateForAnnouncement = "";
   if (delivery === true) {
-    deliveryStateForAnnouncement = "Lieferung zu dir!";
+    deliveryStateForAnnouncement = "Lieferung zu dir! ";
   } else if (delivery === false) {
-    deliveryStateForAnnouncement = "Abholung bei uns vor Ort!";
+    deliveryStateForAnnouncement = "Abholung bei uns vor Ort! ";
   } else {
     console.log("did not find option for delivery");
   }
-  announcementContainerRef.innerHTML = `Du hast folgende Einstellung für deine Bestellung ausgewählt: ${deliveryStateForAnnouncement}.`
+  announcementContainerRef.innerHTML += `Du hast folgende Einstellung für deine Bestellung ausgewählt: ${deliveryStateForAnnouncement}. `
 }
 
 function updateAriaCurrent() {
@@ -155,6 +155,7 @@ function setDeliveryBoxActive() {
     pickupBoxRef.forEach(box => { box.classList.add("active-category"); });
     deliveryBoxRef.forEach(box => { box.classList.remove("active-category"); });
   }
+  announceDeliveryState();
 }
 
 function adjustDeliveryCost() {
