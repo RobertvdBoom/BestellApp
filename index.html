@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +14,6 @@
         rel="stylesheet">
     <link rel="shortcut icon" href="/assets/img/icons/lotus-blume-2.png" type="image/x-icon">
 </head>
-
 <body onload="init()">
     <div id="page-content">
         <div class="top-content">
@@ -27,7 +25,6 @@
                     <span class="sr-only">Burger Menu öffnen!</span>
                 </button>
             </header>
-
             <nav id="resp_menu" class="resp_menu_box resp_menu_closed" hidden="true" aria-label="Kategorien">
                 <ul>
                     <li><button class="starters nav_button resp_menu_btn" type="button"
@@ -68,9 +65,8 @@
                         </div>
                     </dl>
                 </section>
-
                 <!-- WCAG Announcement Container below-->
-                <div id="basket-status" aria-live="polite" class="d_none"></div>
+                <div id="basket-status" aria-live="polite" class="sr-announcement">Testing here</div>
 
                 <a id="skip-to-main" class="skip-link desktop-d-none" href="#dish-container">Beliebte Gerichte
                     überspringen
@@ -159,24 +155,20 @@
 
     <dialog id="basket-dialog" class="mobile-basket-dialog">
         <div class="dialog-header">
-            <img src="/assets/img/icons/lotus-blume-2.png" alt="White Lotus">
+            <img src="/assets/img/icons/lotus-blume-2.png" alt="">
             <h2 lang="en">White Lotus</h2>
         </div>
         <div class="dialog-text-box">
             <h2>Danke für deine Bestellung!</h2>
             <h3>Hier ist die Zusammenfassung deiner Bestellung:</h3>
-
-
             <div id="order-summary-container" class="order-summary">
             </div>
-
-
         </div>
         <!-- Lieferung / Abholung ändern -> Preis update etc. -->
         <p>Möchtest du bar (vor Ort) oder mit Karte zahlen?</p>
         <div class="dialog-payment-buttons-container">
-            <button onclick="finishOrder()" type="button">Bar (vor Ort)</button>
-            <button onclick="finishOrder()" type="button">Online mit Karte</button>
+            <button onclick="finishOrder()" type="button">Bezahlen!</button>
+            <!-- <button onclick="finishOrder()" type="button">Online mit Karte</button> -->
             <button onclick="closeDialog()" type="button" class="close-basket-dialog-btn"
                 aria-label="Warenkorb Schließen!">X</button>
         </div>
@@ -205,16 +197,10 @@
                 <p class="basket-total-container">0.00 €</p>
             </div>
             <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
-            <button onclick="closeDialogMobile()" class="mobile-close-btn">
-                <span aria-hidden="true">X</span>
-                <span class="d_none">Warenkorb Dialog schließen!</span>
-            </button>
-
-
-
+            <button onclick="closeDialogMobile()" class="mobile-close-btn" aria-label="Dialog schließen!">X</button>
             <div class="kitchen-site">
                 <span>This is for later for a backend / Kitchen-Side Display:</span>
-                <button class="order-list mobile-close-btn" onclick="openOrderListDialog()">Order List
+                <button class="order-list mobile-close-btn" onclick="openOrderListDialog()" lang="en" >Order List
                     Dialog</button>
             </div>
         </div>

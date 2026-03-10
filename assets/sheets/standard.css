@@ -194,3 +194,11 @@ textarea {
     );
     width: 100%;
 }
+
+.sr-announcement {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: rect(0px 0px 0px 0px);
+}
