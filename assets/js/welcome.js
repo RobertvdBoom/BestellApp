@@ -1,0 +1,1 @@
+// insert info dialog with option to not show again on reload. Base this on bool -> add button to not show again on reload (saved to local storage  )

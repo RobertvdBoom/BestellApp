@@ -205,12 +205,8 @@ function renderOrderSummary() {
         
         let outerDiv = `<div class="outer-summary-item">${contentForDiv}</div> `
         orderSummaryContainerRef.innerHTML += outerDiv;
-
         // store in variable, add to div container, parse to ref
-
     }
-
-
 }
 
 // LOCAL STORAGE
@@ -221,7 +217,7 @@ function storeItemBasketInLocalStorage() {
 
 function fetchLocalStorage() {
     announceLoadFromLocalStorage();
-    itemBasket = JSON.parse(localStorage.getItem("itemBasket"));
+    itemBasket = JSON.parse(localStorage.getItem("itemBasket")) || [];
 }
 
 function storeDeliveryInLocalStorage() {
@@ -231,17 +227,6 @@ function storeDeliveryInLocalStorage() {
 function fetchDeliveryFromLocalStorage() {
     delivery = JSON.parse(localStorage.getItem("delivery"));
 }
-
-
-
-
-
-
-
-
-
-
-
 
 // render kitchen order -> Later on feature for the backend side / restaurant side to receive the order
 function renderKitchenOrderList() {

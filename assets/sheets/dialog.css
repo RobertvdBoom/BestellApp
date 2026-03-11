@@ -111,3 +111,15 @@ dialog button{
   display: flex;
   justify-content: space-between;
 }
+
+#basket-note-dialog {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.outer-note-container {
+  max-width: 90%;
+}

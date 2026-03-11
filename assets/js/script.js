@@ -193,14 +193,11 @@ function removeDeliveryCost() {
   setDeliveryBoxActive();
   renderDeliveryCost();
 }
-
-
-
 // DIALOG SECTION START
-
 let pageContentRef = document.getElementById('page-content');
 let dialogRef = document.getElementById('basket-dialog');
 let mobileDialogRef = document.getElementById('mobile-basket-dialog');
+let dialogNoteRef = document.getElementById('basket-note-dialog');
 
 let dialogOpened = false;
 
@@ -230,6 +227,18 @@ function closeDialog() {
   blockBackgroundContent();
 }
 
+function openNoteDialog() {
+  dialogNoteRef.showModal();
+  dialogOpened = true;
+  blockBackgroundContent();
+}
+
+function closeNoteDialog() {
+  dialogNoteRef.close();
+  dialogOpened = false;
+  blockBackgroundContent();
+}
+
 function blockBackgroundContent() {
   if (dialogOpened == true) {
     pageContentRef.setAttribute("hidden", "");
@@ -237,9 +246,6 @@ function blockBackgroundContent() {
     pageContentRef.removeAttribute("hidden");
   }
 }
-
-// DIALOG SECTION END
-// CHECK TOMORROW: accessibility
 
 let orderList = [];
 
@@ -262,19 +268,8 @@ function resetBasketItemsContainer() {
   let basketRef = document.querySelectorAll('.basket-items-anchor');
   basketRef.forEach(box => { box.innerHTML = "Vielen Dank für deine Bestellung! Dein Essen sollte in 60 Minuten bei dir sein!"; });
 }
-
 // FULL NOTE SECTION
-// click -> render note buttons new -> insert current note -> open dialog
-let dialogNoteRef = document.getElementById('basket-note-dialog');
 let noteContainerRef = document.getElementById('note-text-area');
-
-function openNoteDialog() {
-  dialogNoteRef.showModal();
-}
-
-function closeNoteDialog() {
-  dialogNoteRef.close();
-}
 
 function addNote(noteIndex) {
   renderNoteCommitButtons(noteIndex);
@@ -301,15 +296,13 @@ function deleteNoteFromSummary(index) {
   renderOrderSummary();
 }
 
-// restaurant side dialog + budget backend '-'
+let restaurantOrderContainer = document.getElementById('order-dialog-for-restaurant');
 let currentTestTime = new Date();
 let orderNumber = 0;
 
 function createOrderID() {
   return orderID = currentTestTime.getFullYear().toString() + (currentTestTime.getMonth() + 1).toString() + currentTestTime.getDate().toString() + currentTestTime.getHours().toString();
 }
-
-let restaurantOrderContainer = document.getElementById('order-dialog-for-restaurant');
 
 function openOrderListDialog() {
   restaurantOrderContainer.showModal();
@@ -343,8 +336,11 @@ function clearItemBasket() {
 let hiddenState = "";
 let vw = window.innerWidth;
 
+window.addEventListener("resize", assignHidden);
+window.addEventListener("resize", adjustTabSkip);
+window.addEventListener("resize", updateVW);
+
 function assignHidden() {
-  // let vh = window.innerHeight;
   let respMenuBoxRef = document.getElementById('resp_menu');
   if (vw < 1266 && hiddenState == true) {
     respMenuBoxRef.removeAttribute("hidden");
@@ -354,8 +350,6 @@ function assignHidden() {
     hiddenState = true;
   }
 }
-
-window.addEventListener("resize", assignHidden);
 
 function initializeHidden() {
   let respMenuBoxRef = document.getElementById('resp_menu');
@@ -383,19 +377,12 @@ function adjustTabSkip() {
   }
 }
 
-window.addEventListener("resize", adjustTabSkip);
-window.addEventListener("resize", updateVW);
-
 function updateVW() {
   vw = window.innerWidth;
 }
-// multiple skips via query selector all? -> move to basket / section etc.
-// mobile vorspeisen etc. h3 -> tabindex tabable
-
+// mabye: 
 let previousItemID = "";
 
 function focusPrevious(previousItemID) {
   document.getElementById(previousItemID).focus();
 }
-
-// announce price changes 

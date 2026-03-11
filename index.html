@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
         rel="stylesheet">
     <link rel="shortcut icon" href="/assets/img/icons/lotus-blume-2.png" type="image/x-icon">
 </head>
+
 <body onload="init()">
     <div id="page-content">
         <div class="top-content">
@@ -198,28 +200,26 @@
             <button onclick="closeDialogMobile()" class="mobile-close-btn" aria-label="Dialog schließen!">X</button>
             <div class="kitchen-site">
                 <span>This is for later for a backend / Kitchen-Side Display:</span>
-                <button class="order-list mobile-close-btn" onclick="openOrderListDialog()" lang="en" >Order List
+                <button class="order-list mobile-close-btn" onclick="openOrderListDialog()" lang="en">Order List
                     Dialog</button>
             </div>
         </div>
-
-
     </dialog>
-
-    <!-- OPTIONAL? -->
 
     <dialog id="basket-note-dialog">
         <div class="dialog-header">
-                <img src="/assets/img/icons/lotus-blume-2.png" alt="">
-                <h2 lang="en">White Lotus</h2>
+            <img src="/assets/img/icons/lotus-blume-2.png" alt="">
+            <h2 lang="en">White Lotus</h2>
         </div>
-        <div class="dialog-text-box">
-            <h2>Hier kannst du gerne eine Nachricht an den Koch senden!</h2>
-            <h3>Anmerkung:</h3>
-            <p id="current-note-container"></p>
-            <textarea id="note-text-area" placeholder="Hier kannst du Wünsche zu deinem Gericht äußern!"></textarea>
-        </div>
-        <div id="note-commit-container">
+        <div class="outer-note-container">
+            <div class="dialog-text-box">
+                <h3>Hier kannst du gerne eine Nachricht an den Koch senden!</h3>
+                <label for="note-text-area">Anmerkung zu dem Gericht:</label>
+                <textarea id="note-text-area" placeholder="Hier kannst du Wünsche zu deinem Gericht äußern!"
+                    aria-label="F"></textarea>
+            </div>
+            <div id="note-commit-container">
+            </div>
         </div>
     </dialog>
 
@@ -234,6 +234,14 @@
             </ol>
         </section>
         <button onclick="closeOrderListDialog()">close</button>
+    </dialog>
+
+    <dialog>
+        <div class="dialog-header">
+            <img src="/assets/img/icons/lotus-blume-2.png" alt="">
+            <h2 lang="en">White Lotus</h2>
+        </div>
+        <p id="successful-order-note"></p>
     </dialog>
 
 </body>
