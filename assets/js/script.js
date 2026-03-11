@@ -7,7 +7,6 @@ function init() {
   setDeliveryBoxActive();
   renderDeliveryCost();
   renderBasketItems();
-  // load local storage & 
   initializeHidden();
   adjustTabSkip();
 }
@@ -22,13 +21,24 @@ function activateCategoryActiveBorder(category) {
 }
 
 // WCAG Screenreader Announcement
+
 const announcementContainerRef = document.getElementById('basket-status')
+
+function announceLoadFromLocalStorage() {
+  announcementContainerRef.innerHTML += `Es wird geprüft, ob es Daten im Local Storage gibt.`
+}
+
 function announceAmount(dish, action, amountNew) {
   announcementContainerRef.innerHTML += `${dish} wurde ${action}. Aktuelle Menge im Warenkorb: ${amountNew}`;
 }
 
 function announcePrice(price) {
-  announcementContainerRef.innerHTML += `Die Summe der Produkte in deinem Warenkorb beträgt: ${price}. Lieferkosten betragen: ${deliveryCost} €. `;
+  if (price === undefined) {
+    announcementContainerRef.innerHTML += `Dein Warenkorb ist derzeit leer. `;
+    announceDeliveryState();
+  } else {
+    announcementContainerRef.innerHTML += `Die Summe der Produkte in deinem Warenkorb beträgt: ${price}. Lieferkosten betragen: ${deliveryCost} €. `;
+  }
 }
 
 function announceActiveCategory(currentActiveCategory) {
@@ -48,14 +58,13 @@ function announceDeliveryState() {
   } else {
     console.log("did not find option for delivery");
   }
-  announcementContainerRef.innerHTML += `Du hast folgende Einstellung für deine Bestellung ausgewählt: ${deliveryStateForAnnouncement}. `
+  announcementContainerRef.innerHTML += `Du hast folgende Einstellung für deine Bestellung ausgewählt: ${deliveryStateForAnnouncement}`;
 }
 
 function updateAriaCurrent() {
   document.querySelectorAll('#resp_menu [aria-current');
 }
 
-//WCAG SCREENREADER / 
 let respMenuState = false;
 
 function toggleRespMenu() {

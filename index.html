@@ -66,7 +66,7 @@
                     </dl>
                 </section>
                 <!-- WCAG Announcement Container below-->
-                <div id="basket-status" aria-live="polite" class="sr-announcement2">Testing here</div>
+                <div id="basket-status" aria-live="polite" class="sr-announcement"></div>
 
                 <a id="skip-to-main" class="skip-link desktop-d-none" href="#dish-container">Beliebte Gerichte
                     überspringen
@@ -110,7 +110,6 @@
             <aside id="basket" class="mobile-d-none basket" role="complementary" aria-label="Warenkorb">
                 <h2 id="basket-header">Warenkorb</h2>
                 <div class="delivery-or-pickup-container">
-                    <!-- rework this here -->
                     <button id="delivery-option-button" class="btn-delivery delivery-option-button"
                         onclick="addDeliveryCost()" type="button">Lieferung</button>
                     <button id="pickup-option-button" class="btn-pickup active-category pickup-option-button"
@@ -121,7 +120,6 @@
                         <p>Wir freuen uns auf deine Bestellung!</p>
                     </div>
                 </section>
-                <!-- announce changes from here -> polite -> do in javascript -->
                 <div class="cost-in-basket-container">
                     <p>Lieferkosten:</p>
                     <p class="basket-delivery-cost">0.00 €</p>

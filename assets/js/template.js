@@ -220,6 +220,7 @@ function storeItemBasketInLocalStorage() {
 }
 
 function fetchLocalStorage() {
+    announceLoadFromLocalStorage();
     itemBasket = JSON.parse(localStorage.getItem("itemBasket"));
 }
 
