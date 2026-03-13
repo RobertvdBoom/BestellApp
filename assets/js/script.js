@@ -103,7 +103,62 @@ function itemMinusOne(index) {
   }
 }
 
-function isInBasket(category, index) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function addToBasket(category, index) {
+  // let itemIsInBasket = false;
+  // let itemIndex = "";
+  // for (let basketIndex = 0; basketIndex < itemBasket.length; basketIndex++) {
+  //   let itemToBeChecked = itemBasket[basketIndex].dishName;
+  //   if (itemToBeChecked == dishData[category][index].dishName) {
+  //     itemIsInBasket = true;
+  //     itemIndex = basketIndex;
+  //   }
+  //   else {
+  //     continue;
+  //   }
+  // }
+
+  let itemIsInBasket = isInBasket(category, index);
+  if (itemIsInBasket.itemIsInBasket == false) {
+    pushItemToBasket(category, index);
+  } else {
+    itemBasket[itemIsInBasket.itemIndex].dishAmount++;
+  }
+
+
+  // if (itemBasket.length >= 1) {
+  //   for (let basketIndex = 0; basketIndex < itemBasket.length; basketIndex++) {
+  //     let itemToBeChecked = itemBasket[basketIndex].dishName;
+  //     if (itemToBeChecked == dishData[category][index].dishName) {
+  //       console.log('Item was found again');
+  //     }
+  //     else if (itemIsInBasket == true) {
+  //       itemBasket[basketIndex]
+  //     }
+  //   }
+  // }
+  // else {
+  //   pushItemToBasket(category, index);
+  // }
+  storeItemBasketInLocalStorage();
+  renderBasketItems();
+}
+
+
+function isInBasket (category, index) {
   let itemIsInBasket = false;
   let itemIndex = "";
   for (let basketIndex = 0; basketIndex < itemBasket.length; basketIndex++) {
@@ -116,28 +171,18 @@ function isInBasket(category, index) {
       continue;
     }
   }
-  if (itemIsInBasket == false) {
-    pushItemToBasket(category, index);
-  } else {
-    itemBasket[itemIndex].dishAmount++;
-  }
-  if (itemBasket.length >= 1) {
-    for (let basketIndex = 0; basketIndex < itemBasket.length; basketIndex++) {
-      let itemToBeChecked = itemBasket[basketIndex].dishName;
-      if (itemToBeChecked == dishData[category][index].dishName) {
-        itemIsInBasket = true;
-      }
-      else if (itemIsInBasket == true) {
-        itemBasket[basketIndex]
-      }
-    }
-  }
-  else {
-    pushItemToBasket(category, index);
-  }
-  storeItemBasketInLocalStorage();
-  renderBasketItems();
+  return {itemIsInBasket, itemIndex};
 }
+
+
+
+
+
+
+
+
+
+
 
 function pushItemToBasket(category, index) {
   let itemObjectInBasket = {
