@@ -39,11 +39,11 @@ function renderDishes(category) {
         </div>
     `
     }
-    createMobileCategoryHeader(category);
+    createMobileCategoryHeader();
     announcePrice();
 }
 
-function createMobileCategoryHeader(category) {
+function createMobileCategoryHeader() {
     let mobileHeaderRef = document.getElementById('mobile-category-header');
     mobileHeaderRef.innerHTML = "";
     if (category = "starters") {
@@ -97,8 +97,6 @@ function renderDeliveryCost() {
         box.innerHTML = deliveryCost.toFixed(2) + " €";
     });
 }
-
-// rework this for whole document
 
 function renderBasketItems() {
     let basketRef = document.querySelectorAll('.basket-items-anchor');
@@ -172,7 +170,6 @@ function addUpBasketItems() {
     return total
 }
 
-// From here on, its all fine '-' - single use case / container
 function renderNoteCommitButtons(noteIndex) {
     let noteButtonContainerRef = document.getElementById('note-commit-container');
     noteButtonContainerRef.innerHTML = "";
@@ -205,11 +202,8 @@ function renderOrderSummary() {
         
         let outerDiv = `<div class="outer-summary-item">${contentForDiv}</div> `
         orderSummaryContainerRef.innerHTML += outerDiv;
-        // store in variable, add to div container, parse to ref
     }
 }
-
-// LOCAL STORAGE
 
 function storeItemBasketInLocalStorage() {
     localStorage.setItem('itemBasket', JSON.stringify(itemBasket));
@@ -228,7 +222,6 @@ function fetchDeliveryFromLocalStorage() {
     delivery = JSON.parse(localStorage.getItem("delivery"));
 }
 
-// render kitchen order -> Later on feature for the backend side / restaurant side to receive the order
 function renderKitchenOrderList() {
   let kitchenOrderRef = document.getElementById('restaurant-kitchen-order-container');
   kitchenOrderRef.innerHTML = "";

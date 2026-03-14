@@ -20,8 +20,6 @@ function activateCategoryActiveBorder(category) {
   announceActiveCategory(category);
 }
 
-// WCAG Screenreader Announcement
-
 const announcementContainerRef = document.getElementById('basket-status')
 
 function announceLoadFromLocalStorage() {
@@ -103,60 +101,16 @@ function itemMinusOne(index) {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function addToBasket(category, index) {
-  // let itemIsInBasket = false;
-  // let itemIndex = "";
-  // for (let basketIndex = 0; basketIndex < itemBasket.length; basketIndex++) {
-  //   let itemToBeChecked = itemBasket[basketIndex].dishName;
-  //   if (itemToBeChecked == dishData[category][index].dishName) {
-  //     itemIsInBasket = true;
-  //     itemIndex = basketIndex;
-  //   }
-  //   else {
-  //     continue;
-  //   }
-  // }
-
   let itemIsInBasket = isInBasket(category, index);
   if (itemIsInBasket.itemIsInBasket == false) {
     pushItemToBasket(category, index);
   } else {
     itemBasket[itemIsInBasket.itemIndex].dishAmount++;
   }
-
-
-  // if (itemBasket.length >= 1) {
-  //   for (let basketIndex = 0; basketIndex < itemBasket.length; basketIndex++) {
-  //     let itemToBeChecked = itemBasket[basketIndex].dishName;
-  //     if (itemToBeChecked == dishData[category][index].dishName) {
-  //       console.log('Item was found again');
-  //     }
-  //     else if (itemIsInBasket == true) {
-  //       itemBasket[basketIndex]
-  //     }
-  //   }
-  // }
-  // else {
-  //   pushItemToBasket(category, index);
-  // }
   storeItemBasketInLocalStorage();
   renderBasketItems();
 }
-
 
 function isInBasket (category, index) {
   let itemIsInBasket = false;
@@ -173,16 +127,6 @@ function isInBasket (category, index) {
   }
   return {itemIsInBasket, itemIndex};
 }
-
-
-
-
-
-
-
-
-
-
 
 function pushItemToBasket(category, index) {
   let itemObjectInBasket = {
@@ -238,7 +182,7 @@ function removeDeliveryCost() {
   setDeliveryBoxActive();
   renderDeliveryCost();
 }
-// DIALOG SECTION START
+
 let pageContentRef = document.getElementById('page-content');
 let dialogRef = document.getElementById('basket-dialog');
 let mobileDialogRef = document.getElementById('mobile-basket-dialog');
@@ -289,6 +233,25 @@ function blockBackgroundContent() {
     pageContentRef.setAttribute("hidden", "");
   } else {
     pageContentRef.removeAttribute("hidden");
+  }
+}
+
+// keep importance in low to high order -> ends at highest prio (go backwards)
+let dialogStates = [
+  { name: 'basket-dialog', open: false },
+  { name: 'mobile-basket-dialog', open: false },
+  { name: 'note-dialog', open: false },
+  { name: 'restaurant', open: false }
+];
+
+function checkForPreviouslyOpenedDialogs {
+  for (let index = 0; index < dialogStates.length; index++) {
+    let element = dialogStates[index];
+    if (element.open === true) {
+      
+    } else {
+      
+    }
   }
 }
 
@@ -385,6 +348,10 @@ window.addEventListener("resize", assignHidden);
 window.addEventListener("resize", adjustTabSkip);
 window.addEventListener("resize", updateVW);
 
+function updateVW() {
+  vw = window.innerWidth;
+}
+
 function assignHidden() {
   let respMenuBoxRef = document.getElementById('resp_menu');
   if (vw < 1266 && hiddenState == true) {
@@ -420,14 +387,4 @@ function adjustTabSkip() {
     linkToMainRef.setAttribute("hidden", "");
     linkToCategoryHeaderMobileRef.setAttribute("hidden", "");
   }
-}
-
-function updateVW() {
-  vw = window.innerWidth;
-}
-// mabye: 
-let previousItemID = "";
-
-function focusPrevious(previousItemID) {
-  document.getElementById(previousItemID).focus();
 }
