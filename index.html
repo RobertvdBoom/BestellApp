@@ -130,9 +130,12 @@
                 </div>
                 <button onclick="openDialog()" class="dialog-btn" aria-haspopup="dialog"
                     aria-controls="basket-dialog">Bestellung abschicken!</button>
-                <button class="order-list" onclick="openOrderListDialog()">Order List Dialog</button>
-                <button class="order-list" onclick="showIntroAgain()">Intro anzeigen</button>
-                <button class="order-list" onclick="toggleSRBox()">Toggle Screenreader Box</button>
+                <div class="helper-buttons">
+                    <button class="order-list" onclick="openOrderListDialog()">Order List Dialog</button>
+                    <button class="order-list" onclick="showIntroAgain()">Intro anzeigen</button>
+                    <button class="order-list" onclick="toggleSRBox()">Toggle SR Box</button>
+                    <button class="order-list" onclick="addAllItems()">Add All Items</button>
+                </div>
             </aside>
         </div>
 
@@ -244,7 +247,15 @@
 
     <dialog id="intro-dialog">
         <h2>Intro Dialog:</h2>
-        <p>Hallo,<br><br>dieses Projekt ist ein wenig ausgeartet. Daher würde ich euch bitten, auch folgende Features zu beachten, falls möglich:<br><br>Im Warenkorb gibt es noch einen Button, über den die bereits getätigten Bestellungen angezeigt werden. Dabei wird eine ID basierend auf Datum, Uhrzeit und einem fortlaufenden Counter gesetzt.<br><br>Außerdem gibt es eine Notizfunktion für die Gerichte. Diese Notizen werden beim Checkout dynamisch gerendert, sofern vorhanden, und können auch dort noch gelöscht werden.<br><br>Zum Großteil habe ich außerdem bereits Support für Screenreader eingebaut. Wenn man die Nachrichten sehen möchte, kann man diese in der Desktop-Ansicht unten im Warenkorb über einen Toggle-Button anzeigen lassen.<br><br>Wenn ihr das responsive testen möchtet, könnt ihr über die Konsole mit „addAllItems()“ alle Items zum Warenkorb hinzufügen.<br><br>Das sollte euch einige Klicks ersparen.</p>
+        <p>Hallo,<br><br>dieses Projekt ist ein wenig ausgeartet. Daher würde ich euch bitten, auch folgende Features zu
+            beachten, falls möglich:<br><br>Im Warenkorb gibt es noch einen Button, über den die bereits getätigten
+            Bestellungen angezeigt werden. Dabei wird eine ID basierend auf Datum, Uhrzeit und einem fortlaufenden
+            Counter gesetzt.<br><br>Außerdem gibt es eine Notizfunktion für die Gerichte. Diese Notizen werden beim
+            Checkout dynamisch gerendert, sofern vorhanden, und können auch dort noch gelöscht werden.<br><br>Zum
+            Großteil habe ich außerdem bereits Support für Screenreader eingebaut. Wenn man die Nachrichten sehen
+            möchte, kann man diese in der Desktop-Ansicht unten im Warenkorb über einen Toggle-Button anzeigen
+            lassen.<br><br>Wenn ihr das responsive testen möchtet, könnt ihr über die Konsole mit „addAllItems()“ alle
+            Items zum Warenkorb hinzufügen.<br><br>Das sollte euch einige Klicks ersparen.</p>
         <div>
             <button onclick="dontShowIntroAgain()">Intro schließen und beim nächsten Laden nicht mehr anzeigen!</button>
             <button onclick="closeIntroDialog()">Intro Schließen!</button>
@@ -253,6 +264,7 @@
 
 </body>
 <script src="/assets/js/template.js"></script>
+<script src="/assets/js/welcome.js"></script>
 <script src="/assets/js/script.js"></script>
 
 </html>

@@ -46,3 +46,9 @@ footer {
 h2{
     margin-block: 0;
 }
+
+.helper-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3px;
+}
