@@ -9,6 +9,44 @@ function init() {
   renderBasketItems();
   initializeHidden();
   adjustTabSkip();
+  fetchIntroInfoFromLS();
+  openIntroDialog();
+}
+
+let introDialog = true;
+
+function toggleSRBox() {
+  let srBoxRef = document.getElementById('basket-status').classList.toggle('sr-announcement');
+}
+
+function openIntroDialog() {
+  if (introDialog === true) {
+    document.getElementById('intro-dialog').showModal();
+  }
+}
+
+function closeIntroDialog() {
+  document.getElementById('intro-dialog').close();
+}
+
+function dontShowIntroAgain() {
+  introDialog = false;
+  saveIntroInfoInLS();
+  closeIntroDialog();
+}
+
+function showIntroAgain() {
+  introDialog = true;
+  saveIntroInfoInLS();
+  openIntroDialog();
+}
+
+function saveIntroInfoInLS() {
+    localStorage.setItem('introDialogOption', JSON.stringify(introDialog));
+}
+
+function fetchIntroInfoFromLS() {
+    introDialog = JSON.parse(localStorage.getItem("introDialogOption"));
 }
 
 function activateCategoryActiveBorder(category) {
@@ -236,25 +274,6 @@ function blockBackgroundContent() {
   }
 }
 
-// keep importance in low to high order -> ends at highest prio (go backwards)
-let dialogStates = [
-  { name: 'basket-dialog', open: false },
-  { name: 'mobile-basket-dialog', open: false },
-  { name: 'note-dialog', open: false },
-  { name: 'restaurant', open: false }
-];
-
-function checkForPreviouslyOpenedDialogs {
-  for (let index = 0; index < dialogStates.length; index++) {
-    let element = dialogStates[index];
-    if (element.open === true) {
-      
-    } else {
-      
-    }
-  }
-}
-
 let orderList = [];
 
 function convertItemBasketToOrderList() {
@@ -276,7 +295,7 @@ function resetBasketItemsContainer() {
   let basketRef = document.querySelectorAll('.basket-items-anchor');
   basketRef.forEach(box => { box.innerHTML = "Vielen Dank für deine Bestellung! Dein Essen sollte in 60 Minuten bei dir sein!"; });
 }
-// FULL NOTE SECTION
+
 let noteContainerRef = document.getElementById('note-text-area');
 
 function addNote(noteIndex) {
