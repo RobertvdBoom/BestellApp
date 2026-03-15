@@ -22,49 +22,6 @@ function activateCategoryActiveBorder(category) {
   announceActiveCategory(category);
 }
 
-const announcementContainerRef = document.getElementById('basket-status')
-
-function announceLoadFromLocalStorage() {
-  announcementContainerRef.innerHTML += `Es wird geprüft, ob es Daten im Local Storage gibt.`
-}
-
-function announceAmount(dish, action, amountNew) {
-  announcementContainerRef.innerHTML += `${dish} wurde ${action}. Aktuelle Menge im Warenkorb: ${amountNew}`;
-}
-
-function announcePrice(price) {
-  if (price === undefined) {
-    announcementContainerRef.innerHTML += `Dein Warenkorb ist derzeit leer. `;
-    announceDeliveryState();
-  } else {
-    announcementContainerRef.innerHTML += `Die Summe der Produkte in deinem Warenkorb beträgt: ${price}. Lieferkosten betragen: ${deliveryCost} €. `;
-  }
-}
-
-function announceActiveCategory(currentActiveCategory) {
-  announcementContainerRef.innerHTML += `Die aktuelle Kategorie ist: ${currentActiveCategory}. `;
-}
-
-function announceCurrentActiveCategory() {
-  announcementContainerRef.innerHTML += `Die aktuelle Kategorie ist: ${currentActiveCategory}. `;
-}
-
-function announceDeliveryState() {
-  let deliveryStateForAnnouncement = "";
-  if (delivery === true) {
-    deliveryStateForAnnouncement = "Lieferung zu dir! ";
-  } else if (delivery === false) {
-    deliveryStateForAnnouncement = "Abholung bei uns vor Ort! ";
-  } else {
-    console.log("did not find option for delivery");
-  }
-  announcementContainerRef.innerHTML += `Du hast folgende Einstellung für deine Bestellung ausgewählt: ${deliveryStateForAnnouncement}`;
-}
-
-function updateAriaCurrent() {
-  document.querySelectorAll('#resp_menu [aria-current');
-}
-
 let respMenuState = false;
 
 function toggleRespMenu() {
@@ -189,6 +146,7 @@ let pageContentRef = document.getElementById('page-content');
 let dialogRef = document.getElementById('basket-dialog');
 let mobileDialogRef = document.getElementById('mobile-basket-dialog');
 let dialogNoteRef = document.getElementById('basket-note-dialog');
+let successfulOrderRef = document.getElementById('successful-order');
 
 let dialogOpened = false;
 
@@ -238,6 +196,22 @@ function blockBackgroundContent() {
   }
 }
 
+function openSuccessfulOrder() {
+  let successfulOrderDeliveryRef = document.getElementById('successful-order-note');
+  successfulOrderDeliveryRef.innerHTML = "";
+  if (delivery === false) {
+    successfulOrderDeliveryRef.innerHTML = "Deine Bestellung ist in 45 Minuten abholbereit."
+  } else {
+    successfulOrderDeliveryRef.innerHTML = "Deine Bestellung ist in ca. 60 Minuten bei dir!"
+  }
+  successfulOrderRef.showModal();
+  setTimeout(closeSuccessfulOrder, 5000);
+}
+
+function closeSuccessfulOrder() {
+  successfulOrderRef.close()
+}
+
 let orderList = [];
 
 function convertItemBasketToOrderList() {
@@ -253,11 +227,18 @@ function finishOrder() {
   renderBasketItems();
   closeDialog();
   resetBasketItemsContainer();
+  openSuccessfulOrder();
 }
 
 function resetBasketItemsContainer() {
   let basketRef = document.querySelectorAll('.basket-items-anchor');
-  basketRef.forEach(box => { box.innerHTML = "Vielen Dank für deine Bestellung! Dein Essen sollte in 60 Minuten bei dir sein!"; });
+  basketRef.forEach(box => { 
+    if (delivery === false) {
+      box.innerHTML = "Vielen Dank für deine Bestellung! Dein Essen ist in 45 Minuten abholbereit!";
+    } else {
+      box.innerHTML = "Vielen Dank für deine Bestellung! Dein Essen sollte in 60 Minuten bei dir sein!";
+    }
+     });
 }
 
 let noteContainerRef = document.getElementById('note-text-area');
@@ -322,6 +303,49 @@ function addAllItemsFromCategory(category) {
 function clearItemBasket() {
   itemBasket = [];
   renderBasketItems();
+}
+
+const announcementContainerRef = document.getElementById('basket-status')
+
+function announceLoadFromLocalStorage() {
+  announcementContainerRef.innerHTML += `Es wird geprüft, ob es Daten im Local Storage gibt.`
+}
+
+function announceAmount(dish, action, amountNew) {
+  announcementContainerRef.innerHTML += `${dish} wurde ${action}. Aktuelle Menge im Warenkorb: ${amountNew}`;
+}
+
+function announcePrice(price) {
+  if (price === undefined) {
+    announcementContainerRef.innerHTML += `Dein Warenkorb ist derzeit leer. `;
+    announceDeliveryState();
+  } else {
+    announcementContainerRef.innerHTML += `Die Summe der Produkte in deinem Warenkorb beträgt: ${price}. Lieferkosten betragen: ${deliveryCost} €. `;
+  }
+}
+
+function announceActiveCategory(currentActiveCategory) {
+  announcementContainerRef.innerHTML += `Die aktuelle Kategorie ist: ${currentActiveCategory}. `;
+}
+
+function announceCurrentActiveCategory() {
+  announcementContainerRef.innerHTML += `Die aktuelle Kategorie ist: ${currentActiveCategory}. `;
+}
+
+function announceDeliveryState() {
+  let deliveryStateForAnnouncement = "";
+  if (delivery === true) {
+    deliveryStateForAnnouncement = "Lieferung zu dir! ";
+  } else if (delivery === false) {
+    deliveryStateForAnnouncement = "Abholung bei uns vor Ort! ";
+  } else {
+    console.log("did not find option for delivery");
+  }
+  announcementContainerRef.innerHTML += `Du hast folgende Einstellung für deine Bestellung ausgewählt: ${deliveryStateForAnnouncement}`;
+}
+
+function updateAriaCurrent() {
+  document.querySelectorAll('#resp_menu [aria-current');
 }
 
 let hiddenState = "";

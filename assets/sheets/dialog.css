@@ -122,3 +122,8 @@ dialog button{
 .outer-note-container {
   max-width: 90%;
 }
+
+.intro-btn-container {
+  display: flex;
+  gap: 20px;
+}

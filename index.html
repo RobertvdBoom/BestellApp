@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/assets/sheets/standard.css">
     <script src="/assets/js/db.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sawarabi+Mincho&display=swap"
-        rel="stylesheet">
     <link rel="shortcut icon" href="/assets/img/icons/lotus-blume-2.png" type="image/x-icon">
 </head>
-
 <body onload="init()">
     <div id="page-content">
         <div class="top-content">
@@ -44,7 +37,6 @@
                 </ul>
             </nav>
         </div>
-
         <div class="outer-main-container">
             <main>
                 <div class="atf-box">
@@ -98,7 +90,6 @@
                 <h2 class="desktop-d-none" id="mobile-category-header"></h2>
                 <section class="main-content-area" id="dish-container">
                 </section>
-
                 <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
                     <button onclick="openDialogMobile()" aria-haspopup="dialog" aria-controls="mobile-basket-dialog"
                         aria-expanded="false">
@@ -106,7 +97,6 @@
                     </button>
                 </div>
             </main>
-
             <aside id="basket" class="mobile-d-none basket" role="complementary" aria-label="Warenkorb">
                 <h2 id="basket-header">Warenkorb</h2>
                 <div class="delivery-or-pickup-container">
@@ -138,12 +128,7 @@
                 </div>
             </aside>
         </div>
-
         <footer id="footer">
-            <address class="footer-links">
-                <span>Diese Website wurde erstellt von: <br>Robert van den Boom</span>
-                <a href="mailto:vdboom.robert@gmail.com">vdboom.robert@gmail.com</a>
-            </address>
             <div class="footer-links">
                 <a href="https://www.flaticon.com/de/kostenlose-icons/lotus" title="lotus Icons" target="_blank">Lotus
                     Icons
@@ -152,10 +137,12 @@
                 <a href="impressum.html" target="_blank" rel="noopener noreferrer">Impressum</a>
                 <a href="datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutz</a>
             </div>
+            <address class="footer-links">
+                <span>Diese Website wurde erstellt von: <br>Robert van den Boom</span>
+                <a href="mailto:vdboom.robert@gmail.com">vdboom.robert@gmail.com</a>
+            </address>
         </footer>
     </div>
-
-
     <dialog id="basket-dialog" class="mobile-basket-dialog">
         <div class="dialog-header">
             <img src="/assets/img/icons/lotus-blume-2.png" alt="">
@@ -174,7 +161,6 @@
                 aria-label="Warenkorb Schließen!">X</button>
         </div>
     </dialog>
-    <!-- WCAG DONE UP TO HERE - REVISE WITH CHECKER, Check footer too -->
     <dialog id="mobile-basket-dialog" class="mobile-basket">
         <h2>Warenkorb</h2>
         <div class="delivery-or-pickup-container">
@@ -200,13 +186,12 @@
             <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
             <button onclick="closeDialogMobile()" class="mobile-close-btn" aria-label="Dialog schließen!">X</button>
             <div class="kitchen-site">
-                <span>This is for later for a backend / Kitchen-Side Display:</span>
+                <span lang="en">This is for later for a backend / Kitchen-Side Display:</span>
                 <button class="order-list mobile-close-btn" onclick="openOrderListDialog()" lang="en">Order List
                     Dialog</button>
             </div>
         </div>
     </dialog>
-
     <dialog id="basket-note-dialog">
         <div class="dialog-header">
             <img src="/assets/img/icons/lotus-blume-2.png" alt="">
@@ -223,7 +208,6 @@
             </div>
         </div>
     </dialog>
-
     <dialog id="order-dialog-for-restaurant">
         <p>In diesem Container landen alle Bestellungen, damit das Restaurant eine Aufstellung der Speisen hat. Auch
             Anmerkungen werden hier angezeigt, damit man in einem weiteren Schritt das Dokument in der Küche ausdrucken
@@ -236,15 +220,6 @@
         </section>
         <button onclick="closeOrderListDialog()">close</button>
     </dialog>
-
-    <dialog>
-        <div class="dialog-header">
-            <img src="/assets/img/icons/lotus-blume-2.png" alt="">
-            <h2 lang="en">White Lotus</h2>
-        </div>
-        <p id="successful-order-note"></p>
-    </dialog>
-
     <dialog id="intro-dialog">
         <h2>Intro Dialog:</h2>
         <p>Hallo,<br><br>dieses Projekt ist ein wenig ausgeartet. Daher würde ich euch bitten, auch folgende Features zu
@@ -254,14 +229,24 @@
             Checkout dynamisch gerendert, sofern vorhanden, und können auch dort noch gelöscht werden.<br><br>Zum
             Großteil habe ich außerdem bereits Support für Screenreader eingebaut. Wenn man die Nachrichten sehen
             möchte, kann man diese in der Desktop-Ansicht unten im Warenkorb über einen Toggle-Button anzeigen
-            lassen.<br><br>Wenn ihr das responsive testen möchtet, könnt ihr über die Konsole mit „addAllItems()“ alle
-            Items zum Warenkorb hinzufügen.<br><br>Das sollte euch einige Klicks ersparen.</p>
-        <div>
+            lassen.<br><br>Wenn ihr das responsive testen möchtet, könnt ihr über die Konsole mit "addAllItems()" alle
+            Items zum Warenkorb hinzufügen.<br><br>Das sollte euch einige Klicks ersparen. <br><br> 
+            Wenn ihr die Items wieder alle Löschen wollt: "clearItemBasket()"
+        </p>
+        <div class="intro-btn-container">
             <button onclick="dontShowIntroAgain()">Intro schließen und beim nächsten Laden nicht mehr anzeigen!</button>
             <button onclick="closeIntroDialog()">Intro Schließen!</button>
         </div>
     </dialog>
-
+    <dialog id="successful-order">
+        <div class="dialog-header">
+            <img src="/assets/img/icons/lotus-blume-2.png" alt="">
+            <h2 lang="en">White Lotus</h2>
+        </div>
+        <p>Vielen Dank für deine Bestellung!</p>
+        <p id="successful-order-note"></p>
+        <button onclick="closeSuccessfulOrder()">Schließen!</button>
+    </dialog>
 </body>
 <script src="/assets/js/template.js"></script>
 <script src="/assets/js/welcome.js"></script>
