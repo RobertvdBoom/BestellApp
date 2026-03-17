@@ -150,6 +150,18 @@ let successfulOrderRef = document.getElementById('successful-order');
 
 let dialogOpened = false;
 
+function openDialog(option) {
+  option.showModal();
+  dialogOpened = true;
+  blockBackgroundContent();
+}
+
+function closeDialog(option) {
+  option.close();
+  dialogOpened = false;
+  blockBackgroundContent();
+}
+
 function openDialogMobile() {
   mobileDialogRef.showModal();
   dialogOpened = true;
