@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <script src="/assets/js/db.js"></script>
     <link rel="shortcut icon" href="/assets/img/icons/lotus-blume-2.png" type="image/x-icon">
 </head>
+
 <body onload="init()">
     <div id="page-content">
         <div class="top-content">
@@ -91,40 +93,43 @@
                 <section class="main-content-area" id="dish-container">
                 </section>
                 <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
-                    <button onclick="openDialogMobile()" aria-haspopup="dialog" aria-controls="mobile-basket-dialog"
-                        aria-expanded="false">
+                    <button onclick="openDialog(mobileDialogRef)" aria-haspopup="dialog"
+                        aria-controls="mobile-basket-dialog" aria-expanded="false">
                         <h2>Warenkorb Öffnen!</h2>
                     </button>
                 </div>
             </main>
             <aside id="basket" class="mobile-d-none basket" role="complementary" aria-label="Warenkorb">
-                <h2 id="basket-header">Warenkorb</h2>
-                <div class="delivery-or-pickup-container">
-                    <button id="delivery-option-button" class="btn-delivery delivery-option-button"
-                        onclick="addDeliveryCost()" type="button">Lieferung</button>
-                    <button id="pickup-option-button" class="btn-pickup active-category pickup-option-button"
-                        onclick="removeDeliveryCost()" type="button">Abholung</button>
-                </div>
-                <section id="basket-container">
-                    <div id="basket-items-container" class="basket-items-anchor">
-                        <p>Wir freuen uns auf deine Bestellung!</p>
+                <div class="outer-aside">
+                    <h2 id="basket-header">Warenkorb</h2>
+                    <div class="delivery-or-pickup-container">
+                        <button id="delivery-option-button" class="btn-delivery delivery-option-button"
+                            onclick="addDeliveryCost()" type="button">Lieferung</button>
+                        <button id="pickup-option-button" class="btn-pickup active-category pickup-option-button"
+                            onclick="removeDeliveryCost()" type="button">Abholung</button>
                     </div>
-                </section>
-                <div class="cost-in-basket-container">
-                    <p>Lieferkosten:</p>
-                    <p class="basket-delivery-cost">0.00 €</p>
-                </div>
-                <div class="cost-in-basket-container">
-                    <p>Summe:</p>
-                    <p class="basket-total-container">0.00 €</p>
-                </div>
-                <button onclick="openDialog()" class="dialog-btn" aria-haspopup="dialog"
-                    aria-controls="basket-dialog">Bestellung abschicken!</button>
-                <div class="helper-buttons">
-                    <button class="order-list" onclick="openOrderListDialog()">Order List Dialog</button>
-                    <button class="order-list" onclick="showIntroAgain()">Intro anzeigen</button>
-                    <button class="order-list" onclick="toggleSRBox()">Toggle SR Box</button>
-                    <button class="order-list" onclick="addAllItems()">Add All Items</button>
+                    <section id="basket-container">
+                        <div id="basket-items-container" class="basket-items-anchor">
+                            <p>Wir freuen uns auf deine Bestellung!</p>
+                        </div>
+                    </section>
+                    <div class="cost-in-basket-container">
+                        <p>Lieferkosten:</p>
+                        <p class="basket-delivery-cost">0.00 €</p>
+                    </div>
+                    <div class="cost-in-basket-container">
+                        <p>Summe:</p>
+                        <p class="basket-total-container">0.00 €</p>
+                    </div>
+                    <button onclick="openDialog(basketDialogRef)" class="dialog-btn" aria-haspopup="dialog"
+                        aria-controls="basket-dialog">Bestellung abschicken!</button>
+                    <div class="helper-buttons">
+                        <!-- openOrderList -->
+                        <button class="order-list" onclick="openOrderListDialog()">Order List Dialog</button>
+                        <button class="order-list" onclick="showIntroAgain()">Intro anzeigen</button>
+                        <button class="order-list" onclick="toggleSRBox()">Toggle SR Box</button>
+                        <button class="order-list" onclick="addAllItems()">Add All Items</button>
+                    </div>
                 </div>
             </aside>
         </div>
@@ -157,7 +162,7 @@
         <p>Möchtest du bar (vor Ort) oder mit Karte zahlen?</p>
         <div class="dialog-payment-buttons-container">
             <button onclick="finishOrder()" type="button">Bezahlen!</button>
-            <button onclick="closeDialog()" type="button" class="close-basket-dialog-btn"
+            <button onclick="closeDialog(basketDialogRef)" type="button" class="close-basket-dialog-btn"
                 aria-label="Warenkorb Schließen!">X</button>
         </div>
     </dialog>
@@ -183,8 +188,9 @@
                 <p>Summe:</p>
                 <p class="basket-total-container">0.00 €</p>
             </div>
-            <button onclick="openDialog()" class="dialog-btn">Bestellung abschicken!</button>
-            <button onclick="closeDialogMobile()" class="mobile-close-btn" aria-label="Dialog schließen!">X</button>
+            <button onclick="openDialog(basketDialogRef)" class="dialog-btn">Bestellung abschicken!</button>
+            <button onclick="closeDialog(mobileDialogRef)" class="mobile-close-btn"
+                aria-label="Dialog schließen!">X</button>
             <div class="kitchen-site">
                 <span lang="en">This is for later for a backend / Kitchen-Side Display:</span>
                 <button class="order-list mobile-close-btn" onclick="openOrderListDialog()" lang="en">Order List
@@ -218,6 +224,7 @@
             <ol id="restaurant-kitchen-order-container">
             </ol>
         </section>
+        <!-- closeOrderListDialog -->
         <button onclick="closeOrderListDialog()">close</button>
     </dialog>
     <dialog id="intro-dialog">
@@ -230,7 +237,7 @@
             Großteil habe ich außerdem bereits Support für Screenreader eingebaut. Wenn man die Nachrichten sehen
             möchte, kann man diese in der Desktop-Ansicht unten im Warenkorb über einen Toggle-Button anzeigen
             lassen.<br><br>Wenn ihr das responsive testen möchtet, könnt ihr über die Konsole mit "addAllItems()" alle
-            Items zum Warenkorb hinzufügen.<br><br>Das sollte euch einige Klicks ersparen. <br><br> 
+            Items zum Warenkorb hinzufügen.<br><br>Das sollte euch einige Klicks ersparen. <br><br>
             Wenn ihr die Items wieder alle Löschen wollt: "clearItemBasket()"
         </p>
         <div class="intro-btn-container">
@@ -250,6 +257,6 @@
 </body>
 <script src="/assets/js/template.js"></script>
 <script src="/assets/js/welcome.js"></script>
-<script src="/assets/js/script.js"></script>
+<script src="/script.js"></script>
 
 </html>

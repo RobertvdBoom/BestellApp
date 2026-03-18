@@ -1,10 +1,24 @@
 .basket {
-    width: 400px;
-    min-height: 100vh;
-    height: 100dvh;
+    width: 25%;
+    min-width: 260px;
+    /* min-height: 100vh;
+    height: 100vh;
+    height: 100dvh; */
+    min-height: 100%;
     background-color: rgb(49, 49, 49);
     display: flex;
     flex-direction: column;
+    /* position: sticky;
+    top: 72px; */
+}
+
+.outer-aside {
+    padding-top: 20px;
+    height: calc(100vh - 72px - 7vh);
+    height: calc(100dvh - 72px - 7vh);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     position: sticky;
     top: 72px;
 }

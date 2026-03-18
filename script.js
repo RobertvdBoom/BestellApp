@@ -143,62 +143,46 @@ function removeDeliveryCost() {
 }
 
 let pageContentRef = document.getElementById('page-content');
-let dialogRef = document.getElementById('basket-dialog');
+let basketDialogRef = document.getElementById('basket-dialog');
 let mobileDialogRef = document.getElementById('mobile-basket-dialog');
 let dialogNoteRef = document.getElementById('basket-note-dialog');
 let successfulOrderRef = document.getElementById('successful-order');
 
 let dialogOpened = false;
+let currentlyOpenedDialog = "";
 
 function openDialog(option) {
+  if (currentlyOpenedDialog != "") {
+    currentlyOpenedDialog.close();
+  }
+  currentlyOpenedDialog = option;
   option.showModal();
   dialogOpened = true;
   blockBackgroundContent();
 }
 
 function closeDialog(option) {
+  currentlyOpenedDialog = "";
   option.close();
   dialogOpened = false;
   blockBackgroundContent();
 }
 
-function openDialogMobile() {
-  mobileDialogRef.showModal();
-  dialogOpened = true;
-  blockBackgroundContent();
-}
 
-function closeDialogMobile() {
-  mobileDialogRef.close();
-  dialogOpened = false;
-  blockBackgroundContent();
-}
 
-function openDialog() {
-  mobileDialogRef.close();
-  renderOrderSummary();
-  dialogRef.showModal();
-  dialogOpened = true;
-  blockBackgroundContent();
-}
 
-function closeDialog() {
-  dialogRef.close();
-  dialogOpened = false;
-  blockBackgroundContent();
-}
 
-function openNoteDialog() {
-  dialogNoteRef.showModal();
-  dialogOpened = true;
-  blockBackgroundContent();
-}
 
-function closeNoteDialog() {
-  dialogNoteRef.close();
-  dialogOpened = false;
-  blockBackgroundContent();
-}
+
+
+
+
+
+
+
+
+
+
 
 function blockBackgroundContent() {
   if (dialogOpened == true) {
@@ -237,7 +221,7 @@ function convertItemBasketToOrderList() {
 function finishOrder() {
   convertItemBasketToOrderList();
   renderBasketItems();
-  closeDialog();
+  closeDialog(basketDialogRef);
   resetBasketItemsContainer();
   openSuccessfulOrder();
 }
@@ -258,20 +242,20 @@ let noteContainerRef = document.getElementById('note-text-area');
 function addNote(noteIndex) {
   renderNoteCommitButtons(noteIndex);
   noteContainerRef.value = itemBasket[noteIndex].note;
-  openNoteDialog();
+  openDialog(dialogNoteRef);
 }
 
 function commitNote(index) {
   let noteToSave = noteContainerRef.value;
   itemBasket[index].note = noteToSave;
   storeItemBasketInLocalStorage();
-  closeNoteDialog();
+  closeDialog(dialogNoteRef);
 }
 
 function deleteNote(index) {
   itemBasket[index].note = "";
   storeItemBasketInLocalStorage();
-  closeNoteDialog();
+  closeDialog(dialogNoteRef);
 }
 
 function deleteNoteFromSummary(index) {
