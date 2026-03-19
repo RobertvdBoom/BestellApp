@@ -536,6 +536,20 @@ function renderFavDishes() {
     for (let index = 0; index < favDishes.length; index++) {
         let element = favDishes[index];
         let favDishID = `fav-item-${favDishes[index].category}-${favDishes[index].index}`;
-        favDishContentRef.innerHTML += returnFavDishCard(element.category, favDishes[index].index, favDishID);
+        favDishContentRef.innerHTML += returnFavDishCard(element.category, element.index, favDishID);
     }
+}
+
+function createBasketItems() {
+    let content = "";
+    if (itemBasket.length == 0) {
+        content = "<p>Wir freuen uns auf deine Bestellung!</p>";
+    }
+    for (let index = 0; index < itemBasket.length; index++) {
+        let element = itemBasket[index];
+        elementTotal = element.dishPrice * element.dishAmount;
+        elementTotal = elementTotal.toFixed(2);
+        content += returnBasketItem(element, index);
+    }
+    return content;
 }

@@ -27,23 +27,15 @@ function returnFavDishCard(category, index, favDishID) {
                 </div>
                 <div class="dish-card-price-and-button">
                     <p class="padding-l-20">${dishData[category][index].dishPrice.toFixed(2)} €</p>
-                    <button aria-label="Menge erhöhen: ${dishData[category][index].dishName}" onclick="addToBasket('${favDishes[index].category}', ${index})">+</button>
+                    <button aria-label="Menge erhöhen: ${dishData[category][index].dishName}" onclick="addToBasket('${category}', ${index})">+</button>
                 </div>
             </article>
         </li>
     `;
 }
 
-function createBasketItems() {
-    let content = "";
-    if (itemBasket.length == 0) {
-        content = "<p>Wir freuen uns auf deine Bestellung!</p>";
-    }
-    for (let index = 0; index < itemBasket.length; index++) {
-        let element = itemBasket[index];
-        elementTotal = element.dishPrice * element.dishAmount;
-        elementTotal = elementTotal.toFixed(2);
-        content += `
+function returnBasketItem(element, index) { 
+    return `
                     <div class="basket-item">
                         <div class="ds-flex-basket-l">
                             <h3>${element.dishName}</h3>
@@ -68,6 +60,4 @@ function createBasketItems() {
                             </div>
                         </div>
                     </div>`
-    }
-    return content;
 }
