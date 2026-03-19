@@ -1,3 +1,26 @@
+let deliveryCost = 0;
+let delivery = false;
+let itemBasket = [];
+let activeCategory = "starters";
+let orderList = [];
+let orderNumber = 0;
+let currentTestTime = new Date();
+let respMenuState = false;
+let dialogOpened = false;
+let currentlyOpenedDialog = "";
+let vw = window.innerWidth;
+let hiddenState = "";
+let pageContentRef = document.getElementById('page-content');
+let basketDialogRef = document.getElementById('basket-dialog');
+let mobileDialogRef = document.getElementById('mobile-basket-dialog');
+let dialogNoteRef = document.getElementById('basket-note-dialog');
+let successfulOrderRef = document.getElementById('successful-order');
+let noteContainerRef = document.getElementById('note-text-area');
+let restaurantOrderContainer = document.getElementById('order-dialog-for-restaurant');
+let mobileItemCountRef = document.getElementById('mobile-basket-opener-and-item-count');
+const announcementContainerRef = document.getElementById('basket-status');
+let category = "starters";
+
 function init() {
   renderDishes(activeCategory);
   renderFavDishes();
@@ -21,8 +44,6 @@ function activateCategoryActiveBorder(category) {
   activeCategory = category;
   announceActiveCategory(category);
 }
-
-let respMenuState = false;
 
 function toggleRespMenu() {
   let respMenuBtnRef = document.getElementById("resp-menu-btn");
@@ -98,8 +119,6 @@ function pushItemToBasket(category, index) {
   itemBasket.push(itemObjectInBasket);
 }
 
-let delivery = false;
-
 function setDeliveryBoxActive() {
   let deliveryBoxRef = document.querySelectorAll('.delivery-option-button');
   let pickupBoxRef = document.querySelectorAll('.pickup-option-button');
@@ -142,15 +161,6 @@ function removeDeliveryCost() {
   renderDeliveryCost();
 }
 
-let pageContentRef = document.getElementById('page-content');
-let basketDialogRef = document.getElementById('basket-dialog');
-let mobileDialogRef = document.getElementById('mobile-basket-dialog');
-let dialogNoteRef = document.getElementById('basket-note-dialog');
-let successfulOrderRef = document.getElementById('successful-order');
-
-let dialogOpened = false;
-let currentlyOpenedDialog = "";
-
 function openDialog(option) {
   if (currentlyOpenedDialog != "") {
     currentlyOpenedDialog.close();
@@ -192,8 +202,6 @@ function closeSuccessfulOrder() {
   successfulOrderRef.close()
 }
 
-let orderList = [];
-
 function convertItemBasketToOrderList() {
   let timeOfOrder = new Date();
   let element = { orderTime: timeOfOrder, orderItems: itemBasket, oderID: (Number(createOrderID()) + orderNumber) };
@@ -221,8 +229,6 @@ function resetBasketItemsContainer() {
      });
 }
 
-let noteContainerRef = document.getElementById('note-text-area');
-
 function addNote(noteIndex) {
   renderNoteCommitButtons(noteIndex);
   noteContainerRef.value = itemBasket[noteIndex].note;
@@ -247,10 +253,6 @@ function deleteNoteFromSummary(index) {
   storeItemBasketInLocalStorage();
   renderOrderSummary();
 }
-
-let restaurantOrderContainer = document.getElementById('order-dialog-for-restaurant');
-let currentTestTime = new Date();
-let orderNumber = 0;
 
 function createOrderID() {
   return orderID = currentTestTime.getFullYear().toString() + (currentTestTime.getMonth() + 1).toString() + currentTestTime.getDate().toString() + currentTestTime.getHours().toString();
@@ -284,8 +286,6 @@ function clearItemBasket() {
   itemBasket = [];
   renderBasketItems();
 }
-
-const announcementContainerRef = document.getElementById('basket-status')
 
 function announceLoadFromLocalStorage() {
   announcementContainerRef.innerHTML += `Es wird geprüft, ob es Daten im Local Storage gibt.`
@@ -327,9 +327,6 @@ function announceDeliveryState() {
 function updateAriaCurrent() {
   document.querySelectorAll('#resp_menu [aria-current');
 }
-
-let hiddenState = "";
-let vw = window.innerWidth;
 
 window.addEventListener("resize", assignHidden);
 window.addEventListener("resize", adjustTabSkip);
@@ -376,10 +373,169 @@ function adjustTabSkip() {
   }
 }
 
-let mobileItemCountRef = document.getElementById('mobile-basket-opener-and-item-count');
-
 function displayItemCountInBasket() {
   let totalItemCount = 0;
   itemBasket.forEach((element)=> totalItemCount+=element.dishAmount);
   mobileItemCountRef.innerHTML = `Warenkorb Öffnen! [${totalItemCount}]`;
+}
+
+function storeItemBasketInLocalStorage() {
+    localStorage.setItem('itemBasket', JSON.stringify(itemBasket));
+}
+
+function fetchLocalStorage() {
+    announceLoadFromLocalStorage();
+    itemBasket = JSON.parse(localStorage.getItem("itemBasket")) || [];
+}
+
+function storeDeliveryInLocalStorage() {
+    localStorage.setItem('delivery', JSON.stringify(delivery));
+}
+
+function fetchDeliveryFromLocalStorage() {
+    delivery = JSON.parse(localStorage.getItem("delivery"));
+}
+
+function itemFromBasketToTrash(index) {
+    itemBasket.splice(index, 1);
+    renderBasketItems();
+}
+
+function calculateTotalBasket() {
+    let basketTotalRef = document.querySelectorAll('.basket-total-container');
+    let total = addUpBasketItems();
+    basketTotalRef.forEach(box => {
+    box.innerHTML = "";
+    box.innerHTML = total;
+    })
+}
+
+function addUpBasketItems() {
+    let total = 0;
+    for (let index = 0; index < itemBasket.length; index++) {
+        let element = itemBasket[index];
+        total += element.dishAmount * element.dishPrice;
+    }
+    total += deliveryCost;
+    total = total.toFixed(2) + " €";
+    announcePrice(total);
+    return total
+}
+
+function renderNoteCommitButtons(noteIndex) {
+    let noteButtonContainerRef = document.getElementById('note-commit-container');
+    noteButtonContainerRef.innerHTML = "";
+    if (itemBasket[noteIndex].note !== "") {
+        noteButtonContainerRef.innerHTML += `
+    <button onclick="commitNote(${noteIndex})">Anmerkung speichern!</button>
+    <button onclick="deleteNote(${noteIndex})">Anmerkung Löschen</button>
+    <button type="button" onclick="closeDialog(dialogNoteRef)">Close</button>`
+    } else {
+        noteButtonContainerRef.innerHTML += `
+    <button onclick="commitNote(${noteIndex})">Anmerkung speichern!</button>
+    <button type="button" onclick="closeDialog(dialogNoteRef)">Close</button>`
+    }
+}
+
+function renderOrderSummary() {
+    let orderSummaryContainerRef = document.getElementById('order-summary-container');
+    orderSummaryContainerRef.innerHTML = "";
+    for (let index = 0; index < itemBasket.length; index++) {
+        let element = itemBasket[index];
+        let contentForDiv = "";
+        contentForDiv = `
+            <p>${element.dishAmount} x ${element.dishName}</p>
+        `
+        if (element.note != "") {
+            contentForDiv += `
+            <span class="note-in-summary">Anmerkung: ${element.note}</span>
+            <button onclick="deleteNoteFromSummary(${index})" aria-label="Notiz zu ${element.dishName} Löschen!">Notiz Löschen!</button>`
+        };
+        
+        let outerDiv = `<div class="outer-summary-item">${contentForDiv}</div> `
+        orderSummaryContainerRef.innerHTML += outerDiv;
+    }
+}
+
+function renderKitchenOrderList() {
+  let kitchenOrderRef = document.getElementById('restaurant-kitchen-order-container');
+  kitchenOrderRef.innerHTML = "";
+  for (let index = 0; index < orderList.length; index++) {
+    const element = orderList[index];
+    kitchenOrderRef.innerHTML += `
+        <li>
+            <h3>Bestellnummer: ${element.oderID}</h3>
+        </li>
+        <p>Time of order: ${element.orderTime}</p>
+        `
+    kitchenOrderRef.innerHTML += createOrderItems(index);
+  }
+}
+
+function createOrderItems(indexOfOrderList) {
+  let orderListItemHTML = "";
+  for (let index = 0; index < orderList[indexOfOrderList].orderItems.length; index++) {
+    let element = orderList[indexOfOrderList].orderItems[index];
+    orderListItemHTML += `
+      <p>${element.dishAmount} x ${element.dishName}</p>
+    `
+    if (element.note != "") {
+      orderListItemHTML += `
+        <span class="note-in-summary">Anmerkung: ${element.note}</span>
+    `
+    }
+  }
+  return orderListItemHTML;
+}
+
+function renderDeliveryCost() {
+    let deliveryCostRef = document.querySelectorAll('.basket-delivery-cost');
+    deliveryCostRef.forEach(box => {
+        box.innerHTML = deliveryCost.toFixed(2) + " €";
+    });
+}
+
+function renderBasketItems() {
+    let basketRef = document.querySelectorAll('.basket-items-anchor');
+    basketRef.innerHTML = "";
+    basketRef.forEach(box => {box.innerHTML = createBasketItems();});
+    calculateTotalBasket();
+    storeItemBasketInLocalStorage();
+    displayItemCountInBasket();
+}
+
+function renderDishes(category) {
+    activateCategoryActiveBorder(category);
+    let dishContentRef = document.getElementById('dish-container');
+    dishContentRef.innerHTML = "";
+    for (let index = 0; index < dishData[category].length; index++) {
+        dishContentRef.innerHTML += returnDishCard(category, index);
+    }
+    createMobileCategoryHeader();
+    announcePrice();
+}
+
+function createMobileCategoryHeader() {
+    let mobileHeaderRef = document.getElementById('mobile-category-header');
+    mobileHeaderRef.innerHTML = "";
+    if (category = "starters") {
+        mobileHeaderRef.innerHTML = "Vorspeisen";
+    } else if (category = "mainDish"){
+        mobileHeaderRef.innerHTML = "Hauptgerichte";
+    } else if (category = "dessert"){
+        mobileHeaderRef.innerHTML = "Nachspeisen";
+    } else if (category = "beverages"){
+        mobileHeaderRef.innerHTML = "Getränke";
+    } else {
+        console.log('did not find header');
+    };  
+}
+
+function renderFavDishes() {
+    let favDishContentRef = document.getElementById('favorite-dishes');
+    for (let index = 0; index < favDishes.length; index++) {
+        let element = favDishes[index];
+        let favDishID = `fav-item-${favDishes[index].category}-${favDishes[index].index}`;
+        favDishContentRef.innerHTML += returnFavDishCard(element.category, favDishes[index].index, favDishID);
+    }
 }

@@ -193,3 +193,12 @@ let dishData =
 
     ],
 };
+
+let favDishes = [
+{ "category": "starters", "index": 2 },
+{ "category": "starters", "index": 3 },
+{ "category": "mainDish", "index": 1 },
+{ "category": "mainDish", "index": 3 },
+{ "category": "mainDish", "index": 4 },
+{ "category": "dessert", "index": 1 },
+{ "category": "dessert", "index": 0 }];
