@@ -104,6 +104,7 @@ function renderBasketItems() {
     basketRef.forEach(box => {box.innerHTML = createBasketItems();});
     calculateTotalBasket();
     storeItemBasketInLocalStorage();
+    displayItemCountInBasket();
 }
 
 function createBasketItems() {

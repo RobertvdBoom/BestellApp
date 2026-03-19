@@ -15,12 +15,15 @@
     <div id="page-content">
         <div class="top-content">
             <header class="top-level-bar">
-                <h2>Bestell App</h2>
-                <button class="resp-btn desktop-d-none" onclick="toggleRespMenu()" type="button"
-                    aria-controls="resp_menu" aria-expanded="false" aria-label="Menü öffnen!" id="resp-menu-btn">
-                    <img src="/assets/img/icons/menu.svg" alt="" aria-hidden="true">
-                    <span class="sr-only">Burger Menu öffnen!</span>
-                </button>
+                <div class="top-level-bar-wrapper">
+                    <h2>Bestell App</h2>
+                    <button class="resp-btn desktop-d-none" onclick="toggleRespMenu()" type="button"
+                        aria-controls="resp_menu" aria-expanded="false" aria-label="Menü öffnen!" id="resp-menu-btn">
+                        <img src="/assets/img/icons/menu.svg" alt="" aria-hidden="true">
+                        <span class="sr-only">Burger Menu öffnen!</span>
+                    </button>
+                </div>
+
             </header>
             <nav id="resp_menu" class="resp_menu_box resp_menu_closed" hidden="true" aria-label="Kategorien">
                 <ul>
@@ -95,7 +98,7 @@
                 <div class="desktop-d-none mobile-basket-opener toggle-item-basket-button">
                     <button onclick="openDialog(mobileDialogRef)" aria-haspopup="dialog"
                         aria-controls="mobile-basket-dialog" aria-expanded="false">
-                        <h2>Warenkorb Öffnen!</h2>
+                        <h2 id="mobile-basket-opener-and-item-count">Warenkorb Öffnen!</h2>
                     </button>
                 </div>
             </main>

@@ -107,15 +107,22 @@ li a{
 
 .top-level-bar{
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 1rem;
     background-color: rgb(22, 22, 22);
+    display: flex;
+    justify-content: center;
 }
 
 .top-level-bar img{
     height: 40px;
+}
+
+.top-level-bar-wrapper{
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
 }
 
 .restaurant-rating-info {

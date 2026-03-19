@@ -13,7 +13,7 @@
 }
 
 .outer-aside {
-    padding-top: 20px;
+    padding: 20px 0px;
     height: calc(100vh - 72px - 7vh);
     height: calc(100dvh - 72px - 7vh);
     display: flex;
@@ -21,6 +21,7 @@
     gap: 20px;
     position: sticky;
     top: 72px;
+    background-color: rgb(49, 49, 49);
 }
 
 #basket-container{

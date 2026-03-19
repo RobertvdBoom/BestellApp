@@ -168,22 +168,6 @@ function closeDialog(option) {
   blockBackgroundContent();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function blockBackgroundContent() {
   if (dialogOpened == true) {
     pageContentRef.setAttribute("hidden", "");
@@ -390,4 +374,12 @@ function adjustTabSkip() {
     linkToMainRef.setAttribute("hidden", "");
     linkToCategoryHeaderMobileRef.setAttribute("hidden", "");
   }
+}
+
+let mobileItemCountRef = document.getElementById('mobile-basket-opener-and-item-count');
+
+function displayItemCountInBasket() {
+  let totalItemCount = 0;
+  itemBasket.forEach((element)=> totalItemCount+=element.dishAmount);
+  mobileItemCountRef.innerHTML = `Warenkorb Öffnen! [${totalItemCount}]`;
 }
